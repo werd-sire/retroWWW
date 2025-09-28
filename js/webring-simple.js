@@ -29,7 +29,7 @@ var SimpleWebRing = {
     conspiracy: {
         sites: [
             { id: 'truth-seekers', url: '/sites/truth-seekers/index.html', name: 'Truth Seekers Network' },
-            { id: 'black-vault', url: '/sites/black-vault/index.html', name: 'The Black Vault' }
+            { id: 'federal-watch', url: '/sites/federal-watch-archive/index.html', name: 'Federal Watch Archive' }
         ],
         getNav: function(currentId) {
             var ring = SimpleWebRing.conspiracy.sites;

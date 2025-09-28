@@ -30,9 +30,9 @@ var WebRings = {
                 url: "../sites/truth-seekers/index.html"
             },
             {
-                id: "black-vault",
-                name: "The Black Vault",
-                url: "../sites/black-vault/index.html"
+                id: "federal-watch",
+                name: "Federal Watch Archive",
+                url: "../sites/federal-watch-archive/index.html"
             }
         ]
     },

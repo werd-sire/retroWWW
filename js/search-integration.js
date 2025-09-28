@@ -43,14 +43,14 @@ var RetroWebSites = {
         rings: ["conspiracy"]
     },
 
-    "black-vault": {
-        url: "sites/black-vault/index.html",
-        title: "The Black Vault - Declassified Government Documents & Research",
-        snippet: "Comprehensive database of declassified government documents, vetted research, and verified intelligence reports. Over 15,000 FOIA-obtained documents.",
-        keywords: "government declassified documents foia cia fbi transparency research whistleblower intelligence black vault",
+    "federal-watch-archive": {
+        url: "sites/federal-watch-archive/index.html",
+        title: "Federal Watch Archive - Dr. Patricia Caldwell - Government Transparency Research",
+        snippet: "Independent research on federal accountability and transparency by Dr. Patricia Caldwell, former Defense Intelligence Agency analyst. 3,247 verified documents.",
+        keywords: "government declassified documents foia cia fbi transparency research federal watch patricia caldwell dia intelligence",
         category: "conspiracy",
-        webmaster: "John Researcher",
-        founded: "September 1999",
+        webmaster: "Dr. Patricia Caldwell",
+        founded: "March 1997",
         working: true,
         rings: ["conspiracy"]
     },
