@@ -1,0 +1,563 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>🏥 Dr. Kevin's Tamagotchi Emergency Hospital! 🏥</title>
+<meta name="description" content="Emergency Tamagotchi medical care! Diagnose sick pets, emergency treatment guides, and virtual pet first aid!">
+<meta name="keywords" content="tamagotchi hospital,sick tamagotchi,virtual pet medicine,emergency care,tamagotchi health,digital pet doctor">
+<style type="text/css">
+<!--
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F0FFFF url('../../assets/gifs/medical_bg.gif');
+    margin: 0;
+    padding: 0;
+    color: #006400;
+}
+a:link { color: #0000FF; text-decoration: underline; }
+a:visited { color: #8B008B; text-decoration: underline; }
+a:hover { color: #FF0000; text-decoration: underline; }
+.hospital-section {
+    background: #FFFFFF;
+    border: 3px solid #228B22;
+    margin: 15px;
+    padding: 20px;
+}
+.emergency-box {
+    background: #FFE4E1;
+    border: 3px solid #FF0000;
+    margin: 15px 0;
+    padding: 15px;
+}
+.diagnosis-box {
+    background: #E0FFFF;
+    border: 2px solid #00CED1;
+    margin: 10px 0;
+    padding: 15px;
+}
+.treatment-box {
+    background: #F0FFF0;
+    border: 2px solid #32CD32;
+    padding: 15px;
+    margin: 10px 0;
+}
+.patient-record {
+    background: #FFF8DC;
+    border: 2px solid #DAA520;
+    padding: 15px;
+    margin: 15px 0;
+}
+.success-story {
+    background: #F5FFFA;
+    border: 2px solid #98FB98;
+    padding: 15px;
+    margin: 10px 0;
+}
+-->
+</style>
+<script language="JavaScript">
+<!--
+window.status = "Dr. Kevin's Emergency Tamagotchi Hospital - Open 24/7!";
+
+function emergencyDiagnosis() {
+    var symptoms = prompt("EMERGENCY DIAGNOSIS SYSTEM\n\nDescribe your Tamagotchi's symptoms:\n(Examples: skull icon, refuses food, won't play, strange beeping)", "");
+
+    if (symptoms) {
+        var diagnosis = "";
+        var treatment = "";
+
+        if (symptoms.toLowerCase().indexOf("skull") >= 0 || symptoms.toLowerCase().indexOf("sick") >= 0) {
+            diagnosis = "ACUTE DIGITAL ILLNESS";
+            treatment = "IMMEDIATE MEDICINE REQUIRED!\n\n1. Select medicine icon (needle/pill)\n2. Give medicine 2-3 times\n3. Wait 10-15 minutes between doses\n4. Monitor for improvement";
+        } else if (symptoms.toLowerCase().indexOf("refuse") >= 0 || symptoms.toLowerCase().indexOf("won't eat") >= 0) {
+            diagnosis = "BEHAVIORAL DISORDER or SICKNESS";
+            treatment = "CHECK FOR ILLNESS FIRST!\n\n1. Look for skull icon\n2. If no skull: try discipline\n3. If skull present: give medicine\n4. Monitor appetite recovery";
+        } else if (symptoms.toLowerCase().indexOf("beep") >= 0) {
+            diagnosis = "ATTENTION DEFICIT SYNDROME";
+            treatment = "COMPREHENSIVE CARE PROTOCOL!\n\n1. Check hunger level\n2. Check happiness level\n3. Check for sickness\n4. Consider discipline if needed";
+        } else {
+            diagnosis = "GENERAL CARE DEFICIENCY";
+            treatment = "BASIC CARE PROTOCOL!\n\n1. Feed if hungry\n2. Play if unhappy\n3. Give medicine if sick\n4. Discipline if misbehaving";
+        }
+
+        alert("🏥 EMERGENCY DIAGNOSIS COMPLETE! 🏥\n\n" +
+              "PATIENT SYMPTOMS: " + symptoms + "\n\n" +
+              "DIAGNOSIS: " + diagnosis + "\n\n" +
+              "PRESCRIBED TREATMENT:\n" + treatment + "\n\n" +
+              "If condition persists, visit the hospital again!\n\n" +
+              "- Dr. Kevin, Digital Pet Physician");
+    }
+}
+
+function medicineGuide() {
+    alert("💊 TAMAGOTCHI MEDICINE GUIDE 💊\n\n" +
+          "🩺 WHEN TO GIVE MEDICINE:\n" +
+          "• Skull icon appears next to pet\n" +
+          "• Pet looks sad/lethargic\n" +
+          "• Refuses to eat when hungry\n" +
+          "• Makes weak beeping sounds\n\n" +
+          "💉 HOW TO ADMINISTER:\n" +
+          "1. Select medicine icon (varies by model)\n" +
+          "2. Press A button to confirm\n" +
+          "3. Give 2-3 doses, spaced 10 minutes apart\n" +
+          "4. Wait for skull to disappear\n\n" +
+          "⚠️ WARNING: Don't give medicine to healthy pets!\n" +
+          "This can make them sick!\n\n" +
+          "- Dr. Kevin's Medical Guidelines");
+}
+
+function preventionTips() {
+    alert("🛡️ DISEASE PREVENTION GUIDE 🛡️\n\n" +
+          "✅ KEEP YOUR PET HEALTHY:\n\n" +
+          "• Maintain high hunger (3-4 hearts)\n" +
+          "• Keep happiness levels up (3-4 hearts)\n" +
+          "• Don't let weight get too high (under 40oz)\n" +
+          "• Clean up waste immediately\n" +
+          "• Don't neglect for long periods\n" +
+          "• Proper discipline balance\n\n" +
+          "📊 HEALTH STATISTICS:\n" +
+          "• Well-cared pets: 5% sickness rate\n" +
+          "• Neglected pets: 47% sickness rate\n\n" +
+          "Prevention is the best medicine!\n\n" +
+          "- Dr. Kevin's Prevention Protocol");
+}
+
+function emergencyContact() {
+    alert("🚨 EMERGENCY CONTACT INFORMATION 🚨\n\n" +
+          "If your Tamagotchi is in CRITICAL CONDITION:\n\n" +
+          "📧 Emergency Email: dr_kevin_tama@aol.com\n" +
+          "📞 Emergency Hotline: 1-800-TAMA-911\n" +
+          "💬 ICQ: 12345678 (online 3pm-10pm PST)\n" +
+          "📱 Pager: 555-TAMA (for REAL emergencies)\n\n" +
+          "🕐 HOSPITAL HOURS:\n" +
+          "Monday-Friday: After school (3:30pm-10pm)\n" +
+          "Weekends: 9am-11pm\n" +
+          "Emergencies: Call anytime!\n\n" +
+          "⚡ AVERAGE RESPONSE TIME: 2-4 hours\n\n" +
+          "Your pet's life is precious! Don't hesitate to call!\n\n" +
+          "- Dr. Kevin Rodriguez, Digital Veterinarian");
+}
+
+function successStories() {
+    alert("🏆 MIRACLE RECOVERY STORIES 🏆\n\n" +
+          "💖 RECENT SUCCESS CASES:\n\n" +
+          "🌟 Mimitchi #23 (Sarah, Oregon)\n" +
+          "Came in with severe neglect syndrome.\n" +
+          "Full recovery in 3 days with intensive care!\n\n" +
+          "🌟 Kuchipatchi (Mike, Texas)\n" +
+          "Critical skull icon for 2 hours.\n" +
+          "Emergency medicine protocol saved his life!\n\n" +
+          "🌟 Ginjirotchi (Anonymous)\n" +
+          "Mysterious illness, no known cause.\n" +
+          "Experimental treatment: COMPLETE CURE!\n\n" +
+          "📈 HOSPITAL STATISTICS:\n" +
+          "Patients Treated: 127\n" +
+          "Success Rate: 94.5%\n" +
+          "Lives Saved: 120\n\n" +
+          "Every pet deserves a second chance!\n\n" +
+          "- Dr. Kevin's Medical Records");
+}
+
+// Medical animation
+function createHeartbeat() {
+    var heart = document.createElement("div");
+    heart.innerHTML = "💓";
+    heart.style.position = "absolute";
+    heart.style.left = "95%";
+    heart.style.top = "10px";
+    heart.style.fontSize = "24px";
+    heart.style.color = "#FF69B4";
+    heart.style.zIndex = "1000";
+    heart.style.pointerEvents = "none";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.style.fontSize = "30px";
+    }, 100);
+
+    setTimeout(function() {
+        heart.style.fontSize = "24px";
+    }, 200);
+
+    setTimeout(function() {
+        if(heart.parentNode) {
+            document.body.removeChild(heart);
+        }
+    }, 400);
+}
+
+setInterval("createHeartbeat()", 2000);
+//-->
+</script>
+</head>
+
+<body bgcolor="#F0FFFF" text="#006400" link="#0000FF" vlink="#8B008B" alink="#FF0000">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="5" cellpadding="20" cellspacing="0" bordercolor="#228B22" bgcolor="#FFFFFF">
+<tr>
+<td align="center">
+<font face="Arial Black" size="6" color="#DC143C">
+🏥 DR. KEVIN'S TAMAGOTCHI HOSPITAL 🏥
+</font>
+<br>
+<font face="Arial" size="4" color="#006400">
+Emergency Digital Pet Medical Center
+</font>
+<br>
+<font face="Arial" size="3" color="#228B22">
+"Saving virtual lives 24/7 since 1997" - Dr. Kevin Rodriguez
+</font>
+<br>
+<marquee behavior="alternate" scrollamount="2" width="400">
+<font color="#FF0000" size="2">
+🚨 EMERGENCY SERVICES AVAILABLE 🚨
+</font>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Emergency Alert -->
+<div class="emergency-box">
+<center>
+<font face="Arial Black" size="4" color="#FF0000">
+🚨 TAMAGOTCHI EMERGENCY? 🚨
+</font>
+<br><br>
+<font face="Arial" size="3" color="#8B0000">
+If your pet is showing signs of illness RIGHT NOW:
+<br><br>
+<b>1. Look for skull icon 💀</b><br>
+<b>2. Give medicine immediately 💊</b><br>
+<b>3. Monitor for 15 minutes ⏰</b><br>
+<b>4. Repeat medicine if needed 🔄</b><br>
+<br>
+<font color="#FF0000">TIME IS CRITICAL! Don't wait!</font>
+</font>
+<br><br>
+<input type="button" value="🩺 EMERGENCY DIAGNOSIS" onclick="emergencyDiagnosis()"
+       style="background: #FF0000; color: #FFFFFF; font-size: 16px; font-weight: bold; padding: 12px 20px; cursor: hand;">
+</center>
+</div>
+
+<!-- Navigation -->
+<table width="90%" border="3" cellpadding="8" cellspacing="2" bordercolor="#228B22" bgcolor="#F0FFF0">
+<tr>
+<td align="center"><a href="#symptoms"><font color="#006400"><b>🩺 SYMPTOMS</b></font></a></td>
+<td align="center"><a href="#treatments"><font color="#006400"><b>💊 TREATMENTS</b></font></a></td>
+<td align="center"><a href="#prevention"><font color="#006400"><b>🛡️ PREVENTION</b></font></a></td>
+<td align="center"><a href="#records"><font color="#006400"><b>📋 RECORDS</b></font></a></td>
+<td align="center"><a href="#contact"><font color="#006400"><b>📞 CONTACT</b></font></a></td>
+</tr>
+</table>
+
+<br>
+
+<!-- Welcome -->
+<div class="hospital-section">
+<font size="4" color="#006400"><b>👨‍⚕️ WELCOME TO THE DIGITAL ICU!</b></font>
+<br><br>
+
+<font color="#006400">
+Greetings, concerned Tamagotchi parents! I'm Dr. Kevin Rodriguez, and I've dedicated
+my life to saving virtual pets in distress. With over 2 years of experience treating
+digital illnesses, I've seen every possible Tamagotchi medical emergency.
+<br><br>
+
+Don't panic if your pet gets sick! With proper treatment, 94.5% of patients make
+a full recovery. The key is QUICK ACTION and following the correct medical protocols.
+<br><br>
+
+<font color="#228B22"><b>🏥 HOSPITAL STATISTICS:</b></font><br>
+• Patients treated: 127 Tamagotchis<br>
+• Lives saved: 120 virtual pets<br>
+• Success rate: 94.5% recovery<br>
+• Average treatment time: 45 minutes<br>
+• Emergency response: Available 24/7<br>
+• Medical experience: 2+ years intensive practice<br>
+</font>
+
+<br><br>
+<center>
+<input type="button" value="💊 MEDICINE GUIDE" onclick="medicineGuide()"
+       style="background: #32CD32; font-size: 14px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+&nbsp;&nbsp;
+<input type="button" value="🚨 EMERGENCY CONTACT" onclick="emergencyContact()"
+       style="background: #FF6347; color: #FFFFFF; font-size: 14px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Symptom Recognition -->
+<a name="symptoms"></a>
+<div class="hospital-section">
+<font size="4" color="#006400"><b>🩺 SYMPTOM RECOGNITION GUIDE</b></font>
+<br><br>
+
+<font color="#006400">
+<b>Learn to identify the warning signs of Tamagotchi illness:</b>
+</font>
+
+<div class="diagnosis-box">
+<font color="#00CED1"><b>🚨 CRITICAL SYMPTOMS (Immediate Treatment Required):</b></font><br>
+<font color="#006400">
+💀 <b>Skull Icon:</b> Most obvious sign of illness<br>
+😰 <b>Weak/Sad Expression:</b> Pet looks lethargic<br>
+🚫 <b>Refuses Food:</b> Won't eat when hungry<br>
+🔇 <b>Weak Beeping:</b> Sounds different from normal<br>
+🏃‍♂️ <b>Won't Play:</b> Refuses games when unhappy<br>
+</font>
+</div>
+
+<div class="diagnosis-box">
+<font color="#00CED1"><b>⚠️ WARNING SYMPTOMS (Monitor Closely):</b></font><br>
+<font color="#006400">
+😕 <b>Frequent Unhappiness:</b> Happiness drops quickly<br>
+🍽️ <b>Irregular Eating:</b> Sometimes refuses food<br>
+😴 <b>Excessive Sleeping:</b> Sleeps more than usual<br>
+📉 <b>Slow Growth:</b> Not evolving on schedule<br>
+⚖️ <b>Weight Fluctuation:</b> Rapid weight changes<br>
+</font>
+</div>
+
+<div class="diagnosis-box">
+<font color="#00CED1"><b>📊 SEVERITY ASSESSMENT:</b></font><br>
+<font color="#006400">
+<b>MILD:</b> 1-2 symptoms, responds to basic care<br>
+<b>MODERATE:</b> 3-4 symptoms, needs medicine<br>
+<b>SEVERE:</b> 5+ symptoms, requires intensive treatment<br>
+<b>CRITICAL:</b> Skull icon + multiple symptoms<br>
+</font>
+</div>
+
+</div>
+
+<!-- Treatment Protocols -->
+<a name="treatments"></a>
+<div class="hospital-section">
+<font size="4" color="#006400"><b>💊 DR. KEVIN'S TREATMENT PROTOCOLS</b></font>
+<br><br>
+
+<div class="treatment-box">
+<font color="#32CD32"><b>🚑 EMERGENCY PROTOCOL (Skull Icon Present):</b></font><br>
+<font color="#006400">
+<b>STEP 1:</b> Remain calm - panic leads to mistakes!<br>
+<b>STEP 2:</b> Locate medicine icon (syringe, pill, or medicine bottle)<br>
+<b>STEP 3:</b> Administer first dose of medicine<br>
+<b>STEP 4:</b> Wait 10-15 minutes (time is critical!)<br>
+<b>STEP 5:</b> Give second dose if skull still present<br>
+<b>STEP 6:</b> Monitor closely for next 30 minutes<br>
+<b>STEP 7:</b> Third dose if no improvement<br>
+<br>
+<font color="#FF0000"><b>⚠️ If skull persists after 3 doses, contact Dr. Kevin IMMEDIATELY!</b></font>
+</font>
+</div>
+
+<div class="treatment-box">
+<font color="#32CD32"><b>🏥 STANDARD CARE PROTOCOL (No Skull):</b></font><br>
+<font color="#006400">
+<b>ASSESSMENT:</b> Check hunger, happiness, weight, and discipline<br>
+<b>NUTRITION:</b> Feed if hunger below 3 hearts<br>
+<b>EXERCISE:</b> Play games if happiness below 3 hearts<br>
+<b>HYGIENE:</b> Clean up any waste immediately<br>
+<b>MONITORING:</b> Check every 30 minutes for 2 hours<br>
+<b>FOLLOW-UP:</b> Return to normal care schedule if stable<br>
+</font>
+</div>
+
+<div class="treatment-box">
+<font color="#32CD32"><b>🔄 RECOVERY MONITORING:</b></font><br>
+<font color="#006400">
+<b>HOUR 1:</b> Check every 15 minutes<br>
+<b>HOUR 2-4:</b> Check every 30 minutes<br>
+<b>HOUR 5-24:</b> Check every hour<br>
+<b>DAY 2+:</b> Return to normal schedule<br>
+<br>
+<b>RECOVERY SIGNS:</b> Normal appetite, active playing, stable weight<br>
+<b>RELAPSE SIGNS:</b> Return of any original symptoms<br>
+</font>
+</div>
+
+</div>
+
+<!-- Prevention -->
+<a name="prevention"></a>
+<div class="hospital-section">
+<font size="4" color="#006400"><b>🛡️ PREVENTIVE MEDICINE PROGRAM</b></font>
+<br><br>
+
+<font color="#006400">
+<b>The best treatment is prevention! Follow Dr. Kevin's wellness plan:</b>
+</font>
+
+<table width="100%" border="2" cellpadding="10" cellspacing="0" bordercolor="#228B22">
+<tr bgcolor="#F0FFF0">
+<td><b>CARE FACTOR</b></td>
+<td><b>OPTIMAL RANGE</b></td>
+<td><b>PREVENTION STRATEGY</b></td>
+</tr>
+<tr>
+<td>Hunger Level</td>
+<td>3-4 hearts</td>
+<td>Feed within 1 hour of beeping</td>
+</tr>
+<tr bgcolor="#F5FFFA">
+<td>Happiness Level</td>
+<td>3-4 hearts</td>
+<td>Play games daily, win frequently</td>
+</tr>
+<tr>
+<td>Weight Management</td>
+<td>25-40 oz</td>
+<td>Balance meals with exercise</td>
+</tr>
+<tr bgcolor="#F5FFFA">
+<td>Discipline Level</td>
+<td>50-75%</td>
+<td>Discipline when misbehaving only</td>
+</tr>
+<tr>
+<td>Hygiene</td>
+<td>Clean always</td>
+<td>Clean waste within 5 minutes</td>
+</tr>
+<tr bgcolor="#F5FFFA">
+<td>Attention</td>
+<td>Regular checks</td>
+<td>Check every 30-60 minutes</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<input type="button" value="🛡️ PREVENTION TIPS" onclick="preventionTips()"
+       style="background: #98FB98; font-size: 14px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Patient Records -->
+<a name="records"></a>
+<div class="hospital-section">
+<font size="4" color="#006400"><b>📋 RECENT PATIENT RECORDS</b></font>
+<br><br>
+
+<div class="patient-record">
+<font color="#DAA520"><b>📁 CASE #127 - Mimitchi "Angel"</b></font><br>
+<font size="2" color="#8B4513">Patient: Sarah (Oregon) | Date: December 20, 1999</font><br>
+<font color="#006400">
+<b>Presenting Symptoms:</b> Skull icon, refuses food, weak beeping<br>
+<b>Duration:</b> 3 hours before treatment<br>
+<b>Treatment:</b> Emergency medicine protocol, 3 doses<br>
+<b>Outcome:</b> ✅ Full recovery in 2 hours<br>
+<b>Follow-up:</b> Stable after 48 hours<br>
+</font>
+</div>
+
+<div class="patient-record">
+<font color="#DAA520"><b>📁 CASE #126 - Kuchipatchi "Buddy"</b></font><br>
+<font size="2" color="#8B4513">Patient: Mike (Texas) | Date: December 18, 1999</font><br>
+<font color="#006400">
+<b>Presenting Symptoms:</b> Lethargic, weight loss, irregular appetite<br>
+<b>Duration:</b> 1 day gradual onset<br>
+<b>Treatment:</b> Intensive care protocol, monitoring<br>
+<b>Outcome:</b> ✅ Gradual improvement over 6 hours<br>
+<b>Follow-up:</b> Preventive care education provided<br>
+</font>
+</div>
+
+<div class="success-story">
+<font color="#98FB98"><b>🏆 SUCCESS STORY SPOTLIGHT:</b></font><br>
+<font color="#006400">
+<b>"Dr. Kevin saved my Tamagotchi's life!"</b> - Jennifer (Florida)<br>
+<br>
+"My Ginjirotchi had been sick for hours and I didn't know what to do.
+I found Dr. Kevin's hospital page and followed his emergency protocol exactly.
+Within 30 minutes, my pet was healthy again! Thank you Dr. Kevin!"
+</font>
+</div>
+
+<center>
+<input type="button" value="🏆 SUCCESS STORIES" onclick="successStories()"
+       style="background: #FFD700; font-size: 14px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Contact Information -->
+<a name="contact"></a>
+<table width="80%" border="4" cellpadding="15" cellspacing="0" bordercolor="#228B22" bgcolor="#F0FFF0">
+<tr>
+<td align="center">
+<font size="4" color="#006400"><b>📞 24/7 EMERGENCY CONTACT</b></font>
+<br><br>
+
+<font color="#006400">
+<b>🚨 FOR IMMEDIATE MEDICAL EMERGENCIES:</b><br>
+📧 Emergency Email: dr_kevin_tama@aol.com<br>
+📞 Emergency Hotline: 1-800-TAMA-911<br>
+💬 ICQ: 12345678 (fastest response)<br>
+📱 Emergency Pager: 555-TAMA<br>
+<br>
+
+<b>🕐 OFFICE HOURS:</b><br>
+Monday-Friday: 3:30pm - 10:00pm PST<br>
+Saturday-Sunday: 9:00am - 11:00pm PST<br>
+Holidays: Emergency calls only<br>
+<br>
+
+<b>📝 CONSULTATION FEES:</b><br>
+Emergency Diagnosis: FREE<br>
+Treatment Planning: FREE<br>
+Follow-up Care: FREE<br>
+House Calls: Not available (yet!)<br>
+<br>
+
+<font color="#FF0000"><b>⚡ AVERAGE RESPONSE TIME: 2-4 hours</b></font><br>
+<font color="#228B22">Your virtual pet's life is precious!</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Navigation Back -->
+<table width="80%" border="3" cellpadding="10" cellspacing="0" bordercolor="#228B22" bgcolor="#F0FFF0">
+<tr>
+<td align="center">
+<font face="Arial" size="3" color="#006400">
+<a href="index.html">🏠 Back to Tamagotchi Heaven</a> |
+<a href="care-guide.html">📋 Care Guide</a> |
+<a href="pet-cemetery.html">🪦 Pet Cemetery</a>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="100%" border="5" cellpadding="10" cellspacing="0" bordercolor="#228B22" bgcolor="#006400">
+<tr>
+<td align="center">
+<font face="Arial" size="2" color="#FFFFFF">
+🏥 Dr. Kevin's Tamagotchi Hospital © 1999 Kevin Rodriguez<br>
+"Every virtual life matters" - Dr. Kevin<br>
+<br>
+<font color="#98FB98">📞 Emergency Hotline: 1-800-TAMA-911 | 🩺 Lives Saved: 120+</font>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+</body>
+</html>

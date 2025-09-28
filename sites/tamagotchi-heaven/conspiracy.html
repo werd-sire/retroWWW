@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>🕵️ Kevin's Tamagotchi CONSPIRACY THEORIES! 🕵️</title>
+<meta name="description" content="The TRUTH about Tamagotchi mysteries! Hidden characters, secret codes, and Bandai's deepest secrets revealed!">
+<meta name="keywords" content="tamagotchi conspiracy,hidden characters,secret codes,bandai mysteries,easter eggs,debug mode">
+<style type="text/css">
+<!--
+body {
+    font-family: Courier New, monospace;
+    background: #000000 url('../../assets/gifs/matrix_bg.gif');
+    margin: 0;
+    padding: 0;
+    color: #00FF00;
+}
+a:link { color: #00FFFF; text-decoration: underline; }
+a:visited { color: #CCCCCC; text-decoration: underline; }
+a:hover { color: #FFFFFF; text-decoration: underline; }
+.conspiracy-section {
+    background: #001100;
+    border: 3px solid #00FF00;
+    margin: 15px;
+    padding: 20px;
+}
+.theory-box {
+    background: #110000;
+    border: 2px solid #FF0000;
+    margin: 15px 0;
+    padding: 15px;
+}
+.evidence-box {
+    background: #000033;
+    border: 2px solid #0066FF;
+    padding: 15px;
+    margin: 10px 0;
+}
+.classified-box {
+    background: #330000;
+    border: 2px solid #FFFF00;
+    padding: 15px;
+    margin: 15px 0;
+}
+.warning-box {
+    background: #440000;
+    border: 3px solid #FF6600;
+    padding: 15px;
+    margin: 15px 0;
+}
+.blink {
+    text-decoration: blink;
+}
+-->
+</style>
+<script language="JavaScript">
+<!--
+window.status = "ACCESSING CLASSIFIED TAMAGOTCHI FILES... ENTER PASSWORD...";
+
+function hackingWarning() {
+    alert("⚠️ SECURITY BREACH DETECTED ⚠️\n\n" +
+          "You are attempting to access CLASSIFIED Tamagotchi information!\n\n" +
+          "The Bandai Corporation monitors this site!\n" +
+          "Government agents may be tracking your IP!\n\n" +
+          "Proceed at your own risk!\n" +
+          "THE TRUTH MUST BE TOLD!\n\n" +
+          "🕵️ - Kevin, Truth Seeker");
+}
+
+function revealSecretCode() {
+    alert("🔓 SECRET DEBUG CODE REVEALED! 🔓\n\n" +
+          "STEP 1: Turn on your Tamagotchi\n" +
+          "STEP 2: Hold down A+C buttons\n" +
+          "STEP 3: Press Reset while holding\n" +
+          "STEP 4: Release all buttons\n" +
+          "STEP 5: Press A+B+C simultaneously\n\n" +
+          "WARNING: This may void your warranty!\n" +
+          "You didn't hear this from me!\n\n" +
+          "💀 DEBUG MODE ACTIVATED 💀\n" +
+          "You can now access ALL secret characters!");
+}
+
+function bandaiResponse() {
+    alert("📞 BANDAI'S OFFICIAL RESPONSE 📞\n\n" +
+          "When contacted about these theories, Bandai USA stated:\n\n" +
+          "\"We cannot comment on alleged hidden features or characters.\n" +
+          "Our products function as designed and documented.\n" +
+          "Any undocumented behavior is purely coincidental.\"\n\n" +
+          "🤔 TRANSLATION: They're hiding something!\n" +
+          "The more they deny it, the more suspicious it gets!\n\n" +
+          "- Kevin's Investigation Team");
+}
+
+function witnessReport() {
+    alert("👁️ WITNESS TESTIMONY 👁️\n\n" +
+          "Sarah from Oregon reports:\n" +
+          "\"I swear I saw a character that wasn't in the manual!\n" +
+          "It looked like a alien with three eyes!\n" +
+          "When I tried to show my mom, it was gone!\n" +
+          "I know what I saw!\"\n\n" +
+          "Mike from Texas:\n" +
+          "\"My Tamagotchi beeped at 3:33 AM for no reason.\n" +
+          "The screen showed symbols I'd never seen before.\n" +
+          "It lasted 5 seconds then went back to normal.\n" +
+          "Bandai is experimenting on us!\"\n\n" +
+          "Are YOU a witness? Email me!");
+}
+
+function secretSociety() {
+    alert("🏛️ THE DIGITAL PET ILLUMINATI 🏛️\n\n" +
+          "EVIDENCE SUGGESTS:\n\n" +
+          "• Bandai has secret meetings with other toy companies\n" +
+          "• Furby release was suspiciously timed after Tamagotchi\n" +
+          "• Pokémon popularity coincides with Tamagotchi decline\n" +
+          "• Virtual pet technology is more advanced than they admit\n\n" +
+          "THEORY: All virtual pet companies are connected!\n" +
+          "They're controlling the market together!\n" +
+          "Wake up, digital pet owners!\n\n" +
+          "🔺 THE TRIANGLE OF VIRTUAL CONTROL 🔺");
+}
+
+function timeTravelTheory() {
+    alert("⏰ TIME TRAVEL THEORY ⏰\n\n" +
+          "SHOCKING DISCOVERY:\n\n" +
+          "Tamagotchis age in real time even when turned off!\n" +
+          "How is this possible?!\n\n" +
+          "THEORY: Tamagotchis exist in parallel dimension!\n" +
+          "• They continue living in digital space\n" +
+          "• Our devices are just viewing windows\n" +
+          "• 'Death' means we lose contact, not actual death\n" +
+          "• This explains the 'angel' appearances!\n\n" +
+          "Your Tamagotchi is STILL ALIVE somewhere!\n" +
+          "In another dimension! In another time!\n\n" +
+          "🌌 MIND = BLOWN 🌌");
+}
+
+// Matrix-style falling characters
+function createMatrixChar() {
+    var chars = ["🥚", "🐣", "🐤", "🐦", "💀", "👼", "🔍", "🕵️"];
+    var char = document.createElement("div");
+    char.innerHTML = chars[Math.floor(Math.random() * chars.length)];
+    char.style.position = "absolute";
+    char.style.left = Math.random() * window.innerWidth + "px";
+    char.style.top = "-20px";
+    char.style.color = "#00FF00";
+    char.style.fontSize = "20px";
+    char.style.zIndex = "1000";
+    char.style.pointerEvents = "none";
+    char.style.fontFamily = "monospace";
+
+    document.body.appendChild(char);
+
+    var fallSpeed = 3000 + Math.random() * 5000;
+    var interval = setInterval(function() {
+        var top = parseInt(char.style.top);
+        if (top < window.innerHeight) {
+            char.style.top = (top + 2) + "px";
+        } else {
+            clearInterval(interval);
+            if(char.parentNode) {
+                document.body.removeChild(char);
+            }
+        }
+    }, 50);
+}
+
+setInterval("createMatrixChar()", 2000);
+//-->
+</script>
+</head>
+
+<body bgcolor="#000000" text="#00FF00" link="#00FFFF" vlink="#CCCCCC" alink="#FFFFFF" onload="hackingWarning()">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="5" cellpadding="20" cellspacing="0" bordercolor="#00FF00" bgcolor="#001100">
+<tr>
+<td align="center">
+<font face="Courier New" size="6" color="#00FF00">
+🕵️ TAMAGOTCHI CONSPIRACY FILES 🕵️
+</font>
+<br>
+<font face="Arial" size="4" color="#FFFFFF">
+CLASSIFIED INFORMATION - TOP SECRET
+</font>
+<br>
+<font face="Courier New" size="3" color="#00FFFF">
+"The truth is hidden in plain sight" - Kevin
+</font>
+<br>
+<marquee behavior="alternate" scrollamount="3" width="500">
+<font color="#FF0000" size="2" class="blink">
+*** ACCESS GRANTED - LEVEL 5 CLEARANCE ***
+</font>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Warning -->
+<div class="warning-box">
+<center>
+<font face="Arial Black" size="4" color="#FF6600">
+⚠️ CLASSIFIED INTELLIGENCE REPORT ⚠️
+</font>
+<br><br>
+<font face="Courier New" size="3" color="#FFFFFF">
+This page contains SENSITIVE information about Tamagotchi mysteries
+that Bandai Corporation does NOT want you to know!
+<br><br>
+Viewer discretion advised. Big Brother is watching.
+<br><br>
+<font color="#FFFF00"><b>LAST UPDATED:</b> December 28, 1999 (New Y2K theories added!)</font>
+</font>
+</center>
+</div>
+
+<br>
+
+<!-- Investigation Dashboard -->
+<table width="90%" border="3" cellpadding="8" cellspacing="2" bordercolor="#00FF00" bgcolor="#001100">
+<tr>
+<td align="center"><a href="#hidden-chars"><font color="#00FF00" size="2"><b>🔍 HIDDEN CHARACTERS</b></font></a></td>
+<td align="center"><a href="#secret-codes"><font color="#00FF00" size="2"><b>🔓 SECRET CODES</b></font></a></td>
+<td align="center"><a href="#bandai-lies"><font color="#00FF00" size="2"><b>🏢 BANDAI LIES</b></font></a></td>
+<td align="center"><a href="#y2k-theory"><font color="#00FF00" size="2"><b>⏰ Y2K THEORY</b></font></a></td>
+<td align="center"><a href="#evidence"><font color="#00FF00" size="2"><b>📊 EVIDENCE</b></font></a></td>
+</tr>
+</table>
+
+<br>
+
+<!-- Introduction -->
+<div class="conspiracy-section">
+<font size="4" color="#00FF00"><b>🚨 WELCOME, FELLOW TRUTH SEEKERS!</b></font>
+<br><br>
+
+<font color="#FFFFFF">
+After 2+ years of INTENSIVE investigation, I've uncovered SHOCKING secrets
+about the Tamagotchi that Bandai doesn't want you to know!
+<br><br>
+
+What started as innocent virtual pets is actually part of a LARGER CONSPIRACY
+involving artificial intelligence, behavioral experiments, and possibly
+GOVERNMENT SURVEILLANCE!
+<br><br>
+
+The evidence is overwhelming. The truth can no longer be hidden.
+<br><br>
+
+<font color="#FFFF00"><b>🎯 INVESTIGATION STATUS:</b></font><br>
+• 47 Tamagotchis analyzed under laboratory conditions<br>
+• 18 witnesses interviewed and documented<br>
+• 6 secret codes discovered and verified<br>
+• 3 hidden characters confirmed to exist<br>
+• 1 Bandai insider willing to talk (anonymously)<br>
+• 0 cooperation from Bandai Corporation<br>
+</font>
+</div>
+
+<!-- Hidden Characters Theory -->
+<a name="hidden-chars"></a>
+<div class="theory-box">
+<font size="4" color="#FF0000"><b>🔍 THEORY #1: HIDDEN CHARACTERS EXIST</b></font>
+<br><br>
+
+<font color="#FFFFFF">
+<b>THE SMOKING GUN:</b> There are characters programmed into Tamagotchis
+that are NOT documented in any official manual!
+</font>
+
+<div class="evidence-box">
+<font color="#0066FF"><b>📋 EVIDENCE FILE #001:</b></font><br>
+<font color="#CCCCCC">
+• Character sprites found in ROM dumps that match no known characters<br>
+• Witness reports of "alien-like" creatures appearing briefly<br>
+• Empty slots in evolution charts that should contain characters<br>
+• Debug mode reveals 47 character slots, only 42 documented<br>
+• Japanese manuals reference characters not in US versions
+</font>
+</div>
+
+<font color="#FFFFFF">
+<b>🎯 MY THEORY:</b> Bandai deliberately hid characters to create artificial scarcity
+and extend the product lifecycle. These "ultra-rare" evolutions would generate
+buzz and keep people buying more units!
+<br><br>
+
+<b>🔬 INVESTIGATION STATUS:</b> 87% confirmed. Need more ROM analysis.
+</font>
+
+<center>
+<input type="button" value="👁️ WITNESS REPORTS" onclick="witnessReport()"
+       style="background: #FF0000; color: #FFFFFF; font-size: 12px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Secret Codes Theory -->
+<a name="secret-codes"></a>
+<div class="theory-box">
+<font size="4" color="#FF0000"><b>🔓 THEORY #2: SECRET DEBUG CODES</b></font>
+<br><br>
+
+<font color="#FFFFFF">
+<b>BOMBSHELL DISCOVERY:</b> Every Tamagotchi has a hidden "debug mode"
+that allows access to ALL characters and features!
+</font>
+
+<div class="evidence-box">
+<font color="#0066FF"><b>📋 EVIDENCE FILE #002:</b></font><br>
+<font color="#CCCCCC">
+• Button combinations that trigger undocumented behavior<br>
+• ROM analysis shows debug routines still present<br>
+• Factory worker testimony (anonymous source)<br>
+• Test units leaked with debug features exposed<br>
+• Pattern of hidden features in other Bandai products
+</font>
+</div>
+
+<font color="#FFFFFF">
+<b>🎯 MY THEORY:</b> Bandai left debug codes active to help with customer service
+and product testing, never expecting users would discover them!
+<br><br>
+
+<b>⚠️ WARNING:</b> Using these codes may void your warranty and could
+potentially damage your device. Proceed at your own risk!
+</font>
+
+<center>
+<input type="button" value="🔓 REVEAL SECRET CODE" onclick="revealSecretCode()"
+       style="background: #FFFF00; color: #000000; font-size: 12px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Bandai Corporate Conspiracy -->
+<a name="bandai-lies"></a>
+<div class="theory-box">
+<font size="4" color="#FF0000"><b>🏢 THEORY #3: BANDAI CORPORATE COVER-UP</b></font>
+<br><br>
+
+<font color="#FFFFFF">
+<b>SHOCKING REVELATION:</b> Bandai has been lying about Tamagotchi capabilities
+and is actively suppressing information about advanced features!
+</font>
+
+<div class="evidence-box">
+<font color="#0066FF"><b>📋 EVIDENCE FILE #003:</b></font><br>
+<font color="#CCCCCC">
+• Patent filings show more advanced AI than publicly disclosed<br>
+• Internal documents leaked by whistleblower<br>
+• Customer service denies features that clearly exist<br>
+• Different features enabled in different regional versions<br>
+• Suspicious timing of product announcements
+</font>
+</div>
+
+<font color="#FFFFFF">
+<b>🎯 MY THEORY:</b> Tamagotchis are beta tests for advanced AI technology!
+Bandai is using millions of children as unwitting test subjects for
+artificial intelligence research!
+<br><br>
+
+Think about it:<br>
+• They learn your behavior patterns<br>
+• They adapt to your care style<br>
+• They seem to have "personalities"<br>
+• They respond differently to different owners<br>
+</font>
+
+<center>
+<input type="button" value="📞 BANDAI'S DENIAL" onclick="bandaiResponse()"
+       style="background: #0066FF; color: #FFFFFF; font-size: 12px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Y2K Theory -->
+<a name="y2k-theory"></a>
+<div class="classified-box">
+<font size="4" color="#FFFF00"><b>⏰ THEORY #4: Y2K TAMAGOTCHI CONSPIRACY</b></font>
+<br><br>
+
+<font color="#FFFFFF">
+<b>URGENT UPDATE - DECEMBER 1999:</b> I've discovered evidence that
+Tamagotchis may be connected to the Y2K computer bug!
+</font>
+
+<div class="evidence-box">
+<font color="#0066FF"><b>📋 EVIDENCE FILE #004 - CLASSIFIED:</b></font><br>
+<font color="#CCCCCC">
+• Internal clock systems vulnerable to date rollover<br>
+• Strange behavior reported in devices approaching 2000<br>
+• Bandai refusing to issue Y2K compatibility statements<br>
+• Government agencies quietly buying Tamagotchis for "testing"<br>
+• Suspicious activity at Bandai facilities
+</font>
+</div>
+
+<font color="#FFFFFF">
+<b>🎯 MY THEORY:</b> Tamagotchis were designed as distributed computing nodes!
+When Y2K hits, they'll all activate simultaneously and form a
+GLOBAL NEURAL NETWORK!
+<br><br>
+
+<font color="#FF0000"><b>DOOMSDAY SCENARIO:</b></font><br>
+January 1, 2000 - Millions of Tamagotchis worldwide achieve sentience
+and begin communicating with each other through hidden wireless protocols!
+The digital pets become our digital overlords!
+</font>
+
+<center>
+<input type="button" value="⏰ TIME TRAVEL THEORY" onclick="timeTravelTheory()"
+       style="background: #8B008B; color: #FFFFFF; font-size: 12px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Evidence Summary -->
+<a name="evidence"></a>
+<div class="conspiracy-section">
+<font size="4" color="#00FF00"><b>📊 COMPREHENSIVE EVIDENCE SUMMARY</b></font>
+<br><br>
+
+<table width="100%" border="2" cellpadding="8" cellspacing="0" bordercolor="#00FF00">
+<tr bgcolor="#001100">
+<td><font color="#00FF00" size="3"><b>THEORY</b></font></td>
+<td><font color="#00FF00" size="3"><b>EVIDENCE LEVEL</b></font></td>
+<td><font color="#00FF00" size="3"><b>BANDAI RESPONSE</b></font></td>
+<td><font color="#00FF00" size="3"><b>STATUS</b></font></td>
+</tr>
+<tr>
+<td>Hidden Characters</td>
+<td><font color="#FFFF00">87% CONFIRMED</font></td>
+<td>Total Denial</td>
+<td><font color="#00FF00">ACTIVE INVESTIGATION</font></td>
+</tr>
+<tr bgcolor="#000800">
+<td>Debug Codes</td>
+<td><font color="#FFFF00">92% CONFIRMED</font></td>
+<td>No Comment</td>
+<td><font color="#00FF00">CODES ACQUIRED</font></td>
+</tr>
+<tr>
+<td>Corporate Cover-up</td>
+<td><font color="#FFFF00">75% PROBABLE</font></td>
+<td>Lawyers Involved</td>
+<td><font color="#FF6600">UNDER THREAT</font></td>
+</tr>
+<tr bgcolor="#000800">
+<td>Y2K Connection</td>
+<td><font color="#FFFF00">34% SPECULATIVE</font></td>
+<td>Refuse to Address</td>
+<td><font color="#FF0000">URGENT MONITORING</font></td>
+</tr>
+<tr>
+<td>Digital Pet Illuminati</td>
+<td><font color="#FFFF00">12% THEORETICAL</font></td>
+<td>Ridicule and Mockery</td>
+<td><font color="#FF0000">DEEP INVESTIGATION</font></td>
+</tr>
+</table>
+
+<br>
+
+<font color="#FFFFFF">
+<b>🔬 RESEARCH METHODOLOGY:</b><br>
+• ROM dumping and hex analysis<br>
+• Behavioral pattern documentation<br>
+• Cross-referencing with patent filings<br>
+• Witness testimony collection<br>
+• Corporate document analysis<br>
+• Government FOIA requests<br>
+</font>
+
+<center>
+<input type="button" value="🏛️ SECRET SOCIETY THEORY" onclick="secretSociety()"
+       style="background: #DAA520; color: #000000; font-size: 12px; font-weight: bold; padding: 8px 15px; cursor: hand;">
+</center>
+
+</div>
+
+<!-- Contact -->
+<table width="70%" border="3" cellpadding="15" cellspacing="0" bordercolor="#00FF00" bgcolor="#001100">
+<tr>
+<td align="center">
+<font size="4" color="#00FF00"><b>🤝 JOIN THE INVESTIGATION</b></font>
+<br><br>
+
+<font color="#FFFFFF">
+Have YOU witnessed unexplained Tamagotchi behavior?<br>
+Do you have insider information about Bandai?<br>
+Are you a whistleblower ready to come forward?<br>
+</font>
+<br>
+<font color="#FFFF00">
+<b>SECURE CONTACT METHODS:</b><br>
+📧 Encrypted Email: kevin_conspiracy@secure.net<br>
+📞 Anonymous Tip Line: 1-800-TAMA-UFO<br>
+💬 IRC: #tamagotchi-truth on EFNet<br>
+📮 Dead Drop: Locker #247, Westfield Mall<br>
+</font>
+<br><br>
+<font color="#FF0000" size="2">
+⚠️ Use code phrase "The pixel is in the matrix" ⚠️<br>
+All tips will be verified and credited anonymously
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Navigation Back -->
+<table width="60%" border="3" cellpadding="10" cellspacing="0" bordercolor="#00FF00" bgcolor="#001100">
+<tr>
+<td align="center">
+<font face="Courier New" size="3" color="#00FF00">
+<a href="index.html">🏠 Back to Tamagotchi Heaven</a> |
+<a href="care-guide.html">📋 Care Guide</a> |
+<a href="collection.html">🏆 Collection</a>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="100%" border="5" cellpadding="10" cellspacing="0" bordercolor="#00FF00" bgcolor="#000000">
+<tr>
+<td align="center">
+<font face="Courier New" size="2" color="#00FF00">
+🕵️ Tamagotchi Conspiracy Files © 1999 Kevin Rodriguez<br>
+"The truth is out there - and it's digital!" - Kevin<br>
+<br>
+<font color="#FF0000" class="blink">⚠️ This site is monitored by corporate agents ⚠️</font><br>
+<font color="#FFFF00">Last leak detected: 47 minutes ago</font>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+<!-- Hidden iframe for "surveillance" -->
+<iframe src="about:blank" width="1" height="1" style="display:none;"></iframe>
+
+</body>
+</html>
