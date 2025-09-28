@@ -45,24 +45,93 @@ function randomSite() {
         "sites/xtreme-sports/index.html",
         "sites/crystal-unicorns/index.html",
         "sites/tamagotchi-heaven/index.html",
-        "sites/steves-hamster/index.html",
-        "sites/neon-shadows/index.html",
-        "sites/black-vault/index.html"
+        "sites/steves-hamster/index.html"
     ];
     var randomIndex = Math.floor(Math.random() * sites.length);
     window.location = sites[randomIndex];
 }
 
 function performSearch() {
-    var query = document.searchForm.query.value;
+    var query = document.searchForm.query.value.toLowerCase();
     if (query == "") {
         alert("Please enter a search term.");
         return false;
     }
-
-    // Redirect to search results page with query parameter
-    window.location = "search-results.html?q=" + encodeURIComponent(query);
-    return false;
+    
+    // Create our site database for searching
+    var sites = [
+        {
+            url: "sites/geocities-fan/index.html",
+            title: "Bobby's Pokemon Page",
+            keywords: "pokemon pikachu charizard cards nintendo gameboy ash misty brock"
+        },
+        {
+            url: "sites/truth-seekers/index.html",
+            title: "Truth Seekers Network",
+            keywords: "conspiracy aliens ufo area 51 government mind control y2k illuminati"
+        },
+        {
+            url: "sites/webmaster-dave/index.html",
+            title: "Webmaster Dave's Digital Design Emporium", 
+            keywords: "web design html professional websites business dave thompson"
+        },
+        {
+            url: "sites/pokemon-paradise/index.html",
+            title: "Sarah's REAL Pokemon Paradise",
+            keywords: "pokemon pikachu original authentic sarah mitchell real not stolen"
+        },
+        {
+            url: "sites/beanie-baby-haven/index.html",
+            title: "Janet's Beanie Baby Haven",
+            keywords: "beanie baby collectible rare princess bear ty investment trading"
+        },
+        {
+            url: "sites/anime-shrine/index.html",
+            title: "Akira's Anime Shrine", 
+            keywords: "anime manga japanese kawaii sailor moon dragon ball otaku akira"
+        },
+        {
+            url: "sites/xtreme-sports/index.html",
+            title: "Brad's Xtreme Sports Page",
+            keywords: "skateboard extreme sports tony hawk tricks nu metal korn limp bizkit"
+        },
+        {
+            url: "sites/crystal-unicorns/index.html",
+            title: "Crystal Moonbeam's Magical Cyber-Unicorn Emporium",
+            keywords: "unicorns crystals magic spiritual healing rainbow fantasy mystical new age love light"
+        },
+        {
+            url: "sites/tamagotchi-heaven/index.html",
+            title: "Kevin's Totally Radical Tamagotchi Heaven",
+            keywords: "tamagotchi virtual pet bandai digital pet 90s toys keychain pixel pet care guide kevin"
+        },
+        {
+            url: "sites/steves-hamster/index.html",
+            title: "Steve's Wicked Cool Hamster Page",
+            keywords: "hamster mr whiskers pet steve notepad animal care rodent"
+        }
+    ];
+    
+    var results = [];
+    for (var i = 0; i < sites.length; i++) {
+        var site = sites[i];
+        if (site.title.toLowerCase().indexOf(query) != -1 || 
+            site.keywords.toLowerCase().indexOf(query) != -1) {
+            results.push(site);
+        }
+    }
+    
+    if (results.length == 0) {
+        alert("No results found for '" + query + "'.\n\nTry searching for: pokemon, anime, conspiracy, beanie baby, skateboard, web design");
+        return false;
+    } else if (results.length == 1) {
+        window.location = results[0].url;
+        return false;
+    } else {
+        // Take to first result directly for professional experience
+        window.location = results[0].url;
+        return false;
+    }
 }
 
 // Removed blinking text for professional appearance
@@ -237,47 +306,7 @@ Complete Pokemon database with images and trading information.
 <font size="2" color="#000080">
 Member of the <b>Professional Directory Ring</b><br>
 <font class="small">
-<script language="JavaScript">
-<!--
-var currentSite = 'cyberfind';
-var sites = [
-    {id: 'cyberfind', url: 'index.html', name: 'CyberFind 2000'},
-    {id: 'webmaster-dave', url: 'sites/webmaster-dave/index.html', name: "Dave's Professional Web Services"},
-    {id: 'neon-shadows', url: 'sites/neon-shadows/index.html', name: 'Neon Shadows Design Studio'}
-];
-
-function showProfessionalSites() {
-    var content = '<html><head><title>Professional Directory Ring Sites</title></head><body bgcolor="#F0F0F0"><center><h2>Professional Directory Ring</h2><table border="1" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">';
-    for (var i = 0; i < sites.length; i++) {
-        content += '<tr><td><a href="' + sites[i].url + '" target="_parent">' + sites[i].name + '</a></td></tr>';
-    }
-    content += '</table></center></body></html>';
-    var listWindow = window.open('', 'sitelist', 'width=400,height=300,scrollbars=yes,resizable=yes');
-    listWindow.document.write(content);
-    listWindow.document.close();
-}
-
-var currentIndex = 0;
-for (var i = 0; i < sites.length; i++) {
-    if (sites[i].id === currentSite) {
-        currentIndex = i;
-        break;
-    }
-}
-
-var prevIndex = (currentIndex - 1 + sites.length) % sites.length;
-var nextIndex = (currentIndex + 1) % sites.length;
-var randomIndex = Math.floor(Math.random() * sites.length);
-
-document.write('[<a href="' + sites[prevIndex].url + '"><font color="#000080">Previous</font></a>] ');
-document.write('[<a href="' + sites[nextIndex].url + '"><font color="#000080">Next</font></a>] ');
-document.write('[<a href="' + sites[randomIndex].url + '"><font color="#000080">Random</font></a>] ');
-document.write('[<a href="javascript:showProfessionalSites()"><font color="#000080">List Sites</font></a>]');
-//-->
-</script>
-<noscript>
-[<a href="sites/webmaster-dave/index.html">Previous</a>] [<a href="sites/neon-shadows/index.html">Next</a>] [<a href="webrings/professional-ring.html">List Sites</a>]
-</noscript>
+[<a href="#">Previous</a>] [<a href="#">Random</a>] [<a href="#">Next</a>] [<a href="#">List Sites</a>]
 </font>
 </font>
 </td>

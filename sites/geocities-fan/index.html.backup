@@ -325,44 +325,10 @@ EMAIL ME: <A HREF="mailto:pokemonmaster2000@hotmail.com">
 <FONT COLOR="#FFFF00">pokemonmaster2000@hotmail.com</FONT></A><BR>
 <BR>
 This site is part of the <B>POKEMON WEBRING</B><BR>
-<SCRIPT LANGUAGE="JavaScript">
-<!--
-var pokemonSites = [
-    {id: 'bobby-pokemon', url: '../geocities-fan/index.html', name: "Bobby's Pokemon Page"},
-    {id: 'sarah-pokemon', url: '../pokemon-paradise/index.html', name: "Sarah's Pokemon Paradise"}
-];
-var currentSiteId = 'bobby-pokemon';
-var currentIndex = 0;
-for(var i = 0; i < pokemonSites.length; i++) {
-    if(pokemonSites[i].id == currentSiteId) { currentIndex = i; break; }
-}
-function navigatePokemonRing(direction) {
-    var newIndex;
-    if(direction == 'prev') {
-        newIndex = (currentIndex - 1 + pokemonSites.length) % pokemonSites.length;
-    } else if(direction == 'next') {
-        newIndex = (currentIndex + 1) % pokemonSites.length;
-    } else if(direction == 'random') {
-        do { newIndex = Math.floor(Math.random() * pokemonSites.length); }
-        while(newIndex == currentIndex && pokemonSites.length > 1);
-    }
-    if(newIndex !== undefined) { window.location.href = pokemonSites[newIndex].url; }
-}
-function showPokemonList() {
-    var listWindow = window.open('', 'pokemonList', 'width=400,height=300,scrollbars=yes');
-    var content = '<html><head><title>Pokemon Ring Sites</title></head><body bgcolor="#FFFF00"><h2>Pokemon Webring Sites</h2><ul>';
-    for(var i = 0; i < pokemonSites.length; i++) {
-        content += '<li><a href="' + pokemonSites[i].url + '">' + pokemonSites[i].name + '</a></li>';
-    }
-    content += '</ul></body></html>';
-    listWindow.document.write(content); listWindow.document.close();
-}
-document.write('[<A HREF="javascript:navigatePokemonRing(\'prev\')"><FONT COLOR="#00FF00">Previous</FONT></A>] ');
-document.write('[<A HREF="javascript:navigatePokemonRing(\'next\')"><FONT COLOR="#00FF00">Next</FONT></A>] ');
-document.write('[<A HREF="javascript:navigatePokemonRing(\'random\')"><FONT COLOR="#00FF00">Random</FONT></A>] ');
-document.write('[<A HREF="javascript:showPokemonList()"><FONT COLOR="#00FF00">List Sites</FONT></A>]');
-//-->
-</SCRIPT><BR>
+[<A HREF="#"><FONT COLOR="#00FF00">Previous</FONT></A>] 
+[<A HREF="#"><FONT COLOR="#00FF00">Next</FONT></A>] 
+[<A HREF="#"><FONT COLOR="#00FF00">Random</FONT></A>] 
+[<A HREF="#"><FONT COLOR="#00FF00">List Sites</FONT></A>]<BR>
 <BR>
 <IMG SRC="../../assets/gifs/counter2.gif" WIDTH="100" HEIGHT="30"><BR>
 VISITORS SINCE 11/1/1999<BR>
