@@ -377,14 +377,60 @@ Serving the greater Anytown metropolitan area since 1997<br>
 </tr>
 </table>
 
-<!-- Web Ring -->
+<!-- Professional Directory Web Ring -->
 <br>
-<table border="2" cellpadding="5" bgcolor="#FFFFFF" bordercolor="#000000">
+<table border="2" cellpadding="5" bgcolor="#E0E0E0" bordercolor="#0000FF">
 <tr>
 <td align="center">
-<font face="Arial" size="2" color="#000000">
-This site is a proud member of the <b>Professional Webmaster Ring</b><br>
-[<a href="#">Previous</a>] [<a href="#">Random</a>] [<a href="#">Next</a>] [<a href="#">Join</a>]
+<font face="Arial" size="2" color="#0000FF">
+Member of the <b>Professional Directory Ring</b><br>
+<script language="JavaScript">
+<!--
+var currentSite = 'webmaster-dave';
+var sites = [
+    {id: 'cyberfind', url: '../../index.html', name: 'CyberFind 2000'},
+    {id: 'webmaster-dave', url: '../webmaster-dave/index.html', name: "Dave's Professional Web Services"},
+    {id: 'neon-shadows', url: '../neon-shadows/index.html', name: 'Neon Shadows Design Studio'}
+];
+
+var currentIndex = 1;
+for(var i = 0; i < sites.length; i++) {
+    if(sites[i].id == currentSite) { currentIndex = i; break; }
+}
+
+function navigateRing(direction) {
+    var newIndex;
+    if(direction == 'prev') {
+        newIndex = (currentIndex - 1 + sites.length) % sites.length;
+    } else if(direction == 'next') {
+        newIndex = (currentIndex + 1) % sites.length;
+    } else if(direction == 'random') {
+        do { newIndex = Math.floor(Math.random() * sites.length); }
+        while(newIndex == currentIndex && sites.length > 1);
+    }
+    if(newIndex !== undefined) { window.location.href = sites[newIndex].url; }
+}
+
+function showSiteList() {
+    var listWindow = window.open('', 'ringList', 'width=400,height=300,scrollbars=yes');
+    var content = '<html><head><title>Professional Directory Ring</title></head><body bgcolor="#F0F0F0"><h2>Professional Directory Ring</h2><ul>';
+    for(var i = 0; i < sites.length; i++) {
+        content += '<li><a href="' + sites[i].url + '">' + sites[i].name + '</a></li>';
+    }
+    content += '</ul></body></html>';
+    listWindow.document.write(content);
+    listWindow.document.close();
+}
+
+document.write('[<a href="javascript:navigateRing(\'prev\')"><font color="#0000FF">Previous</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'next\')"><font color="#0000FF">Next</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'random\')"><font color="#0000FF">Random</font></a>] ');
+document.write('[<a href="javascript:showSiteList()"><font color="#0000FF">List Sites</font></a>]');
+//-->
+</script>
+<noscript>
+[<a href="../../webrings/professional-ring.html">Professional Ring Hub</a>]
+</noscript>
 </font>
 </td>
 </tr>

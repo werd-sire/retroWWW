@@ -223,6 +223,66 @@ Enter your email to receive UNCENSORED updates:<br>
 
 <br>
 
+<!-- Conspiracy Research Web Ring -->
+<table width="100%" border="2" cellpadding="8" cellspacing="0" bordercolor="#00FF00" bgcolor="#001100">
+<tr>
+<td align="center">
+<font face="Courier New" size="2" color="#00FF00">
+<b>*** CONSPIRACY RESEARCH NETWORK ***</b>
+<br>
+<script language="JavaScript">
+<!--
+var currentSite = 'truth-seekers';
+var sites = [
+    {id: 'truth-seekers', url: '../truth-seekers/index.html', name: 'Truth Seekers Network'},
+    {id: 'federal-watch', url: '../federal-watch-archive/index.html', name: 'Federal Watch Archive'}
+];
+
+var currentIndex = 0;
+for(var i = 0; i < sites.length; i++) {
+    if(sites[i].id == currentSite) { currentIndex = i; break; }
+}
+
+function navigateRing(direction) {
+    var newIndex;
+    if(direction == 'prev') {
+        newIndex = (currentIndex - 1 + sites.length) % sites.length;
+    } else if(direction == 'next') {
+        newIndex = (currentIndex + 1) % sites.length;
+    } else if(direction == 'random') {
+        do { newIndex = Math.floor(Math.random() * sites.length); }
+        while(newIndex == currentIndex && sites.length > 1);
+    }
+    if(newIndex !== undefined) { window.location.href = sites[newIndex].url; }
+}
+
+function showSiteList() {
+    var listWindow = window.open('', 'ringList', 'width=400,height=300,scrollbars=yes');
+    var content = '<html><head><title>Conspiracy Research Network</title></head><body bgcolor="#000000" text="#00FF00"><h2>Conspiracy Research Network</h2><ul>';
+    for(var i = 0; i < sites.length; i++) {
+        content += '<li><a href="' + sites[i].url + '">' + sites[i].name + '</a></li>';
+    }
+    content += '</ul></body></html>';
+    listWindow.document.write(content);
+    listWindow.document.close();
+}
+
+document.write('[<a href="javascript:navigateRing(\'prev\')"><font color="#FFFF00">Previous</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'next\')"><font color="#FFFF00">Next</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'random\')"><font color="#FFFF00">Random</font></a>] ');
+document.write('[<a href="javascript:showSiteList()"><font color="#FFFF00">List Sites</font></a>]');
+//-->
+</script>
+<noscript>
+[<a href="../../webrings/conspiracy-ring.html">Conspiracy Research Hub</a>]
+</noscript>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
 <!-- Footer -->
 <font face="Arial" size="1" color="#666666">
 <center>

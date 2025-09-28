@@ -549,16 +549,46 @@ Last updated: December 18, 1999 (Added new Evangelion theories!)
 <!--
 var currentSite = 'anime-shrine';
 var sites = [
-    {id: 'anime-shrine', url: '../anime-shrine/index.html', name: "Akira's Shrine"}
+    {id: 'anime-shrine', url: '../anime-shrine/index.html', name: "Akira's Anime Shrine"}
 ];
-// Single site ring - all links go to ring hub
+
+var currentIndex = 0;
+for(var i = 0; i < sites.length; i++) {
+    if(sites[i].id == currentSite) { currentIndex = i; break; }
+}
+
+function navigateRing(direction) {
+    var newIndex;
+    if(direction == 'prev') {
+        newIndex = (currentIndex - 1 + sites.length) % sites.length;
+    } else if(direction == 'next') {
+        newIndex = (currentIndex + 1) % sites.length;
+    } else if(direction == 'random') {
+        do { newIndex = Math.floor(Math.random() * sites.length); }
+        while(newIndex == currentIndex && sites.length > 1);
+    }
+    if(newIndex !== undefined) { window.location.href = sites[newIndex].url; }
+}
+
+function showSiteList() {
+    var listWindow = window.open('', 'ringList', 'width=400,height=300,scrollbars=yes');
+    var content = '<html><head><title>Anime & Manga Ring</title></head><body bgcolor="#FFB6C1"><h2>Anime & Manga Ring</h2><ul>';
+    for(var i = 0; i < sites.length; i++) {
+        content += '<li><a href="' + sites[i].url + '">' + sites[i].name + '</a></li>';
+    }
+    content += '</ul></body></html>';
+    listWindow.document.write(content);
+    listWindow.document.close();
+}
+
+// For single-site ring, show join and hub links instead of navigation
 document.write('[<a href="../../webrings/anime-ring.html"><font color="#FF1493">Join Ring</font></a>] ');
-document.write('[<a href="' + sites[0].url + '"><font color="#FF1493">Visit Site</font></a>] ');
+document.write('[<a href="javascript:showSiteList()"><font color="#FF1493">List Sites</font></a>] ');
 document.write('[<a href="../../webrings/index.html"><font color="#FF1493">All Rings</font></a>]');
 //-->
 </script>
 <noscript>
-[<a href="../../webrings/anime-ring.html">Anime Ring</a>]
+[<a href="../../webrings/anime-ring.html">Anime Ring Hub</a>]
 </noscript>
 </font></td></tr></table>
 

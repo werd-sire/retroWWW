@@ -262,23 +262,56 @@ Contact: <a href="mailto:neonshadows@rockcity.net">neonshadows@rockcity.net</a><
 Booking: <a href="mailto:booking@theunderground.net">The Underground</a> •
 Fan Mail: <a href="mailto:fans@neonshadows.net">fans@neonshadows.net</a>
 <br><br>
-<!-- Alternative Music Web Ring -->
-<table border="2" bgcolor="#FF0000" cellpadding="5" cellspacing="0" bordercolor="#FFFF00">
+<!-- Professional Directory Web Ring -->
+<table border="2" bgcolor="#330000" cellpadding="5" cellspacing="0" bordercolor="#FFFF00">
 <tr><td align="center">
-<font size="2" color="#FFFF00"><b>Alternative Music Ring</b><br>
+<font size="2" color="#FFFF00"><b>Professional Directory Ring</b><br>
 <script language="JavaScript">
 <!--
 var currentSite = 'neon-shadows';
 var sites = [
-    {id: 'neon-shadows', url: '../neon-shadows/index.html', name: 'The Neon Shadows'}
+    {id: 'cyberfind', url: '../../index.html', name: 'CyberFind 2000'},
+    {id: 'webmaster-dave', url: '../webmaster-dave/index.html', name: "Dave's Professional Web Services"},
+    {id: 'neon-shadows', url: '../neon-shadows/index.html', name: 'Neon Shadows Design Studio'}
 ];
-// Single site ring - all links go to ring hub for now
-document.write('[<a href="../../webrings/music-ring.html"><font color="#FFFF00">Join Ring</font></a>] ');
-document.write('[<a href="../../webrings/index.html"><font color="#FFFF00">All Rings</font></a>]');
+
+var currentIndex = 2;
+for(var i = 0; i < sites.length; i++) {
+    if(sites[i].id == currentSite) { currentIndex = i; break; }
+}
+
+function navigateRing(direction) {
+    var newIndex;
+    if(direction == 'prev') {
+        newIndex = (currentIndex - 1 + sites.length) % sites.length;
+    } else if(direction == 'next') {
+        newIndex = (currentIndex + 1) % sites.length;
+    } else if(direction == 'random') {
+        do { newIndex = Math.floor(Math.random() * sites.length); }
+        while(newIndex == currentIndex && sites.length > 1);
+    }
+    if(newIndex !== undefined) { window.location.href = sites[newIndex].url; }
+}
+
+function showSiteList() {
+    var listWindow = window.open('', 'ringList', 'width=400,height=300,scrollbars=yes');
+    var content = '<html><head><title>Professional Directory Ring</title></head><body bgcolor="#000000" text="#FFFF00"><h2>Professional Directory Ring</h2><ul>';
+    for(var i = 0; i < sites.length; i++) {
+        content += '<li><a href="' + sites[i].url + '">' + sites[i].name + '</a></li>';
+    }
+    content += '</ul></body></html>';
+    listWindow.document.write(content);
+    listWindow.document.close();
+}
+
+document.write('[<a href="javascript:navigateRing(\'prev\')"><font color="#FFFF00">Previous</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'next\')"><font color="#FFFF00">Next</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'random\')"><font color="#FFFF00">Random</font></a>] ');
+document.write('[<a href="javascript:showSiteList()"><font color="#FFFF00">List Sites</font></a>]');
 //-->
 </script>
 <noscript>
-[<a href="../../webrings/music-ring.html">Music Ring</a>]
+[<a href="../../webrings/professional-ring.html">Professional Ring Hub</a>]
 </noscript>
 </font></td></tr></table>
 <br><br>

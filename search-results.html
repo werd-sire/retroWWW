@@ -20,6 +20,7 @@ A:active { color: #CC0000; }
 .error-text { color: #CC0000; font-size: 10px; }
 -->
 </style>
+<script src="search-database.js"></script>
 <script language="JavaScript">
 <!--
 function getUrlParameter(name) {
@@ -42,120 +43,54 @@ function displayResults() {
 
     queryDisplay.innerHTML = query;
 
-    // Database of all real sites
-    var realSites = [
-        {
-            url: "sites/geocities-fan/index.html",
-            title: "Bobby's Pokemon Page - The Ultimate Pokemon Resource!",
-            snippet: "Welcome to my Pokemon page! I have all 150 Pokemon listed with pictures! Trading cards, game tips, and more!",
-            keywords: "pokemon pikachu charizard cards nintendo gameboy ash misty brock",
-            working: true
-        },
-        {
-            url: "sites/federal-watch-archive/index.html",
-            title: "Federal Watch Archive - Dr. Patricia Caldwell - Government Transparency Research",
-            snippet: "Independent research on federal accountability and transparency by Dr. Patricia Caldwell, former Defense Intelligence Agency analyst. 3,247 verified documents.",
-            keywords: "government declassified documents foia cia fbi transparency research whistleblower intelligence",
-            working: true
-        },
-        {
-            url: "sites/truth-seekers/index.html",
-            title: "Truth Seekers Network - They Don't Want You to Know!",
-            snippet: "Exposing government lies and alien coverups. The truth is out there and we have the evidence!",
-            keywords: "conspiracy aliens ufo area 51 government mind control y2k illuminati",
-            working: true
-        },
-        {
-            url: "sites/webmaster-dave/index.html",
-            title: "Webmaster Dave's Digital Design Emporium",
-            snippet: "Professional web design services since 1997! HTML expert with affordable rates and quick turnaround.",
-            keywords: "web design html professional websites business dave thompson",
-            working: true
-        },
-        {
-            url: "sites/pokemon-paradise/index.html",
-            title: "Sarah's REAL Pokemon Paradise - Original Content Only!",
-            snippet: "The only authentic Pokemon fan site with original artwork and content. Do NOT steal!",
-            keywords: "pokemon pikachu original authentic sarah mitchell real not stolen",
-            working: true
-        },
-        {
-            url: "sites/beanie-baby-haven/index.html",
-            title: "Janet's Beanie Baby Haven - Investment Central",
-            snippet: "Rare Beanie Babies for sale and trade! Current market prices and investment advice.",
-            keywords: "beanie baby collectible rare princess bear ty investment trading",
-            working: true
-        },
-        {
-            url: "sites/anime-shrine/index.html",
-            title: "Akira's Anime Shrine - Otaku Paradise",
-            snippet: "The best anime and manga resource on the web! Reviews, images, and discussion.",
-            keywords: "anime manga japanese kawaii sailor moon dragon ball otaku akira",
-            working: true
-        },
-        {
-            url: "sites/xtreme-sports/index.html",
-            title: "Brad's Xtreme Sports Page - Get Radical!",
-            snippet: "Skateboarding tricks, extreme sports videos, and nu-metal music. Tony Hawk rules!",
-            keywords: "skateboard extreme sports tony hawk tricks nu metal korn limp bizkit",
-            working: true
-        },
-        {
-            url: "sites/crystal-unicorns/index.html",
-            title: "Crystal Moonbeam's Magical Cyber-Unicorn Emporium",
-            snippet: "Spiritual healing, crystal magic, and unicorn wisdom. Find your inner light!",
-            keywords: "spiritual healing crystals unicorns magic new age mystical",
-            working: true
-        },
-        {
-            url: "sites/steves-hamster/index.html",
-            title: "Steve's Amazing Hamster Paradise",
-            snippet: "Everything you need to know about hamster care! Photos of my pet hamsters and care tips.",
-            keywords: "hamster pets animals care cute fluffy steve",
-            working: true
-        },
-        {
-            url: "classifieds/index.html",
-            title: "CyberFind Classifieds - Buy, Sell, Trade Online",
-            snippet: "Free online classified advertisements. Find great deals on everything!",
-            keywords: "classifieds buy sell trade free online ads marketplace",
-            working: true
-        },
-        {
-            url: "dating/index.html",
-            title: "CyberFind Dating - Find Your Perfect Match!",
-            snippet: "Meet singles in your area! Chat, email, and find love on the Information Superhighway.",
-            keywords: "dating singles personals romance love relationships meet chat",
-            working: true
-        },
-        {
-            url: "sites/neon-shadows/index.html",
-            title: "The Neon Shadows - Official Band Website",
-            snippet: "The hottest alternative rock band in the tri-state area! Check out our demos, show dates, and Y2K millennium concert info.",
-            keywords: "neon shadows alternative rock grunge band music demos electric nights live shows y2k concert local music",
-            working: true
-        }
-    ];
+    // Load search database (dynamically generated)
+    var realSites = [];
+    var brokenSites = [];
 
-    // Fake broken sites (only show sparingly)
-    var brokenSites = [
-        {
-            url: "error-404.html",
-            title: "Mike's Computer Lab - Programming Tutorials",
-            snippet: "Learn Java, C++, and Visual Basic! Step-by-step tutorials for beginners.",
-            keywords: "programming java c++ visual basic tutorials computer science code",
-            working: false,
-            error: "404 - Page Not Found"
-        },
-        {
-            url: "error-500.html",
-            title: "GameStation Central - Video Game Reviews",
-            snippet: "The latest reviews of PlayStation, Nintendo 64, and PC games!",
-            keywords: "games video games playstation nintendo 64 pc reviews gaming",
-            working: false,
-            error: "500 - Internal Server Error"
+    // Try to load the auto-generated search database
+    try {
+        if (typeof SEARCH_DATABASE !== 'undefined') {
+            realSites = SEARCH_DATABASE.filter(function(site) { return site.working === true; });
         }
-    ];
+        if (typeof BROKEN_SITES !== 'undefined') {
+            brokenSites = BROKEN_SITES;
+        }
+    } catch (e) {
+        console.log('Using fallback search data');
+    }
+
+    // Fallback data if search database fails to load
+    if (realSites.length === 0) {
+        realSites = [
+            {
+                url: "sites/geocities-fan/index.html",
+                title: "Bobby's Pokemon Page - The Ultimate Pokemon Resource!",
+                snippet: "Welcome to my Pokemon page! I have all 150 Pokemon listed with pictures! Trading cards, game tips, and more!",
+                keywords: "pokemon pikachu charizard cards nintendo gameboy ash misty brock",
+                working: true
+            },
+            {
+                url: "sites/federal-watch-archive/index.html",
+                title: "Federal Watch Archive - Dr. Patricia Caldwell - Government Transparency Research",
+                snippet: "Independent research on federal accountability and transparency by Dr. Patricia Caldwell, former Defense Intelligence Agency analyst. 3,247 verified documents.",
+                keywords: "government declassified documents foia cia fbi transparency research whistleblower intelligence",
+                working: true
+            }
+        ];
+    }
+
+    if (brokenSites.length === 0) {
+        brokenSites = [
+            {
+                url: "error-404.html",
+                title: "Mike's Computer Lab - Programming Tutorials",
+                snippet: "Learn Java, C++, and Visual Basic! Step-by-step tutorials for beginners.",
+                keywords: "programming java c++ visual basic tutorials computer science code",
+                working: false,
+                error: "404 - Page Not Found"
+            }
+        ];
+    }
 
     // Improved search algorithm with relevance scoring
     query = query.toLowerCase();

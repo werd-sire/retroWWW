@@ -394,42 +394,59 @@ Only visit the ORIGINAL Pokemon Paradise!</FONT>
 📧 <B>Email Sarah:</B> sarahspokemon@hotmail.com<BR>
 🔗 <B>ICQ:</B> 98765432 • <B>AIM:</B> PokemonSarah15<BR>
 <BR>
-This site is part of the <B>POKEMON WEBRING</B><BR>
-<SCRIPT LANGUAGE="JavaScript">
+This site is part of the <B>POKEMON TRAINERS RING</B><BR>
+<BR>
+<table border="2" bgcolor="#FFB6C1" cellpadding="5" cellspacing="0" bordercolor="#9932CC">
+<tr><td align="center">
+<font size="2" color="#9932CC"><b>Pokemon Trainers Ring</b></font>
+<br>
+<script language="JavaScript">
 <!--
-var pokemonSites = [
+var currentSite = 'sarah-pokemon';
+var sites = [
     {id: 'bobby-pokemon', url: '../geocities-fan/index.html', name: "Bobby's Pokemon Page"},
     {id: 'sarah-pokemon', url: '../pokemon-paradise/index.html', name: "Sarah's Pokemon Paradise"}
 ];
-var currentSiteId = 'sarah-pokemon';
+
 var currentIndex = 1;
-function navigatePokemonRing(direction) {
+for(var i = 0; i < sites.length; i++) {
+    if(sites[i].id == currentSite) { currentIndex = i; break; }
+}
+
+function navigateRing(direction) {
     var newIndex;
     if(direction == 'prev') {
-        newIndex = (currentIndex - 1 + pokemonSites.length) % pokemonSites.length;
+        newIndex = (currentIndex - 1 + sites.length) % sites.length;
     } else if(direction == 'next') {
-        newIndex = (currentIndex + 1) % pokemonSites.length;
+        newIndex = (currentIndex + 1) % sites.length;
     } else if(direction == 'random') {
-        do { newIndex = Math.floor(Math.random() * pokemonSites.length); }
-        while(newIndex == currentIndex && pokemonSites.length > 1);
+        do { newIndex = Math.floor(Math.random() * sites.length); }
+        while(newIndex == currentIndex && sites.length > 1);
     }
-    if(newIndex !== undefined) { window.location.href = pokemonSites[newIndex].url; }
+    if(newIndex !== undefined) { window.location.href = sites[newIndex].url; }
 }
-function showPokemonList() {
-    var listWindow = window.open('', 'pokemonList', 'width=400,height=300,scrollbars=yes');
-    var content = '<html><head><title>Pokemon Ring Sites</title></head><body bgcolor="#FFFF00"><h2>Pokemon Webring Sites</h2><ul>';
-    for(var i = 0; i < pokemonSites.length; i++) {
-        content += '<li><a href="' + pokemonSites[i].url + '">' + pokemonSites[i].name + '</a></li>';
+
+function showSiteList() {
+    var listWindow = window.open('', 'ringList', 'width=400,height=300,scrollbars=yes');
+    var content = '<html><head><title>Pokemon Trainers Ring Sites</title></head><body bgcolor="#FFB6C1"><h2>Pokemon Trainers Ring</h2><ul>';
+    for(var i = 0; i < sites.length; i++) {
+        content += '<li><a href="' + sites[i].url + '">' + sites[i].name + '</a></li>';
     }
     content += '</ul></body></html>';
-    listWindow.document.write(content); listWindow.document.close();
+    listWindow.document.write(content);
+    listWindow.document.close();
 }
-document.write('[<A HREF="javascript:navigatePokemonRing(\'prev\')"><FONT COLOR="#FFFF00">Previous</FONT></A>] ');
-document.write('[<A HREF="javascript:navigatePokemonRing(\'next\')"><FONT COLOR="#FFFF00">Next</FONT></A>] ');
-document.write('[<A HREF="javascript:navigatePokemonRing(\'random\')"><FONT COLOR="#FFFF00">Random</FONT></A>] ');
-document.write('[<A HREF="javascript:showPokemonList()"><FONT COLOR="#FFFF00">List Sites</FONT></A>]');
+
+document.write('[<a href="javascript:navigateRing(\'prev\')"><font color="#9932CC">Previous</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'next\')"><font color="#9932CC">Next</font></a>] ');
+document.write('[<a href="javascript:navigateRing(\'random\')"><font color="#9932CC">Random</font></a>] ');
+document.write('[<a href="javascript:showSiteList()"><font color="#9932CC">List Sites</font></a>]');
 //-->
-</SCRIPT>
+</script>
+<noscript>
+[<a href="../../webrings/pokemon-ring.html">Pokemon Ring Hub</a>]
+</noscript>
+</font></td></tr></table>
 <BR>
 <BR>
 <FONT COLOR="#FFFF00">This site has been visited by <IMG SRC="../../assets/gifs/sarah_counter.gif" WIDTH="100" HEIGHT="30" ALT="Counter"> trainers!</FONT><BR>
