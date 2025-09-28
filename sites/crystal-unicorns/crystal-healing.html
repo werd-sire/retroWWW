@@ -1,0 +1,555 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>💎✨ Sacred Crystal Healing Temple of Infinite Light! ✨💎</title>
+<meta name="description" content="Discover the ancient power of healing crystals channeled from the cosmic dimensions!">
+<script language="JavaScript">
+<!--
+alert("💎✨ ENTERING THE SACRED CRYSTAL TEMPLE! ✨💎\n\nYou are about to receive ancient crystal wisdom\nfrom the Atlantean Crystal Masters!\n\nPrepare for total energetic transformation! 🌟");
+
+// Crystal readings
+function crystalReading() {
+    var crystals = [
+        {name: "Amethyst", power: "opens your third eye to cosmic visions", chakra: "Crown", color: "#9932CC"},
+        {name: "Rose Quartz", power: "magnetizes your twin flame soulmate", chakra: "Heart", color: "#FF69B4"},
+        {name: "Clear Quartz", power: "amplifies your manifestation abilities 1000x", chakra: "All", color: "#FFFFFF"},
+        {name: "Citrine", power: "channels golden abundance from fairy realm", chakra: "Solar Plexus", color: "#FFD700"},
+        {name: "Moonstone", power: "connects you to lunar goddess wisdom", chakra: "Sacral", color: "#F0F8FF"},
+        {name: "Black Tourmaline", power: "shields you from psychic vampires", chakra: "Root", color: "#000000"},
+        {name: "Labradorite", power: "activates your interdimensional travel", chakra: "Third Eye", color: "#4682B4"},
+        {name: "Selenite", power: "downloads direct messages from angels", chakra: "Crown", color: "#FFFAFA"}
+    ];
+    
+    var crystal = crystals[Math.floor(Math.random() * crystals.length)];
+    alert("🔮 YOUR PERSONAL CRYSTAL READING! 🔮\n\n" +
+          "💎 Crystal: " + crystal.name + "\n" +
+          "✨ Healing Power: " + crystal.power + "\n" +
+          "🌈 Chakra: " + crystal.chakra + "\n\n" +
+          "Meditate with this crystal for 21 minutes daily!\n" +
+          "Channel its energy and watch magic unfold! 💫");
+}
+
+function chakraScanning() {
+    var chakras = ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"];
+    var conditions = ["perfectly aligned", "slightly blocked", "overactive", "underactive", "beautifully balanced", "ready for healing"];
+    
+    var results = "🌈 CHAKRA SCAN RESULTS 🌈\n\n";
+    for(var i = 0; i < chakras.length; i++) {
+        var condition = conditions[Math.floor(Math.random() * conditions.length)];
+        results += "💫 " + chakras[i] + " Chakra: " + condition + "\n";
+    }
+    
+    results += "\n✨ Overall Energy: RADIANTLY BEAUTIFUL! ✨\n";
+    results += "Recommended: Daily crystal meditation and unicorn blessings! 🦄💖";
+    
+    alert(results);
+}
+
+function healingSession() {
+    alert("💎 REMOTE CRYSTAL HEALING SESSION 💎\n\n" +
+          "Connecting to the Crystal Grid of Gaia...\n" +
+          "Channeling healing energy from Lemuria...\n" +
+          "Activating your crystalline DNA...\n" +
+          "Clearing ancestral karma patterns...\n" +
+          "Downloading light codes from Sirius...\n" +
+          "Sealing your aura with divine protection...\n\n" +
+          "HEALING COMPLETE! ✨\n\n" +
+          "You have been upgraded to a higher vibration!\n" +
+          "Drink lots of water and rest peacefully! 💫💧");
+}
+
+// Crystal energy meter
+var crystalPower = 0;
+function increaseCrystalPower() {
+    crystalPower += Math.floor(Math.random() * 10) + 5;
+    if(crystalPower > 100) crystalPower = 100;
+    
+    if(document.getElementById) {
+        var meter = document.getElementById('crystalMeter');
+        if(meter) {
+            meter.innerHTML = crystalPower + "% COSMIC ENERGY";
+            if(crystalPower >= 100) {
+                meter.innerHTML = "💯 MAXIMUM CRYSTALLINE POWER ACHIEVED! 💯";
+            }
+        }
+    }
+}
+
+// Floating crystals effect
+function createFloatingCrystal() {
+    var crystal = document.createElement("div");
+    var crystalTypes = ["💎", "🔮", "✨", "💫", "🌟", "⭐", "💖", "🦄"];
+    crystal.innerHTML = crystalTypes[Math.floor(Math.random() * crystalTypes.length)];
+    crystal.style.position = "absolute";
+    crystal.style.left = Math.random() * window.innerWidth + "px";
+    crystal.style.top = window.innerHeight + "px";
+    crystal.style.fontSize = (Math.random() * 30 + 20) + "px";
+    crystal.style.zIndex = "1000";
+    crystal.style.pointerEvents = "none";
+    crystal.style.transition = "all 8s linear";
+    
+    document.body.appendChild(crystal);
+    
+    // Float upward
+    setTimeout(function() {
+        crystal.style.top = "-100px";
+        crystal.style.opacity = "0";
+    }, 100);
+    
+    setTimeout(function() {
+        if(crystal.parentNode) {
+            document.body.removeChild(crystal);
+        }
+    }, 8000);
+}
+
+setInterval("createFloatingCrystal()", 1000);
+setInterval("increaseCrystalPower()", 3000);
+
+window.status = "Channeling healing crystal energy from the Atlantean temples... 💎✨💫";
+//-->
+</script>
+</head>
+
+<body bgcolor="#4B0082" text="#FFFFFF" link="#FFD700" vlink="#FF69B4" alink="#00FFFF"
+      background="../../assets/gifs/crystal_temple_bg.gif">
+
+<center>
+
+<!-- Crystal Temple Header -->
+<table width="95%" border="10" cellpadding="20" cellspacing="0" bordercolor="#FFD700" bgcolor="#000080">
+<tr>
+<td align="center">
+<img src="../../assets/gifs/crystal_temple.gif" width="200" height="150" alt="Crystal Temple">
+<br>
+<font face="Comic Sans MS" size="7" color="#FFD700">
+💎 CRYSTAL HEALING TEMPLE 💎
+</font>
+<br>
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+SACRED ATLANTEAN HEALING SANCTUARY
+</font>
+<br>
+<marquee behavior="alternate" scrollamount="5" width="800">
+<font color="#FF69B4" size="3">
+✨ CHANNELING DIVINE HEALING ENERGY FROM THE COSMIC CRYSTAL GRID ✨
+</font>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Crystal Power Meter -->
+<table width="80%" border="6" cellpadding="15" cellspacing="0" bordercolor="#00FFFF" bgcolor="#191970">
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="4" color="#00FFFF">
+🌟 TEMPLE ENERGY LEVEL 🌟
+</font>
+<br><br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<span id="crystalMeter">0% COSMIC ENERGY</span>
+</font>
+<br><br>
+<font face="Comic Sans MS" size="2" color="#FFFF00">
+✨ Energy increases as more souls visit our sacred temple! ✨
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Crystal Services -->
+<table width="90%" border="8" cellpadding="15" cellspacing="0" bordercolor="#FF1493" bgcolor="#8B008B">
+<tr>
+<td align="center" bgcolor="#FF1493">
+<font face="Comic Sans MS" size="5" color="#FFFFFF">
+🔮 SACRED HEALING SERVICES 🔮
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="3" cellpadding="15" cellspacing="5">
+<tr>
+<td width="33%" align="center" bgcolor="#9932CC">
+<img src="../../assets/gifs/crystal_reading.gif" width="100" height="100" alt="Crystal Reading">
+<br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>💎 PERSONAL CRYSTAL READING</b><br>
+Discover your soul crystal!<br>
+</font>
+<br>
+<input type="button" value="GET READING!" onclick="crystalReading()" 
+       style="background: linear-gradient(45deg, #9932CC, #DA70D6); color: #FFFFFF; font-weight: bold; font-size: 14px; font-family: Comic Sans MS; padding: 10px; border: 3px solid #FFD700;">
+</td>
+<td width="33%" align="center" bgcolor="#8B008B">
+<img src="../../assets/gifs/chakra_scan.gif" width="100" height="100" alt="Chakra Scan">
+<br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>🌈 CHAKRA ENERGY SCAN</b><br>
+See your rainbow body!<br>
+</font>
+<br>
+<input type="button" value="SCAN CHAKRAS!" onclick="chakraScanning()" 
+       style="background: linear-gradient(45deg, #FF0000, #FF6600, #FFFF00, #00FF00, #0099FF, #6600FF, #FF00FF); color: #FFFFFF; font-weight: bold; font-size: 14px; font-family: Comic Sans MS; padding: 10px; border: 3px solid #FFD700;">
+</td>
+<td width="33%" align="center" bgcolor="#4B0082">
+<img src="../../assets/gifs/healing_energy.gif" width="100" height="100" alt="Healing Energy">
+<br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>✨ REMOTE HEALING SESSION</b><br>
+Instant energy upgrade!<br>
+</font>
+<br>
+<input type="button" value="HEAL NOW!" onclick="healingSession()" 
+       style="background: linear-gradient(45deg, #00FFFF, #0099FF, #4169E1); color: #FFFFFF; font-weight: bold; font-size: 14px; font-family: Comic Sans MS; padding: 10px; border: 3px solid #FFD700;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Crystal Library -->
+<table width="95%" border="7" cellpadding="15" cellspacing="0" bordercolor="#32CD32" bgcolor="#006400">
+<tr>
+<td align="center" bgcolor="#32CD32">
+<font face="Comic Sans MS" size="4" color="#8B008B">
+📚 SACRED CRYSTAL LIBRARY 📚
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>💎 HEALING CRYSTAL ENCYCLOPEDIA - CHANNELED FROM ATLANTIS:</b>
+</font>
+
+<br><br>
+
+<table width="100%" border="2" cellpadding="10" cellspacing="5">
+<tr>
+<td width="50%" bgcolor="#228B22">
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+<b>💜 AMETHYST - The Crown Jewel</b><br>
+<font color="#FFFFFF" size="2">
+• Opens third eye to cosmic visions<br>
+• Connects directly to spirit guides<br>
+• Transforms negative energy to love<br>
+• Enhances psychic abilities 1000x<br>
+• Perfect for past life regression<br>
+<b>Atlantean Use:</b> High Priestess meditation stones
+</font>
+</font>
+</td>
+<td width="50%" bgcolor="#228B22">
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+<b>💖 ROSE QUARTZ - The Love Magnet</b><br>
+<font color="#FFFFFF" size="2">
+• Attracts twin flame soulmate instantly<br>
+• Heals all heart chakra wounds<br>
+• Radiates pure unconditional love<br>
+• Activates self-love programming<br>
+• Manifests romantic miracles<br>
+<b>Atlantean Use:</b> Temple of Love ceremonies
+</font>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#006400">
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+<b>✨ CLEAR QUARTZ - The Master Healer</b><br>
+<font color="#FFFFFF" size="2">
+• Amplifies all other crystal energies<br>
+• Downloads cosmic information<br>
+• Creates protective energy shields<br>
+• Cleanses negative thought patterns<br>
+• Channels pure divine light<br>
+<b>Atlantean Use:</b> Power source for crystal cities
+</font>
+</font>
+</td>
+<td bgcolor="#006400">
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+<b>💛 CITRINE - The Abundance Stone</b><br>
+<font color="#FFFFFF" size="2">
+• Manifests golden wealth and prosperity<br>
+• Activates solar plexus confidence<br>
+• Attracts business success miracles<br>
+• Transforms fear into personal power<br>
+• Channels fairy realm abundance<br>
+<b>Atlantean Use:</b> Merchant temple prosperity rituals
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<font face="Comic Sans MS" size="3" color="#90EE90">
+<b>✨ SPECIAL: Rare crystals from the Pleiades now available! ✨</b><br>
+<font size="2" color="#FFFFFF">These cosmic gems have never been on Earth before! Limited quantity!</font>
+</font>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Healing Testimonials -->
+<table width="85%" border="6" cellpadding="15" cellspacing="0" bordercolor="#FF6347" bgcolor="#8B0000">
+<tr>
+<td align="center" bgcolor="#FF6347">
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+🌟 MIRACULOUS HEALING TESTIMONIALS 🌟
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>"Rainbow Stardust, Age 28:"</b> <font color="#FFFF00">"Crystal's amethyst completely cured my depression! 
+Now I can see angels and my third eye never closes! I'm literally glowing! ✨👁️"</font>
+<br><br>
+<b>"Cosmic Moonbeam, Age 35:"</b> <font color="#FFFF00">"The rose quartz love spell worked TOO well! 
+I now have 5 soulmates fighting over me! Help! But in a good way! 💕😅"</font>
+<br><br>
+<b>"Sacred Dragon, Age 42:"</b> <font color="#FFFF00">"I meditated with selenite and downloaded 
+the entire Akashic Records! Now I know all my past lives and future timelines! 📜⏰"</font>
+<br><br>
+<b>"Angel Butterfly, Age 24:"</b> <font color="#FFFF00">"Crystal's healing session cured my migraines, 
+cleared my karma, AND I won the lottery the next day! This is REAL magic! 💰✨"</font>
+<br><br>
+<b>"Starseed Princess, Age 19:"</b> <font color="#FFFF00">"My parents thought I was crazy until 
+my crystals started glowing during the earthquake! Now they believe! 💎🌟"</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Crystal Grid Generator -->
+<table width="90%" border="5" cellpadding="15" cellspacing="0" bordercolor="#DA70D6" bgcolor="#8B008B">
+<tr>
+<td align="center" bgcolor="#DA70D6">
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+⚡ SACRED GEOMETRY CRYSTAL GRID ⚡
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="../../assets/gifs/crystal_grid.gif" width="300" height="200" alt="Crystal Grid">
+<br><br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+This sacred Atlantean crystal grid is ALWAYS activated in our temple!<br>
+It amplifies all healing energies and connects us to the cosmic crystal network!
+</font>
+<br><br>
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+<b>CURRENT GRID STATUS:</b><br>
+🔥 Energy Level: MAXIMUM POWER! ⚡<br>
+🌍 Connected Crystals: 777,777 worldwide<br>
+💫 Healing Rays: Broadcasting to all souls<br>
+🦄 Unicorn Blessing: ACTIVE ✨<br>
+👼 Angelic Protection: ONLINE 🛡️
+</font>
+<br><br>
+<font face="Comic Sans MS" size="2" color="#FF69B4">
+Your visit to this page automatically connects you to our grid! 💎⚡
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Crystal Prescriptions -->
+<table width="80%" border="8" cellpadding="15" cellspacing="0" bordercolor="#FFD700" bgcolor="#FF8C00">
+<tr>
+<td align="center" bgcolor="#FFD700">
+<font face="Comic Sans MS" size="4" color="#8B008B">
+💊 CRYSTAL PRESCRIPTIONS FOR COMMON AILMENTS 💊
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>🩺 HOLISTIC CRYSTAL MEDICINE (NO DOCTORS NEEDED!):</b>
+</font>
+
+<br><br>
+
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+💔 <b>BROKEN HEART:</b> Rose Quartz + Rhodonite + Green Aventurine<br>
+😰 <b>ANXIETY:</b> Amethyst + Lepidolite + Blue Lace Agate<br>
+💸 <b>MONEY PROBLEMS:</b> Citrine + Pyrite + Green Jade<br>
+😴 <b>INSOMNIA:</b> Moonstone + Selenite + Howlite<br>
+🤢 <b>PHYSICAL PAIN:</b> Clear Quartz + Hematite + Fluorite<br>
+😡 <b>ANGER ISSUES:</b> Carnelian + Smoky Quartz + Prehnite<br>
+🤔 <b>CONFUSION:</b> Fluorite + Sodalite + Labradorite<br>
+😢 <b>DEPRESSION:</b> Sunstone + Citrine + Tiger's Eye
+</font>
+
+<br><br>
+
+<center>
+<table border="3" cellpadding="10" bgcolor="#FFFFFF" bordercolor="#FFD700">
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="3" color="#8B008B">
+<b>⚠️ CRYSTAL DISCLAIMER ⚠️</b><br>
+<font color="#FF0000" size="2">
+Results guaranteed by Cosmic Law!<br>
+If crystals don't work, you're not believing hard enough!<br>
+Increase faith and try again! ✨💖
+</font>
+</font>
+</td>
+</tr>
+</table>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Meditation Instructions -->
+<table width="75%" border="7" cellpadding="15" cellspacing="0" bordercolor="#00FFFF" bgcolor="#008080">
+<tr>
+<td align="center" bgcolor="#00FFFF">
+<font face="Comic Sans MS" size="4" color="#8B008B">
+🧘‍♀️ CRYSTAL MEDITATION INSTRUCTIONS 🧘‍♀️
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>💎 THE ATLANTEAN CRYSTAL ACTIVATION PROTOCOL:</b>
+</font>
+
+<ol>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<li><font color="#FFFF00">Cleanse your crystal under full moonlight for 7 hours</font></li>
+<li><font color="#FFFF00">Hold crystal to your heart and state your intention 3 times</font></li>
+<li><font color="#FFFF00">Place crystal on your third eye chakra</font></li>
+<li><font color="#FFFF00">Visualize rainbow light entering through your crown</font></li>
+<li><font color="#FFFF00">Ask your crystal guide to appear (they will!)</font></li>
+<li><font color="#FFFF00">Channel healing energy for 21 minutes minimum</font></li>
+<li><font color="#FFFF00">Thank the crystal and seal the energy with "So mote it be!"</font></li>
+</ol>
+
+<br>
+
+<center>
+<font face="Comic Sans MS" size="3" color="#00FFFF">
+<b>✨ ADVANCED TIP: Crystals work faster when you talk to them! ✨</b><br>
+<font size="2" color="#FFFFFF">They are conscious beings with ancient wisdom to share!</font>
+</font>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Featured Products -->
+<table width="85%" border="6" cellpadding="15" cellspacing="0" bordercolor="#FF69B4" bgcolor="#4B0082">
+<tr>
+<td align="center" bgcolor="#FF69B4">
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+🛍️ SACRED CRYSTAL TREASURES FOR SALE! 🛍️
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="3" cellpadding="10" cellspacing="5">
+<tr>
+<td width="33%" align="center" bgcolor="#8B008B">
+<img src="../../assets/gifs/atlantean_crystal.gif" width="100" height="120" alt="Atlantean Crystal">
+<br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>🏛️ GENUINE ATLANTEAN CRYSTAL!</b><br>
+Recovered from sunken temple!<br>
+<font color="#FFD700">$1,999.99</font><br>
+<font size="2">*Awakens all psychic abilities instantly!</font>
+</font>
+</td>
+<td width="33%" align="center" bgcolor="#8B008B">
+<img src="../../assets/gifs/unicorn_crystal.gif" width="100" height="120" alt="Unicorn Crystal">
+<br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>🦄 UNICORN HORN CRYSTAL SET!</b><br>
+Blessed by real unicorns!<br>
+<font color="#FFD700">$777.77</font><br>
+<font size="2">*Grants 3 wishes guaranteed!</font>
+</font>
+</td>
+<td width="33%" align="center" bgcolor="#8B008B">
+<img src="../../assets/gifs/pleiadian_crystal.gif" width="100" height="120" alt="Pleiadian Crystal">
+<br>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>👽 PLEIADIAN STAR CRYSTAL!</b><br>
+Direct from alien mothership!<br>
+<font color="#FFD700">$2,222.22</font><br>
+<font size="2">*Enables telepathic contact with ETs!</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+⭐ ALL CRYSTALS COME WITH LIFETIME COSMIC WARRANTY! ⭐<br>
+<font color="#FFFFFF" size="2">If not completely enlightened within 30 days, return for full refund!</font>
+</font>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Back to Main -->
+<table width="60%" border="5" cellpadding="10" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#8B008B">
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+🏠 <a href="index.html" style="color: #FFD700;">Return to Crystal's Magical Homepage</a> 🏠<br>
+<br>
+<font size="2" color="#FF69B4">
+May the healing power of crystals transform your life completely! 💎✨💖
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+<!-- Crystal healing frequencies background music -->
+<bgsound src="../../assets/midi/crystal_healing.mid" loop="infinite">
+
+</body>
+</html>

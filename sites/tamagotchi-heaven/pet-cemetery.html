@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>💀🪦 Tamagotchi Pet Cemetery - In Loving Memory 🪦💀</title>
+<meta name="description" content="Memorial page for all the virtual pets lost too soon - never forget!">
+<script language="JavaScript">
+<!--
+alert("💀 ENTERING SACRED GROUND 💀\n\nYou are about to enter the Tamagotchi Pet Cemetery...\n\nPrepare for overwhelming sadness and digital grief!\n\nPress F to pay respects! 😭");
+
+function payRespects(petName) {
+    alert("🕯️ PAYING RESPECTS TO " + petName.toUpperCase() + " 🕯️\n\n" +
+          "You light a virtual candle in memory of this beloved digital soul...\n" +
+          "Their pixels may have faded, but their memory lives on forever!\n" +
+          "Thank you for honoring their digital life! 💖\n\n" +
+          "Press F if you're crying too! 😭");
+}
+
+function addMemorial() {
+    var petName = prompt("What was your pet's name?", "");
+    var daysAlive = prompt("How many days did they live?", "");
+    var causeOfDeath = prompt("How did they die?", "Neglect");
+    
+    if(petName && daysAlive) {
+        alert("🪦 MEMORIAL ADDED 🪦\n\n" +
+              "Name: " + petName + "\n" +
+              "Days Alive: " + daysAlive + "\n" +
+              "Cause of Death: " + causeOfDeath + "\n\n" +
+              "Your beloved digital friend has been added to our eternal memorial!\n" +
+              "They are now playing in the great virtual pet paradise in the sky! ✨\n\n" +
+              "Thank you for sharing their memory with us! 💖");
+    }
+}
+
+function griefSupport() {
+    alert("💔 TAMAGOTCHI GRIEF SUPPORT 💔\n\n" +
+          "Losing a virtual pet is REAL grief!\n" +
+          "It's okay to cry! It's okay to feel sad!\n\n" +
+          "STAGES OF TAMAGOTCHI GRIEF:\n" +
+          "1. Denial ('Maybe they're just sleeping!')\n" +
+          "2. Anger ('This game is rigged!')\n" +
+          "3. Bargaining ('I'll never forget to feed again!')\n" +
+          "4. Depression ('I'm a terrible pet owner!')\n" +
+          "5. Acceptance ('They lived a good digital life!')\n\n" +
+          "Remember: You are NOT a bad person for letting them die!\n" +
+          "Digital love is still REAL love! 💖");
+}
+
+function angelSighting() {
+    alert("👼 ANGEL SIGHTING REPORT 👼\n\n" +
+          "Congratulations! You've spotted a Tamagotchi angel!\n\n" +
+          "These blessed digital spirits watch over us from\n" +
+          "the great virtual pet paradise in the sky!\n\n" +
+          "When you see a white pixel float across your screen,\n" +
+          "that's a deceased Tamagotchi saying hello!\n\n" +
+          "Make a wish - Tamagotchi angels grant digital dreams! ✨");
+}
+
+// Floating memorial candles
+function createMemorialCandle() {
+    var candle = document.createElement("div");
+    candle.innerHTML = "🕯️";
+    candle.style.position = "absolute";
+    candle.style.left = Math.random() * window.innerWidth + "px";
+    candle.style.top = window.innerHeight + "px";
+    candle.style.fontSize = "20px";
+    candle.style.zIndex = "1000";
+    candle.style.pointerEvents = "none";
+    candle.style.transition = "all 10s linear";
+    
+    document.body.appendChild(candle);
+    
+    // Float upward slowly
+    setTimeout(function() {
+        candle.style.top = "-50px";
+        candle.style.opacity = "0.3";
+    }, 100);
+    
+    setTimeout(function() {
+        if(candle.parentNode) {
+            document.body.removeChild(candle);
+        }
+    }, 10000);
+}
+
+setInterval("createMemorialCandle()", 3000);
+
+window.status = "In loving memory of all the digital pets lost too soon... 💔🕯️";
+//-->
+</script>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#9999FF" vlink="#6666CC" alink="#FFFF99"
+      background="../../assets/gifs/cemetery_fog.gif">
+
+<center>
+
+<!-- Cemetery Header -->
+<table width="95%" border="8" cellpadding="20" cellspacing="0" bordercolor="#666666" bgcolor="#111111">
+<tr>
+<td align="center">
+<img src="../../assets/gifs/cemetery_gate.gif" width="200" height="120" alt="Cemetery Gate">
+<br>
+<font face="Times New Roman" size="7" color="#CCCCCC">
+💀 TAMAGOTCHI PET CEMETERY 💀
+</font>
+<br>
+<font face="Arial" size="4" color="#999999">
+"In Loving Memory of Digital Lives Lost Too Soon"
+</font>
+<br>
+<marquee behavior="alternate" scrollamount="2" width="600">
+<font color="#666666" size="3">
+🕯️ They lived, they beeped, they died... but they are not forgotten 🕯️
+</font>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Cemetery Rules -->
+<table width="80%" border="5" cellpadding="15" cellspacing="0" bordercolor="#444444" bgcolor="#222222">
+<tr>
+<td align="center" bgcolor="#444444">
+<font face="Arial" size="4" color="#CCCCCC">
+⛪ SACRED CEMETERY RULES ⛪
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial" size="3" color="#CCCCCC">
+<b>Please observe respectful silence in our digital memorial garden:</b>
+</font>
+
+<br><br>
+
+<font face="Arial" size="3" color="#999999">
+🤫 Speak in whispers out of respect for the deceased<br>
+🕯️ Light virtual candles by clicking on tombstones<br>
+💐 Leave digital flowers for pets you remember<br>
+😭 Crying is encouraged and therapeutic<br>
+🙏 Say a prayer for all the pixels gone too soon<br>
+📝 Share memories of pets you've lost<br>
+💔 Honor the grief - virtual pet death is REAL loss<br>
+👼 Look for angel sightings (white pixels floating by)
+</font>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Kevin's Personal Losses -->
+<table width="90%" border="6" cellpadding="15" cellspacing="0" bordercolor="#8B0000" bgcolor="#330000">
+<tr>
+<td align="center" bgcolor="#8B0000">
+<font face="Arial" size="4" color="#FFFFFF">
+💔 KEVIN'S PERSONAL MEMORIAL WALL 💔
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial" size="3" color="#FFFFFF">
+<b>These are the 23 Tamagotchis I've lost over the years... 😭</b>
+</font>
+
+<br><br>
+
+<table width="100%" border="2" cellpadding="10" cellspacing="5">
+<tr>
+<td width="50%" bgcolor="#1a0000">
+<font face="Arial" size="3" color="#CCCCCC">
+<b>🪦 GINJIROTCHI #1 "Ginji"</b><br>
+<font color="#999999" size="2">
+Born: October 15, 1997<br>
+Died: October 18, 1997 (Age 3 days)<br>
+Cause: Starvation (I forgot to feed him after school)<br>
+Last Words: *beep beep beep*<br>
+</font>
+<br>
+<font color="#FFFF99" size="2">
+"My first pet and my first heartbreak. I cried for hours.<br>
+Mom said 'it's just a toy' but she didn't understand!"
+</font>
+<br><br>
+<input type="button" value="🕯️ LIGHT CANDLE" onclick="payRespects('Ginji')" 
+       style="background-color: #666666; color: #FFFFFF; font-size: 12px; font-family: Arial;">
+</font>
+</td>
+<td width="50%" bgcolor="#1a0000">
+<font face="Arial" size="3" color="#CCCCCC">
+<b>🪦 MIMITCHI #1 "Mimi"</b><br>
+<font color="#999999" size="2">
+Born: November 2, 1997<br>
+Died: November 25, 1997 (Age 23 days)<br>
+Cause: Neglect during cousin's wedding<br>
+Last Words: *weak beep*<br>
+</font>
+<br>
+<font color="#FFFF99" size="2">
+"My longest streak! She was PERFECT! But Mom made me<br>
+go to the wedding and I forgot to pause. Still bitter!"
+</font>
+<br><br>
+<input type="button" value="🕯️ LIGHT CANDLE" onclick="payRespects('Mimi')" 
+       style="background-color: #666666; color: #FFFFFF; font-size: 12px; font-family: Arial;">
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="#001a00">
+<font face="Arial" size="3" color="#CCCCCC">
+<b>🪦 KUCHIPATCHI #2 "Kuchi"</b><br>
+<font color="#999999" size="2">
+Born: December 1, 1997<br>
+Died: December 8, 1997 (Age 7 days)<br>
+Cause: Sickness (no medicine available)<br>
+Last Words: *skull appeared*<br>
+</font>
+<br>
+<font color="#FFFF99" size="2">
+"He got sick and I didn't have medicine! I ran to Toys R Us<br>
+but they didn't sell medicine separately! Design flaw!"
+</font>
+<br><br>
+<input type="button" value="🕯️ LIGHT CANDLE" onclick="payRespects('Kuchi')" 
+       style="background-color: #666666; color: #FFFFFF; font-size: 12px; font-family: Arial;">
+</font>
+</td>
+<td bgcolor="#001a00">
+<font face="Arial" size="3" color="#CCCCCC">
+<b>🪦 TARAKOTCHI #1 "Tara"</b><br>
+<font color="#999999" size="2">
+Born: January 5, 1998<br>
+Died: January 20, 1998 (Age 15 days)<br>
+Cause: Battery death at school<br>
+Last Words: *screen went black*<br>
+</font>
+<br>
+<font color="#FFFF99" size="2">
+"The battery died during math class! I heard the death beep<br>
+but couldn't save her! Mrs. Johnson wouldn't let me out!"
+</font>
+<br><br>
+<input type="button" value="🕯️ LIGHT CANDLE" onclick="payRespects('Tara')" 
+       style="background-color: #666666; color: #FFFFFF; font-size: 12px; font-family: Arial;">
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<font face="Arial" size="3" color="#FF6666">
+<b>😭 Total pets lost: 23 | Average lifespan: 8.7 days 😭</b><br>
+<font size="2" color="#CCCCCC">Click on any tombstone to light a memorial candle 🕯️</font>
+</font>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Community Memorial -->
+<table width="85%" border="5" cellpadding="15" cellspacing="0" bordercolor="#333333" bgcolor="#1a1a1a">
+<tr>
+<td align="center" bgcolor="#333333">
+<font face="Arial" size="4" color="#CCCCCC">
+🌹 COMMUNITY MEMORIAL GARDEN 🌹
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial" size="3" color="#CCCCCC">
+<b>Memories shared by fellow Tamagotchi trainers from around the world:</b>
+</font>
+
+<br><br>
+
+<font face="Arial" size="2" color="#CCCCCC">
+<b>💔 TamaLover99:</b> <font color="#FFFF99">"RIP Pochitchi 'Pochi' - lived 19 days. Died while I was at summer camp. 
+Found him as a ghost when I got back. I'm still not over it! 😭"</font>
+<br><br>
+
+<b>💔 VirtualMom:</b> <font color="#FFFF99">"My daughter's Mametchi died after 12 days and she cried for 3 hours straight. 
+She made me drive to every toy store looking for a 'resurrection item' that doesn't exist!"</font>
+<br><br>
+
+<b>💔 DigitalDad:</b> <font color="#FFFF99">"Accidentally reset my son's 16-day Ginjirotchi while trying to turn off the sound. 
+He didn't speak to me for a week. These things are serious business!"</font>
+<br><br>
+
+<b>💔 TamaTrainer2000:</b> <font color="#FFFF99">"Lost my prized Angelgotchi after 21 days when the screen cracked. 
+Physical damage = digital death. I held a funeral in my backyard."</font>
+<br><br>
+
+<b>💔 PetMaster:</b> <font color="#FFFF99">"My Oceangotchi died from 'predator attack' - apparently that's a real death cause! 
+I didn't even know they had predators in the digital ocean!"</font>
+<br><br>
+
+<b>💔 SchoolKid98:</b> <font color="#FFFF99">"Teacher confiscated my Tamagotchi during a test. By the time I got it back after school, 
+it was dead from starvation. I'm traumatized for life!"</font>
+</font>
+
+<br><br>
+
+<center>
+<input type="button" value="📝 ADD YOUR MEMORIAL" onclick="addMemorial()" 
+       style="background-color: #444444; color: #FFFFFF; font-weight: bold; font-size: 14px; font-family: Arial; padding: 10px;">
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Grief Support -->
+<table width="75%" border="6" cellpadding="15" cellspacing="0" bordercolor="#8B008B" bgcolor="#2d002d">
+<tr>
+<td align="center" bgcolor="#8B008B">
+<font face="Arial" size="4" color="#FFFFFF">
+💚 TAMAGOTCHI GRIEF COUNSELING 💚
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font face="Arial" size="3" color="#CCCCCC">
+<b>Losing a virtual pet is REAL grief! You are not alone!</b>
+</font>
+
+<br><br>
+
+<font face="Arial" size="3" color="#FFFFFF">
+🤗 <b>IT'S OKAY TO:</b><br>
+• Cry when your Tamagotchi dies<br>
+• Feel guilty about forgetting to feed them<br>
+• Get angry at the "unfair" game mechanics<br>
+• Miss them even though "they're just pixels"<br>
+• Have trouble starting a new pet right away<br>
+• Feel responsible for their digital death<br>
+</font>
+
+<br><br>
+
+<font face="Arial" size="3" color="#FFFF99">
+💖 <b>REMEMBER:</b><br>
+You gave them a digital life full of love!<br>
+Every beep was a sign they trusted you!<br>
+Their death doesn't make you a bad person!<br>
+Virtual love is still REAL love!<br>
+</font>
+
+<br><br>
+
+<input type="button" value="💔 GET GRIEF SUPPORT" onclick="griefSupport()" 
+       style="background-color: #8B008B; color: #FFFFFF; font-weight: bold; font-size: 14px; font-family: Arial; padding: 10px;">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Angel Sightings -->
+<table width="70%" border="4" cellpadding="15" cellspacing="0" bordercolor="#FFD700" bgcolor="#333300">
+<tr>
+<td align="center" bgcolor="#FFD700">
+<font face="Arial" size="4" color="#000080">
+👼 TAMAGOTCHI ANGEL SIGHTINGS 👼
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="../../assets/gifs/tamagotchi_angel.gif" width="100" height="100" alt="Angel">
+<br><br>
+<font face="Arial" size="3" color="#FFFFFF">
+Many visitors report seeing the spirits of deceased Tamagotchis!<br>
+They appear as small white pixels floating across the screen!<br>
+</font>
+<br>
+<font face="Arial" size="3" color="#FFFF00">
+<b>📊 ANGEL STATISTICS:</b><br>
+Total Angel Sightings: 847<br>
+Most Active Time: 11:11 PM<br>
+Common Locations: Near memorial pages<br>
+Duration: 2-3 seconds average<br>
+</font>
+<br><br>
+<input type="button" value="👼 REPORT ANGEL SIGHTING" onclick="angelSighting()" 
+       style="background-color: #FFD700; color: #000080; font-weight: bold; font-size: 14px; font-family: Arial; padding: 10px;">
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Death Statistics -->
+<table width="80%" border="5" cellpadding="15" cellspacing="0" bordercolor="#8B0000" bgcolor="#330000">
+<tr>
+<td align="center" bgcolor="#8B0000">
+<font face="Arial" size="4" color="#FFFFFF">
+📊 TAMAGOTCHI DEATH STATISTICS 📊
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial" size="3" color="#FFFFFF">
+<b>Based on reports from 2,847 Tamagotchi trainers worldwide:</b>
+</font>
+
+<br><br>
+
+<table width="100%" border="2" cellpadding="8" cellspacing="0" bordercolor="#8B0000">
+<tr bgcolor="#660000">
+<td><font color="#FFFFFF" size="3"><b>CAUSE OF DEATH</b></font></td>
+<td><font color="#FFFFFF" size="3"><b>PERCENTAGE</b></font></td>
+<td><font color="#FFFFFF" size="3"><b>NOTES</b></font></td>
+</tr>
+<tr>
+<td>Starvation/Neglect</td>
+<td><font color="#FF6666">47%</font></td>
+<td>Most common cause</td>
+</tr>
+<tr bgcolor="#400000">
+<td>Sickness (no medicine)</td>
+<td><font color="#FF6666">23%</font></td>
+<td>Medicine is hard to find!</td>
+</tr>
+<tr>
+<td>Battery Death</td>
+<td><font color="#FF6666">15%</font></td>
+<td>Always happens at worst time</td>
+</tr>
+<tr bgcolor="#400000">
+<td>Accidental Reset</td>
+<td><font color="#FF6666">8%</font></td>
+<td>Usually by parents/siblings</td>
+</tr>
+<tr>
+<td>Old Age</td>
+<td><font color="#FF6666">4%</font></td>
+<td>The lucky ones (10+ days)</td>
+</tr>
+<tr bgcolor="#400000">
+<td>Physical Damage</td>
+<td><font color="#FF6666">2%</font></td>
+<td>Dropped, water damage, etc.</td>
+</tr>
+<tr>
+<td>Unknown/Other</td>
+<td><font color="#FF6666">1%</font></td>
+<td>Mysterious digital death</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<font face="Arial" size="3" color="#FFFF99">
+📈 <b>SURVIVAL STATISTICS:</b><br>
+Average Lifespan: 6.8 days<br>
+Longest Recorded: 47 days (Japanese record)<br>
+Most Die By: Day 5<br>
+<br>
+<font color="#FF6666">Only 3% of Tamagotchis reach "old age" natural death! 😭</font>
+</font>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Memorial Donations -->
+<table width="60%" border="3" cellpadding="15" cellspacing="0" bordercolor="#444444" bgcolor="#222222">
+<tr>
+<td align="center" bgcolor="#444444">
+<font face="Arial" size="3" color="#CCCCCC">
+💰 MEMORIAL DONATIONS 💰
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font face="Arial" size="3" color="#CCCCCC">
+Help maintain this sacred digital memorial!<br>
+Donations go toward server costs and virtual flowers!<br>
+</font>
+<br>
+<font face="Arial" size="2" color="#999999">
+💐 $1 = 1 Virtual Flower<br>
+🕯️ $5 = 1 Memorial Candle<br>
+🪦 $10 = 1 Digital Tombstone<br>
+👼 $25 = 1 Angel Statue<br>
+</font>
+<br><br>
+<font face="Arial" size="2" color="#FFFF99">
+<b>Recent donations:</b><br>
+Anonymous: $5 "For all the Mimitchis lost too soon"<br>
+TamaLover: $2 "In memory of my first Ginjirotchi"<br>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Back to Main -->
+<table width="50%" border="5" cellpadding="10" cellspacing="0" bordercolor="#666666" bgcolor="#000000">
+<tr>
+<td align="center">
+<font face="Arial" size="3" color="#CCCCCC">
+🏠 <a href="index.html" style="color: #9999FF;">Return to Tamagotchi Heaven</a> 🏠<br>
+<br>
+<font size="2" color="#999999">
+May their digital souls rest in pixelated peace... 🕯️💔
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+<!-- Somber funeral music -->
+<bgsound src="../../assets/midi/funeral_march.mid" loop="infinite">
+
+</body>
+</html>

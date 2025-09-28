@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CyberFind 2000 - Professional Web Directory & Search Engine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="search,engine,web,directory,internet,find,portal,cyberfind,professional">
+<meta name="description" content="CyberFind 2000 - Professional Web Directory and Search Engine. Find the best sites on the World Wide Web.">
+<style type="text/css">
+<!--
+BODY { font-family: Arial, Helvetica, sans-serif; }
+A:link { color: #0000CC; text-decoration: underline; }
+A:visited { color: #551A8B; text-decoration: underline; }
+A:hover { color: #CC0000; text-decoration: underline; }
+A:active { color: #CC0000; }
+.header { font-family: Times, serif; font-weight: bold; }
+.category { font-family: Verdana, Arial, sans-serif; font-size: 11px; }
+.small { font-size: 10px; }
+-->
+</style>
+<script language="JavaScript">
+<!--
+window.status = "Welcome to CyberFind 2000!";
+
+function displayTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeValue = "" + ((hours > 12) ? hours - 12 : hours);
+    timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+    timeValue += (hours >= 12) ? " P.M." : " A.M.";
+    document.clock.face.value = timeValue;
+    setTimeout("displayTime()",1000);
+}
+
+function randomSite() {
+    var sites = [
+        "sites/geocities-fan/index.html",
+        "sites/truth-seekers/index.html",
+        "sites/webmaster-dave/index.html",
+        "sites/pokemon-paradise/index.html",
+        "sites/beanie-baby-haven/index.html",
+        "sites/anime-shrine/index.html",
+        "sites/xtreme-sports/index.html",
+        "sites/crystal-unicorns/index.html",
+        "sites/tamagotchi-heaven/index.html",
+        "sites/steves-hamster/index.html"
+    ];
+    var randomIndex = Math.floor(Math.random() * sites.length);
+    window.location = sites[randomIndex];
+}
+
+function performSearch() {
+    var query = document.searchForm.query.value.toLowerCase();
+    if (query == "") {
+        alert("Please enter a search term.");
+        return false;
+    }
+    
+    // Create our site database for searching
+    var sites = [
+        {
+            url: "sites/geocities-fan/index.html",
+            title: "Bobby's Pokemon Page",
+            keywords: "pokemon pikachu charizard cards nintendo gameboy ash misty brock"
+        },
+        {
+            url: "sites/truth-seekers/index.html",
+            title: "Truth Seekers Network",
+            keywords: "conspiracy aliens ufo area 51 government mind control y2k illuminati"
+        },
+        {
+            url: "sites/webmaster-dave/index.html",
+            title: "Webmaster Dave's Digital Design Emporium", 
+            keywords: "web design html professional websites business dave thompson"
+        },
+        {
+            url: "sites/pokemon-paradise/index.html",
+            title: "Sarah's REAL Pokemon Paradise",
+            keywords: "pokemon pikachu original authentic sarah mitchell real not stolen"
+        },
+        {
+            url: "sites/beanie-baby-haven/index.html",
+            title: "Janet's Beanie Baby Haven",
+            keywords: "beanie baby collectible rare princess bear ty investment trading"
+        },
+        {
+            url: "sites/anime-shrine/index.html",
+            title: "Akira's Anime Shrine", 
+            keywords: "anime manga japanese kawaii sailor moon dragon ball otaku akira"
+        },
+        {
+            url: "sites/xtreme-sports/index.html",
+            title: "Brad's Xtreme Sports Page",
+            keywords: "skateboard extreme sports tony hawk tricks nu metal korn limp bizkit"
+        },
+        {
+            url: "sites/crystal-unicorns/index.html",
+            title: "Crystal Moonbeam's Magical Cyber-Unicorn Emporium",
+            keywords: "unicorns crystals magic spiritual healing rainbow fantasy mystical new age love light"
+        },
+        {
+            url: "sites/tamagotchi-heaven/index.html",
+            title: "Kevin's Totally Radical Tamagotchi Heaven",
+            keywords: "tamagotchi virtual pet bandai digital pet 90s toys keychain pixel pet care guide kevin"
+        },
+        {
+            url: "sites/steves-hamster/index.html",
+            title: "Steve's Wicked Cool Hamster Page",
+            keywords: "hamster mr whiskers pet steve notepad animal care rodent"
+        }
+    ];
+    
+    var results = [];
+    for (var i = 0; i < sites.length; i++) {
+        var site = sites[i];
+        if (site.title.toLowerCase().indexOf(query) != -1 || 
+            site.keywords.toLowerCase().indexOf(query) != -1) {
+            results.push(site);
+        }
+    }
+    
+    if (results.length == 0) {
+        alert("No results found for '" + query + "'.\n\nTry searching for: pokemon, anime, conspiracy, beanie baby, skateboard, web design");
+        return false;
+    } else if (results.length == 1) {
+        window.location = results[0].url;
+        return false;
+    } else {
+        // Take to first result directly for professional experience
+        window.location = results[0].url;
+        return false;
+    }
+}
+
+// Removed blinking text for professional appearance
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000CC" vlink="#551A8B" alink="#CC0000"
+      onLoad="displayTime();">
+
+<center>
+
+<!-- Professional Header -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#E6E6FA">
+<tr>
+<td align="center">
+<font class="small" color="#666666">
+Professional Web Directory • Over 10,000 Sites Indexed • Updated Daily
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Main Logo Area -->
+<table width="600" border="1" cellpadding="15" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F0F0F0">
+<tr>
+<td align="center">
+<font class="header" size="6" color="#000080">CyberFind</font>
+<font class="header" size="5" color="#CC0000">2000</font>
+<br>
+<font size="2" color="#666666">
+<i>Professional Web Directory & Search Engine</i>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Search Box -->
+<table width="500" border="1" cellpadding="10" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#FFFFFF">
+<tr>
+<td align="center">
+<form name="searchForm" onSubmit="return performSearch();">
+<font size="3" color="#000080"><b>Search the Web:</b></font><br><br>
+<input type="text" name="query" size="30" style="font-family: Arial; font-size: 12px; border: 1px solid #666666; padding: 2px;">
+<br><br>
+<input type="submit" value="Search" style="font-family: Arial; font-size: 11px; background-color: #E0E0E0; border: 2px outset #CCCCCC; padding: 3px 12px; cursor: hand;">
+<input type="button" value="I'm Feeling Lucky" onClick="randomSite()" style="font-family: Arial; font-size: 11px; background-color: #E0E0E0; border: 2px outset #CCCCCC; padding: 3px 12px; cursor: hand;">
+</form>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Directory Categories -->
+<table width="650" border="0" cellpadding="0" cellspacing="8">
+<tr>
+<td colspan="3" align="center" bgcolor="#E6E6FA">
+<font size="4" color="#000080"><b>Web Directory</b></font>
+</td>
+</tr>
+<tr>
+<!-- Column 1 -->
+<td width="33%" valign="top" bgcolor="#F8F8FF" style="border: 1px solid #CCCCCC; padding: 8px;">
+<font class="category" color="#000080"><b>Entertainment</b></font><br>
+<font class="category">
+• <a href="sites/movies/index.html">Movies</a><br>
+• <a href="sites/music/index.html">Music</a><br>
+• <a href="sites/tvshows/index.html">TV Shows</a><br>
+• <a href="sites/celebrities/index.html">Celebrities</a><br>
+• <a href="sites/games/index.html">Games</a><br>
+</font>
+<br>
+<font class="category" color="#000080"><b>Computers</b></font><br>
+<font class="category">
+• <a href="sites/hardware/index.html">Hardware</a><br>
+• <a href="sites/software/index.html">Software</a><br>
+• <a href="sites/internet/index.html">Internet</a><br>
+• <a href="sites/y2k/index.html">Y2K Info</a><br>
+</font>
+</td>
+<!-- Column 2 -->
+<td width="33%" valign="top" bgcolor="#F8F8FF" style="border: 1px solid #CCCCCC; padding: 8px;">
+<font class="category" color="#000080"><b>Lifestyle</b></font><br>
+<font class="category">
+• <a href="sites/fashion/index.html">Fashion</a><br>
+• <a href="sites/health/index.html">Health</a><br>
+• <a href="sites/food/index.html">Food</a><br>
+• <a href="sites/travel/index.html">Travel</a><br>
+• <a href="sites/pets/index.html">Pets</a><br>
+</font>
+<br>
+<font class="category" color="#000080"><b>Reference</b></font><br>
+<font class="category">
+• <a href="sites/news/index.html">News</a><br>
+• <a href="sites/education/index.html">Education</a><br>
+• <a href="sites/science/index.html">Science</a><br>
+• <a href="sites/government/index.html">Government</a><br>
+</font>
+</td>
+<!-- Column 3 -->
+<td width="33%" valign="top" bgcolor="#F8F8FF" style="border: 1px solid #CCCCCC; padding: 8px;">
+<font class="category" color="#000080"><b>Special Interest</b></font><br>
+<font class="category">
+• <a href="sites/weird/index.html">Unusual Sites</a><br>
+• <a href="sites/humor/index.html">Humor</a><br>
+• <a href="sites/paranormal/index.html">Paranormal</a><br>
+• <a href="sites/downloads/index.html">Downloads</a><br>
+• <a href="sites/personal/index.html">Personal Pages</a><br>
+</font>
+<br>
+<font class="category" color="#000080"><b>Community</b></font><br>
+<font class="category">
+• <a href="sites/chat/index.html">Chat Rooms</a><br>
+• <a href="sites/forums/index.html">Forums</a><br>
+• <a href="sites/dating/index.html">Dating</a><br>
+• <a href="sites/classifieds/index.html">Classifieds</a><br>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Featured Sites -->
+<table width="500" border="1" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#FFF8DC">
+<tr>
+<td align="center">
+<font size="3" color="#000080"><b>Featured Site</b></font>
+<br>
+<font size="2" color="#000000">
+Visit <a href="sites/geocities-fan/index.html">Bobby's Pokemon Page</a> -
+Complete Pokemon database with images and trading information.
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Bottom Features -->
+<table width="500" border="0" cellpadding="8" cellspacing="8">
+<tr>
+<td width="50%" bgcolor="#F0F0F0" style="border: 1px solid #CCCCCC;">
+<center>
+<font size="2" color="#000080"><b>Site Statistics</b></font><br>
+<img src="assets/gifs/counter.gif" width="100" height="30" alt="31337"><br>
+<font class="small" color="#666666">Visitors since January 1999</font>
+</center>
+</td>
+<td width="50%" bgcolor="#F0F0F0" style="border: 1px solid #CCCCCC;">
+<center>
+<form name="clock">
+<font size="2" color="#000080"><b>Current Time</b></font><br>
+<input type="text" name="face" size="12" style="background-color: #FFFFFF; color: #000000; border: 1px solid #CCCCCC; font-family: Arial; text-align: center; font-size: 11px;" readonly>
+</form>
+</center>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Web Ring -->
+<table width="400" border="1" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F8F8FF">
+<tr>
+<td align="center">
+<font size="2" color="#000080">
+Member of the <b>Professional Directory Ring</b><br>
+<font class="small">
+[<a href="#">Previous</a>] [<a href="#">Random</a>] [<a href="#">Next</a>] [<a href="#">List Sites</a>]
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="500" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td align="center" bgcolor="#E6E6FA">
+<font class="small" color="#666666">
+<a href="about.html">About CyberFind</a> |
+<a href="submit.html">Submit Your Site</a> |
+<a href="advertise.html">Advertise</a> |
+<a href="mailto:webmaster@cyberfind2000.net">Contact</a>
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font class="small" color="#999999">
+&copy; 1999-2000 CyberFind 2000 Professional Directory. All Rights Reserved.<br>
+Best viewed at 800x600 resolution with Internet Explorer 4.0 or Netscape 4.0
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="assets/gifs/html32.gif" width="88" height="31" alt="HTML 3.2 Compliant">
+<img src="assets/gifs/y2k.gif" width="88" height="31" alt="Y2K Ready!">
+</td>
+</tr>
+</table>
+
+</center>
+
+<!-- Removed background music for professional experience -->
+
+</body>
+</html>
