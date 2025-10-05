@@ -38,7 +38,54 @@ window.onload = function() {
         <h1>YOUR BROWSER DOESN'T SUPPORT THE TRUTH!</h1>
         <p>This site requires frames to contain the dangerous knowledge within.</p>
         <p>Upgrade your browser or remain ignorant. The choice is yours.</p>
-        </center>
+        
+<br>
+
+<!-- Conspiracy & Truth Ring Navigation -->
+
+
+<br>
+
+<br>
+
+<!-- Conspiracy & Truth Ring Navigation -->
+<table border="2" bgcolor="#000000" cellpadding="5" cellspacing="0" bordercolor="#00FF00">
+<tr><td align="center">
+<font size="2" color="#00FF00" face="Courier New"><b>Conspiracy & Truth Ring</b><br>
+<script language="JavaScript" src="../../js/webring-data.js"></script>
+<script language="JavaScript">
+<!--
+if (typeof WEBRINGS !== 'undefined' && WEBRINGS['conspiracy']) {
+    var ring = WEBRINGS['conspiracy'];
+    var siteId = 'truth-seekers';
+    var currentIndex = -1;
+
+    for (var i = 0; i < ring.members.length; i++) {
+        if (ring.members[i].id === siteId) {
+            currentIndex = i;
+            break;
+        }
+    }
+
+    if (currentIndex !== -1) {
+        var prevIndex = (currentIndex - 1 + ring.members.length) % ring.members.length;
+        var nextIndex = (currentIndex + 1) % ring.members.length;
+        var randomIndex = Math.floor(Math.random() * ring.members.length);
+
+        document.write('[<a href="' + ring.members[prevIndex].url + '"><font color="#00FFFF">Previous</font></a>] ');
+        document.write('[<a href="../../webrings/conspiracy-ring.html"><font color="#00FFFF">List</font></a>] ');
+        document.write('[<a href="' + ring.members[nextIndex].url + '"><font color="#00FFFF">Next</font></a>] ');
+        document.write('[<a href="' + ring.members[randomIndex].url + '"><font color="#00FFFF">Random</font></a>]');
+        document.write('<br><font size="1">Member ' + (currentIndex + 1) + ' of ' + ring.members.length + '</font>');
+    }
+}
+//-->
+</script>
+<noscript>[<a href="../../webrings/conspiracy-ring.html"><font color="#00FFFF">Conspiracy & Truth Ring</font></a>]</noscript>
+</font></td></tr></table>
+
+<br>
+</center>
         </body>
     </noframes>
 </frameset>

@@ -1,0 +1,522 @@
+// CyberChat Forums - Configuration & Data
+// All forum data: categories, boards, users, threads, posts
+
+var FORUM_CONFIG = {
+    name: "CyberChat Forums",
+    tagline: "The #1 Community for Everything Internet!",
+    url: "www.cyberchat-forums.net",
+    founded: "January 15, 1998",
+    version: "v2.1.4",
+
+    stats: {
+        totalMembers: 15847,
+        totalPosts: 487392,
+        totalThreads: 23451,
+        currentOnline: 347,
+        mostOnline: {
+            count: 892,
+            date: "Dec 31, 1999 11:58 PM",
+            occasion: "Y2K Countdown"
+        },
+        newestMember: "MiLLeNNiuMkId",
+        newestMemberDate: "Dec 29, 1999 3:42 PM"
+    },
+
+    admins: [
+        { id: 'cyberwolf', name: 'CyberWolf', title: 'Founder & Owner' },
+        { id: 'phoenix_rising', name: 'Phoenix_Rising', title: 'Head Administrator' },
+        { id: 'sysadmin_bob', name: 'SysAdmin_Bob', title: 'Technical Administrator' }
+    ],
+
+    // User rank thresholds
+    ranks: [
+        { name: 'Newbie', minPosts: 0, maxPosts: 49, pips: 1, color: '#999999' },
+        { name: 'Member', minPosts: 50, maxPosts: 249, pips: 2, color: '#666666' },
+        { name: 'Regular', minPosts: 250, maxPosts: 999, pips: 3, color: '#003366' },
+        { name: 'Veteran', minPosts: 1000, maxPosts: 2499, pips: 4, color: '#0066CC' },
+        { name: 'Elite Member', minPosts: 2500, maxPosts: 9999, pips: 5, color: '#9900CC' },
+        { name: 'Legend', minPosts: 10000, maxPosts: 999999, pips: 6, color: '#CC6600' }
+    ],
+
+    // Forum categories and boards
+    categories: [
+        {
+            id: 'general',
+            name: 'General Forums',
+            boards: [
+                {
+                    id: 'general-discussion',
+                    name: 'General Discussion',
+                    description: 'Talk about anything and everything!',
+                    threads: 2847,
+                    posts: 35432,
+                    moderators: ['phoenix_rising']
+                },
+                {
+                    id: 'introductions',
+                    name: 'Introductions',
+                    description: 'New to the forums? Introduce yourself here!',
+                    threads: 1523,
+                    posts: 8234,
+                    moderators: ['momof3', 'webwizard']
+                },
+                {
+                    id: 'off-topic',
+                    name: 'Off Topic',
+                    description: 'Random, crazy, and everything in between',
+                    threads: 4892,
+                    posts: 52891,
+                    moderators: ['gamegod', 'retrogamer']
+                }
+            ]
+        },
+        {
+            id: 'technology',
+            name: 'Technology',
+            boards: [
+                {
+                    id: 'tech-support',
+                    name: 'Tech Support',
+                    description: 'Computer problems? Get help here!',
+                    threads: 3421,
+                    posts: 28567,
+                    moderators: ['techmaster99', 'codemonkey']
+                },
+                {
+                    id: 'hardware',
+                    name: 'Hardware',
+                    description: 'PC building, upgrades, and hardware discussions',
+                    threads: 1847,
+                    posts: 15234,
+                    moderators: ['techmaster99']
+                },
+                {
+                    id: 'software-programming',
+                    name: 'Software & Programming',
+                    description: 'Coding, applications, and software talk',
+                    threads: 1456,
+                    posts: 12456,
+                    moderators: ['codemonkey']
+                },
+                {
+                    id: 'linux-unix',
+                    name: 'Linux & UNIX',
+                    description: 'For the penguin lovers and command-line warriors',
+                    threads: 982,
+                    posts: 9234,
+                    moderators: ['techmaster99', 'linuxguru']
+                },
+                {
+                    id: 'mac-users',
+                    name: 'Mac Users',
+                    description: 'Think Different? Discuss Mac here!',
+                    threads: 421,
+                    posts: 3421,
+                    moderators: ['macfanatic']
+                }
+            ]
+        },
+        {
+            id: 'internet',
+            name: 'Internet & Web',
+            boards: [
+                {
+                    id: 'web-design',
+                    name: 'Web Design',
+                    description: 'HTML, CSS, JavaScript, and web development',
+                    threads: 2134,
+                    posts: 18765,
+                    moderators: ['webwizard']
+                },
+                {
+                    id: 'isp-connectivity',
+                    name: 'ISPs & Connectivity',
+                    description: 'Dial-up, cable, DSL, and connectivity issues',
+                    threads: 892,
+                    posts: 7654,
+                    moderators: []
+                },
+                {
+                    id: 'chat-im',
+                    name: 'Chat & Instant Messaging',
+                    description: 'ICQ, AIM, IRC, and other chat platforms',
+                    threads: 1342,
+                    posts: 11234,
+                    moderators: ['chatmaster']
+                }
+            ]
+        },
+        {
+            id: 'gaming',
+            name: 'Gaming',
+            boards: [
+                {
+                    id: 'pc-gaming',
+                    name: 'PC Gaming',
+                    description: 'Quake, Half-Life, StarCraft, and more!',
+                    threads: 3567,
+                    posts: 31234,
+                    moderators: ['gamegod', 'fragmaster']
+                },
+                {
+                    id: 'console-gaming',
+                    name: 'Console Gaming',
+                    description: 'PlayStation, N64, Dreamcast discussions',
+                    threads: 2891,
+                    posts: 24567,
+                    moderators: ['gamegod', 'consolekid']
+                },
+                {
+                    id: 'gaming-industry',
+                    name: 'Gaming Industry',
+                    description: 'News, rumors, and industry discussion',
+                    threads: 982,
+                    posts: 8234,
+                    moderators: ['gamegod']
+                }
+            ]
+        },
+        {
+            id: 'entertainment',
+            name: 'Entertainment',
+            boards: [
+                {
+                    id: 'movies-tv',
+                    name: 'Movies & TV',
+                    description: 'The latest films, shows, and entertainment',
+                    threads: 2234,
+                    posts: 19432,
+                    moderators: ['moviebuff']
+                },
+                {
+                    id: 'music',
+                    name: 'Music',
+                    description: 'All genres, all artists, all music',
+                    threads: 1923,
+                    posts: 16234,
+                    moderators: ['napsterking']
+                },
+                {
+                    id: 'anime-manga',
+                    name: 'Anime & Manga',
+                    description: 'Japanese animation and comics',
+                    threads: 2567,
+                    posts: 22891,
+                    moderators: ['animelover2000', 'otakumaster']
+                }
+            ]
+        },
+        {
+            id: 'special-interest',
+            name: 'Special Interest',
+            boards: [
+                {
+                    id: 'paranormal-conspiracy',
+                    name: 'Paranormal & Conspiracy',
+                    description: 'UFOs, aliens, government secrets, and more',
+                    threads: 1645,
+                    posts: 13567,
+                    moderators: ['skepticalone', 'truthseeker']
+                },
+                {
+                    id: 'science-space',
+                    name: 'Science & Space',
+                    description: 'Scientific discussion and space exploration',
+                    threads: 734,
+                    posts: 6234,
+                    moderators: ['scienceguy']
+                },
+                {
+                    id: 'creative-writing',
+                    name: 'Creative Writing & Art',
+                    description: 'Share your stories, poetry, and artwork',
+                    threads: 1123,
+                    posts: 9432,
+                    moderators: ['artiste', 'wordsmith']
+                }
+            ]
+        },
+        {
+            id: 'marketplace',
+            name: 'Marketplace',
+            boards: [
+                {
+                    id: 'buy-sell-trade',
+                    name: 'Buy/Sell/Trade',
+                    description: 'Trade computer parts, games, and collectibles',
+                    threads: 1734,
+                    posts: 14234,
+                    moderators: ['tradingpost']
+                }
+            ]
+        },
+        {
+            id: 'site',
+            name: 'Site Forums',
+            boards: [
+                {
+                    id: 'news-announcements',
+                    name: 'Forum News & Announcements',
+                    description: 'Official announcements from the admin team',
+                    threads: 127,
+                    posts: 892,
+                    moderators: ['cyberwolf', 'phoenix_rising']
+                },
+                {
+                    id: 'suggestions',
+                    name: 'Suggestions & Feedback',
+                    description: 'Have an idea? Let us know!',
+                    threads: 634,
+                    posts: 5432,
+                    moderators: ['phoenix_rising']
+                },
+                {
+                    id: 'help-desk',
+                    name: 'Help Desk',
+                    description: 'Need help using the forums?',
+                    threads: 421,
+                    posts: 3234,
+                    moderators: ['webwizard']
+                }
+            ]
+        }
+    ]
+};
+
+// User database
+var USERS = {
+    // Admins
+    cyberwolf: {
+        id: 'cyberwolf',
+        displayName: 'CyberWolf',
+        joined: 'Jan 1998',
+        postCount: 6745,
+        customRank: 'The Alpha',
+        isAdmin: true,
+        isMod: [],
+        avatar: '../../assets/avatars/wolf.gif',
+        signature: '<img src="../../assets/gifs/admin.gif"><br><font size="1" color="#666666">Founder of CyberChat Forums<br>"Leading the pack since \'98"</font>',
+        location: 'Seattle, WA',
+        interests: 'Internet culture, forums, technology',
+        personality: 'old-internet-veteran'
+    },
+
+    phoenix_rising: {
+        id: 'phoenix_rising',
+        displayName: 'Phoenix_Rising',
+        joined: 'Feb 1998',
+        postCount: 4234,
+        customRank: 'Head Administrator',
+        isAdmin: true,
+        isMod: ['general-discussion', 'suggestions'],
+        avatar: '../../assets/avatars/phoenix.gif',
+        signature: '<font size="1" color="#CC0000"><b>Admin of CyberChat</b></font><br><font size="1">PM me for urgent issues</font>',
+        location: 'Portland, OR',
+        interests: 'Community building, conflict resolution',
+        personality: 'wholesome-mod'
+    },
+
+    // Power User Moderators
+    techmaster99: {
+        id: 'techmaster99',
+        displayName: 'TechMaster99',
+        joined: 'Feb 1998',
+        postCount: 5234,
+        customRank: 'RTFM Specialist',
+        isAdmin: false,
+        isMod: ['tech-support', 'hardware', 'linux-unix'],
+        avatar: '../../assets/avatars/computer.gif',
+        signature: '<font size="1"><b>"Read The Fine Manual"</b><br>---<br>CPU: Pentium III 500MHz | RAM: 256MB | OS: Dual-boot Win98/RedHat 6.0</font>',
+        location: 'Austin, TX',
+        interests: 'Linux, hardware, overclocking',
+        personality: 'helpful-tech-guru'
+    },
+
+    animelover2000: {
+        id: 'animelover2000',
+        displayName: 'AnimeLover2000',
+        joined: 'May 1998',
+        postCount: 4892,
+        customRank: 'Anime Guru',
+        isAdmin: false,
+        isMod: ['anime-manga'],
+        avatar: '../../assets/avatars/anime-girl.gif',
+        signature: '<img src="../../assets/gifs/anime-banner.gif"><br><font size="1">Fav Anime: Evangelion, Cowboy Bebop, Trigun, Escaflowne<br>現在見ている: Serial Experiments Lain</font>',
+        location: 'San Francisco, CA',
+        interests: 'Anime, manga, Japanese culture',
+        personality: 'anime-enthusiast'
+    },
+
+    gamegod: {
+        id: 'gamegod',
+        displayName: 'GameGod',
+        joined: 'Mar 1998',
+        postCount: 3456,
+        customRank: 'Gaming Insider',
+        isAdmin: false,
+        isMod: ['pc-gaming', 'console-gaming', 'gaming-industry', 'off-topic'],
+        avatar: '../../assets/avatars/joystick.gif',
+        signature: '<font size="1">PC Master Race | N64 Fanboy | Dreamcast Believer<br>---<br>"I have industry connections you wouldn\'t believe"</font>',
+        location: 'Los Angeles, CA',
+        interests: 'Gaming, E3, game development',
+        personality: 'insider-bragger'
+    },
+
+    webwizard: {
+        id: 'webwizard',
+        displayName: 'WebWizard',
+        joined: 'Feb 1998',
+        postCount: 3234,
+        customRank: 'HTML Sensei',
+        isAdmin: false,
+        isMod: ['web-design', 'introductions', 'help-desk'],
+        avatar: '../../assets/avatars/wizard.gif',
+        signature: '<font size="1">&lt;html&gt;&lt;body&gt;Making the web beautiful&lt;/body&gt;&lt;/html&gt;<br>Check out my <a href="#">web design tutorials</a>!</font>',
+        location: 'Boston, MA',
+        interests: 'Web design, HTML, JavaScript',
+        personality: 'helpful-teacher'
+    },
+
+    // High-Activity Users
+    flameking: {
+        id: 'flameking',
+        displayName: 'FlameKing',
+        joined: 'Apr 1998',
+        postCount: 4123,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        warnings: 3,
+        avatar: '../../assets/avatars/fire.gif',
+        signature: '<img src="../../assets/gifs/flame.gif"> <b>BOW TO THE KING</b> <img src="../../assets/gifs/flame.gif"><br><font size="1">If you can\'t handle the heat, GTFO</font>',
+        location: 'New York, NY',
+        interests: 'Starting arguments, being right',
+        personality: 'flame-warrior'
+    },
+
+    momof3: {
+        id: 'momof3',
+        displayName: 'MomOf3',
+        joined: 'Sep 1998',
+        postCount: 1892,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: '../../assets/avatars/smiley.gif',
+        signature: '<font size="1">Proud mother of three wonderful kids!<br>Just trying to learn about this "internet" thing :)<br>Be kind to everyone!</font>',
+        location: 'Minneapolis, MN',
+        interests: 'Family, parenting, learning',
+        personality: 'wholesome-mom'
+    },
+
+    codemonkey: {
+        id: 'codemonkey',
+        displayName: 'CodeMonkey',
+        joined: 'Jun 1998',
+        postCount: 2567,
+        customRank: null,
+        isAdmin: false,
+        isMod: ['software-programming'],
+        avatar: '../../assets/avatars/monkey.gif',
+        signature: '<font face="Courier New" size="1">10 PRINT "CODE"\n20 GOTO 10</font>',
+        location: 'Silicon Valley, CA',
+        interests: 'C++, Visual Basic, Java',
+        personality: 'code-nerd'
+    },
+
+    retrogamer: {
+        id: 'retrogamer',
+        displayName: 'RetroGamer',
+        joined: 'Jan 1998',
+        postCount: 3891,
+        customRank: 'BBS Veteran',
+        isAdmin: false,
+        isMod: ['off-topic'],
+        avatar: '../../assets/avatars/retro-console.gif',
+        signature: '<font size="1">Been online since 1985 (BBS days)<br>"Kids these days don\'t know what 300 baud feels like"<br>ATARI 2600 FOREVER</font>',
+        location: 'Chicago, IL',
+        interests: 'Classic gaming, BBS history, nostalgia',
+        personality: 'old-internet-veteran'
+    },
+
+    skepticalone: {
+        id: 'skepticalone',
+        displayName: 'SkepticalOne',
+        joined: 'Aug 1998',
+        postCount: 2891,
+        customRank: 'Truth Seeker',
+        isAdmin: false,
+        isMod: ['paranormal-conspiracy'],
+        avatar: '../../assets/avatars/alien.gif',
+        signature: '<font size="1" color="#00FF00">THE TRUTH IS OUT THERE<br>Area 51 • Roswell • MJ-12<br>"Question Everything"</font>',
+        location: 'Undisclosed',
+        interests: 'UFOs, conspiracies, government secrets',
+        personality: 'conspiracy-theorist'
+    },
+
+    // Mid-Level Active Users
+    napsterking: {
+        id: 'napsterking',
+        displayName: 'NapsterKing',
+        joined: 'Sep 1999',
+        postCount: 445,
+        customRank: null,
+        isAdmin: false,
+        isMod: ['music'],
+        avatar: '../../assets/avatars/music-note.gif',
+        signature: '<font size="1">MP3s 4 LIFE | Napster: napsterking99<br>Free music for everyone!</font>',
+        location: 'Miami, FL',
+        interests: 'Music, MP3s, Napster',
+        personality: 'piracy-advocate'
+    },
+
+    // Newer/Lower Activity Users
+    xxdarkangelxx: {
+        id: 'xxdarkangelxx',
+        displayName: 'xXDarkAngelXx',
+        joined: 'Nov 1999',
+        postCount: 87,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: '../../assets/avatars/dark-angel.gif',
+        signature: '<font color="#666666"><i>~*~In the darkness I find my light~*~</i><br>Linkin Park | Korn | Limp Bizkit<br>Pain is my art</font>',
+        location: 'Somewhere dark',
+        interests: 'nu-metal, darkness, being misunderstood',
+        personality: 'edgy-teen'
+    },
+
+    poketrainer99: {
+        id: 'poketrainer99',
+        displayName: 'PokeTrainer99',
+        joined: 'Aug 1999',
+        postCount: 234,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: '../../assets/avatars/pikachu.gif',
+        signature: '<img src="../../assets/gifs/pokemon-banner.gif"><br><font size="1">GOTTA CATCH \'EM ALL!!!<br>Favorite: Charizard!!!</font>',
+        location: 'California',
+        interests: 'Pokemon, Game Boy, Nintendo',
+        personality: 'young-enthusiast'
+    },
+
+    // Legendary/Banned Users
+    BANNED_trollmaster: {
+        id: 'trollmaster',
+        displayName: '[BANNED]TrollMaster',
+        joined: 'May 1998',
+        postCount: 892,
+        banned: true,
+        bannedDate: 'Aug 1999',
+        bannedReason: 'Excessive trolling and harassment',
+        isAdmin: false,
+        isMod: [],
+        personality: 'legendary-troll'
+    }
+};
+
+// Export for Node.js
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { FORUM_CONFIG, USERS };
+}

@@ -1,315 +1,114 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Pokemon Ring - Gotta Catch 'Em All Sites!</title>
+<title>Pokemon Web Ring - CyberFind 2000 Web Ring</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="keywords" content="pokemon,pikachu,charizard,ring,fan sites,trading cards,gameboy,nintendo">
-<meta name="description" content="Pokemon Ring - The ultimate web ring for Pokemon fans! Trading cards, game tips, and Pokemon communities.">
+<meta name="description" content="Gotta catch 'em all! Pokemon card collectors, game guides, and fan sites.">
 <style type="text/css">
 <!--
-BODY { font-family: Arial, Helvetica, sans-serif; background-image: url('../assets/gifs/pokeball_tile.gif'); }
-A:link { color: #0000CC; text-decoration: underline; }
-A:visited { color: #551A8B; text-decoration: underline; }
-A:hover { color: #FF0000; text-decoration: underline; }
-A:active { color: #FF0000; }
-.header { font-family: Comic Sans MS, cursive; font-weight: bold; }
-.small { font-size: 10px; }
-.site-box { border: 3px solid #FFD700; background-color: #FFFACD; padding: 10px; margin: 10px; }
-.rivalry-box { border: 3px solid #FF0000; background-color: #FFE4E1; padding: 8px; margin: 5px; }
+BODY { font-family: Arial, Helvetica, sans-serif; background-color: #FFFF00; }
+A:link { color: #0000FF; }
+A:visited { color: #FF0000; }
+A:hover { background-color: #FFFF00; }
 -->
 </style>
-<script language="JavaScript">
-<!--
-window.status = "Welcome to the Pokemon Ring! Gotta browse 'em all!";
-
-// Pokemon Ring Navigation System
-var pokemonSites = [
-    {
-        id: 1,
-        name: "Bobby's Pokemon Page",
-        url: "../sites/geocities-fan/index.html",
-        webmaster: "Bobby (Age 12)",
-        description: "THE BEST POKEMON SITE ON THE INTERNET!!!!! Complete Pokemon database with all 151 Pokemon!",
-        specialty: "Trading Cards & Game Tips",
-        founded: "November 1999",
-        active: true
-    },
-    {
-        id: 2,
-        name: "Sarah's REAL Pokemon Paradise",
-        url: "../sites/pokemon-paradise/index.html",
-        webmaster: "Sarah Mitchell (Age 14)",
-        description: "The ONLY authentic Pokemon fan site with ORIGINAL artwork and content. Do NOT steal!",
-        specialty: "Original Art & Stories",
-        founded: "December 1999",
-        active: true
-    }
-];
-
-function navigateRing(direction, currentSite) {
-    var currentIndex = -1;
-
-    // Find current site index
-    for (var i = 0; i < pokemonSites.length; i++) {
-        if (pokemonSites[i].id == currentSite) {
-            currentIndex = i;
-            break;
-        }
-    }
-
-    var targetIndex;
-    if (direction == "next") {
-        targetIndex = (currentIndex + 1) % pokemonSites.length;
-    } else if (direction == "prev") {
-        targetIndex = (currentIndex - 1 + pokemonSites.length) % pokemonSites.length;
-    } else if (direction == "random") {
-        do {
-            targetIndex = Math.floor(Math.random() * pokemonSites.length);
-        } while (targetIndex == currentIndex && pokemonSites.length > 1);
-    }
-
-    if (targetIndex >= 0) {
-        window.location = pokemonSites[targetIndex].url;
-    }
-}
-
-function randomSite() {
-    var randomIndex = Math.floor(Math.random() * pokemonSites.length);
-    window.location = pokemonSites[randomIndex].url;
-}
-
-function showRivalry() {
-    alert("POKEMON RIVALRY ALERT!\\n\\nBobby vs Sarah - The Battle for Pokemon Supremacy!\\n\\nBobby says: 'I have the BEST Pokemon database!'\\nSarah says: 'My site has ORIGINAL content only!'\\n\\nWho will you choose?");
-}
-//-->
-</script>
 </head>
 
-<body bgcolor="#87CEEB" text="#000000" link="#0000CC" vlink="#551A8B" alink="#FF0000">
+<body text="#000000">
 
 <center>
 
 <!-- Header -->
-<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFD700">
+<table width="100%" border="3" cellpadding="10" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFFF00">
 <tr>
 <td align="center">
-<font class="small" color="#000000">
-<a href="index.html">Web Ring Central</a> |
-<a href="../index.html">CyberFind Home</a> |
-<a href="pokemon-join.html">Join Pokemon Ring</a>
-</font>
+<font size="6"><b>⚡ POKEMON WEB RING ⚡</b></font>
 </td>
 </tr>
 </table>
 
-<br>
-
-<!-- Main Logo -->
-<table width="650" border="5" cellpadding="15" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFFF00">
-<tr>
-<td align="center">
-<img src="../assets/gifs/pikachu_dance.gif" width="80" height="80" alt="Pikachu">
-<font class="header" size="6" color="#FF0000">POKEMON RING</font>
-<img src="../assets/gifs/pikachu_dance.gif" width="80" height="80" alt="Pikachu">
-<br>
-<font class="header" size="3" color="#0000FF">
-<marquee behavior="alternate" scrollamount="5">
-*** GOTTA CATCH 'EM ALL SITES! ***
-</marquee>
-</font>
-<br>
-<font size="2" color="#000000">
-<b>The Ultimate Web Ring for Pokemon Trainers!</b>
-</font>
-</td>
-</tr>
-</table>
-
-<br>
-
-<!-- Ring Navigation -->
-<table width="500" border="3" cellpadding="8" cellspacing="0" bordercolor="#0000FF" bgcolor="#E0E0FF">
-<tr>
-<td align="center">
-<font size="3" color="#0000FF"><b>Ring Navigation</b></font>
-<br><br>
-<input type="button" value="<< Previous Site" onClick="navigateRing('prev', 0)" style="font-family: Arial; font-size: 11px; background-color: #FFFF00; border: 2px outset #CCCCCC; padding: 3px 8px; cursor: hand;">
-<input type="button" value="Random Site" onClick="randomSite()" style="font-family: Arial; font-size: 11px; background-color: #FF0000; color: white; border: 2px outset #CCCCCC; padding: 3px 8px; cursor: hand;">
-<input type="button" value="Next Site >>" onClick="navigateRing('next', 0)" style="font-family: Arial; font-size: 11px; background-color: #FFFF00; border: 2px outset #CCCCCC; padding: 3px 8px; cursor: hand;">
-<br><br>
-<font size="2" color="#000000">
-<a href="#sites">List All Sites</a> | <a href="pokemon-join.html">Join Ring</a> | <a href="index.html">Other Rings</a>
-</font>
-</td>
-</tr>
-</table>
-
-<br>
-
-<!-- Rivalry Alert -->
-<table width="600" border="4" cellpadding="10" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFCCCC">
-<tr>
-<td align="center">
-<font size="3" color="#FF0000"><b>🔥 POKEMON RIVALRY ALERT! 🔥</b></font>
-<br>
-<font size="2" color="#000000">
-Two Pokemon masters compete for supremacy! Who has the better site?<br>
-<b>Bobby</b> claims to have the ULTIMATE Pokemon database!<br>
-<b>Sarah</b> insists her site has the ONLY original content!<br>
-<br>
-<input type="button" value="Learn About the Rivalry" onClick="showRivalry()" style="font-family: Arial; font-size: 11px; background-color: #FF0000; color: white; border: 2px outset #CCCCCC; padding: 3px 8px; cursor: hand;">
-</font>
-</td>
-</tr>
-</table>
-
-<br>
-
-<!-- Ring Members -->
-<a name="sites"></a>
-<table width="700" border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td colspan="2" align="center" bgcolor="#0000FF">
-<font size="4" color="#FFFF00"><b>Pokemon Ring Members</b></font>
-</td>
-</tr>
-</table>
-
-<!-- Bobby's Site -->
-<div class="site-box">
-<table width="100%" border="0" cellpadding="5" cellspacing="0">
-<tr>
-<td width="100" align="center">
-<img src="../assets/gifs/pokeball_spin.gif" width="60" height="60" alt="Pokeball">
-<br>
-<font size="1" color="#666666">Site #1</font>
-</td>
-<td>
-<font size="3" color="#0000FF"><b>Bobby's Pokemon Page - The Ultimate Pokemon Resource!</b></font>
-<br>
-<font size="2" color="#000000">
-<b>Webmaster:</b> Bobby (Age 12)<br>
-<b>Founded:</b> November 1999<br>
-<b>Specialty:</b> Trading Cards & Game Tips<br>
-<b>Status:</b> <font color="#00AA00">Active - Updated 12/20/1999</font><br>
-<br>
-<i>"THE BEST POKEMON SITE ON THE INTERNET!!!!! I have all 150 Pokemon listed with pictures! Trading cards, game tips, and more! I JUST GOT A HOLOGRAPHIC CHARIZARD!!!!"</i>
-<br><br>
-<b>Features:</b> Complete Pokedex • Card Collection • Trading Post • Secret Game Tips<br>
-<a href="../sites/geocities-fan/index.html"><b>Visit Bobby's Pokemon Page →</b></a>
-</font>
-</td>
-</tr>
-</table>
-</div>
-
-<!-- Sarah's Site -->
-<div class="site-box">
-<table width="100%" border="0" cellpadding="5" cellspacing="0">
-<tr>
-<td width="100" align="center">
-<img src="../assets/gifs/pokeball_spin.gif" width="60" height="60" alt="Pokeball">
-<br>
-<font size="1" color="#666666">Site #2</font>
-</td>
-<td>
-<font size="3" color="#FF00FF"><b>Sarah's REAL Pokemon Paradise - Original Content Only!</b></font>
-<br>
-<font size="2" color="#000000">
-<b>Webmaster:</b> Sarah Mitchell (Age 14)<br>
-<b>Founded:</b> December 1999<br>
-<b>Specialty:</b> Original Artwork & Stories<br>
-<b>Status:</b> <font color="#00AA00">Active - Updated 12/18/1999</font><br>
-<br>
-<i>"The only authentic Pokemon fan site with original artwork and content. Do NOT steal! I create my own Pokemon stories and draw my own pictures. This is NOT like other sites that just copy everything!"</i>
-<br><br>
-<b>Features:</b> Original Pokemon Art • Fan Fiction • Character Stories • Anti-Theft Protection<br>
-<a href="../sites/pokemon-paradise/index.html"><b>Visit Sarah's Pokemon Paradise →</b></a>
-</font>
-</td>
-</tr>
-</table>
-</div>
-
-<!-- Rivalry Details -->
-<table width="600" border="3" cellpadding="10" cellspacing="0" bordercolor="#FF00FF" bgcolor="#FFEBFF">
+<!-- Breadcrumb -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#333333">
 <tr>
 <td>
-<font size="3" color="#FF00FF"><b>The Great Pokemon Site War of 1999</b></font>
-<br><br>
-<font size="2" color="#000000">
-The Pokemon community has been divided by this epic rivalry!
-<br><br>
-<b>Bobby's Supporters Say:</b><br>
-• "He has ALL 150 Pokemon with pictures!"<br>
-• "Best trading card section ever!"<br>
-• "His game tips actually work!"<br>
-• "He got a HOLOGRAPHIC CHARIZARD!"<br>
-<br>
-<b>Sarah's Supporters Say:</b><br>
-• "Finally, someone with ORIGINAL content!"<br>
-• "Her Pokemon stories are amazing!"<br>
-• "She actually draws her own pictures!"<br>
-• "No copied content like other sites!"<br>
-<br>
-<font color="#FF0000"><b>The Verdict:</b> Both sites are awesome in their own way! Visit both and decide for yourself!</font>
+<font size="2" color="#FFFFFF">
+<a href="../index.html"><font color="#FFFFFF">CyberFind Home</font></a> &gt;
+<a href="index.html"><font color="#FFFFFF">Web Rings</font></a> &gt;
+<b>Pokemon Web Ring</b>
 </font>
+</td>
+<td align="right">
+<font size="1" color="#FFFF00">Last Updated: 04/12/1999</font>
 </td>
 </tr>
 </table>
 
 <br>
 
-<!-- Ring Statistics -->
-<table width="500" border="2" cellpadding="8" cellspacing="0" bordercolor="#00AA00" bgcolor="#F0FFF0">
+<table width="700" border="2" cellpadding="15" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFFFFF">
 <tr>
-<td align="center">
-<font size="3" color="#00AA00"><b>Pokemon Ring Stats</b></font>
+<td>
+
+<font size="4" color="#000000"><b>About This Ring</b></font><br>
+<br>
+<font size="2" color="#000000">
+Gotta catch 'em all! Pokemon card collectors, game guides, and fan sites.
 <br><br>
-<table border="0" cellpadding="3" cellspacing="0" width="100%">
-<tr>
-<td><font size="2">Ring Members:</font></td>
-<td align="right"><font size="2"><b>2</b></font></td>
+<b>Ring Statistics:</b><br>
+• Founded: February 1999<br>
+• Members: 3 sites<br>
+• Total Hits: 25,678<br>
+• Last Updated: 04/12/1999<br>
+</font>
+
+<br><br>
+
+<font size="4" color="#000000"><b>Member Sites</b></font><br>
+<br>
+
+<table width="100%" border="1" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC">
+<tr bgcolor="#CCCCCC">
+<td align="center"><b>#</b></td>
+<td><b>Site Name</b></td>
+<td><b>Joined</b></td>
+<td align="center"><b>Status</b></td>
+<td align="center"><b>Visit</b></td>
 </tr>
-<tr>
-<td><font size="2">Total Pokemon Covered:</font></td>
-<td align="right"><font size="2"><b>151+</b></font></td>
+
+<tr bgcolor="#FFFFFF">
+<td align="center"><font size="2">1</font></td>
+<td><font size="2"><b>Bobby's Pokemon Page</b></font></td>
+<td><font size="2">02/1999</font></td>
+<td align="center"><font size="2" color="#008000">✅ Active</font></td>
+<td align="center"><font size="2">[<a href="../sites/geocities-fan/">Visit</a>]</font></td>
 </tr>
-<tr>
-<td><font size="2">Trading Cards Featured:</font></td>
-<td align="right"><font size="2"><b>500+</b></font></td>
-</tr>
-<tr>
-<td><font size="2">Ring Clicks Today:</font></td>
-<td align="right"><font size="2"><b>1,247</b></font></td>
-</tr>
-<tr>
-<td><font size="2">Active Trainers:</font></td>
-<td align="right"><font size="2"><b>∞</b></font></td>
+<tr bgcolor="#F8F8F8">
+<td align="center"><font size="2">2</font></td>
+<td><font size="2"><b>Sarah's REAL Pokemon Paradise</b></font></td>
+<td><font size="2">02/1999</font></td>
+<td align="center"><font size="2" color="#008000">✅ Active</font></td>
+<td align="center"><font size="2">[<a href="../sites/pokemon-paradise/">Visit</a>]</font></td>
 </tr>
 </table>
+
+<br><br>
+
+<center>
+<table border="2" cellpadding="10" cellspacing="0" bordercolor="#008000" bgcolor="#E0FFE0">
+<tr>
+<td align="center">
+<font size="3" color="#006400"><b>Want to Join This Ring?</b></font><br>
+<br>
+<font size="2" color="#000000">
+Add the ring navigation code to your site and submit your application!<br>
+<br>
+<a href="join.html?ring=pokemon"><b>→ Join Pokemon Web Ring →</b></a>
+</font>
 </td>
 </tr>
 </table>
+</center>
 
-<br>
-
-<!-- Join Information -->
-<table width="600" border="2" cellpadding="10" cellspacing="0" bordercolor="#0000FF" bgcolor="#E6E6FA">
-<tr>
-<td align="center">
-<font size="3" color="#0000FF"><b>Join the Pokemon Ring!</b></font>
-<br><br>
-<font size="2" color="#000000">
-<b>Requirements:</b><br>
-• Pokemon-themed content<br>
-• Family-friendly site<br>
-• Regular updates<br>
-• Add ring navigation to your site<br>
-• No "fake" or "hacked" Pokemon content<br>
-<br>
-<a href="pokemon-join.html"><b>Submit Your Pokemon Site →</b></a>
-</font>
 </td>
 </tr>
 </table>
@@ -317,20 +116,16 @@ The Pokemon community has been divided by this epic rivalry!
 <br>
 
 <!-- Footer -->
-<table width="600" border="0" cellpadding="10" cellspacing="0">
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#E6E6FA">
 <tr>
-<td align="center" bgcolor="#FFD700">
-<font class="small" color="#000000">
+<td align="center">
+<font size="2">
 <a href="index.html">Web Ring Central</a> |
 <a href="../index.html">CyberFind Home</a> |
-<a href="mailto:pokemon-ring@cyberfind2000.net">Ring Master</a> |
-<a href="pokemon-join.html">Join Ring</a>
-<br><br>
-&copy; 1999-2000 Pokemon Ring. Part of the Web Ring Central Network.<br>
-Pokemon is &copy; Nintendo/Game Freak. This is a fan community only.<br>
+<a href="join.html?ring=pokemon">Join This Ring</a>
 <br>
-<font size="1">
-Ring Master: PokemonMaster2000 | Founded: December 1999 | Last Updated: 12/20/1999
+<font size="1" color="#666666">
+© 1999-2000 Pokemon Web Ring • Part of CyberFind 2000 Web Ring Network
 </font>
 </font>
 </td>
@@ -338,31 +133,6 @@ Ring Master: PokemonMaster2000 | Founded: December 1999 | Last Updated: 12/20/19
 </table>
 
 </center>
-
-<!-- Floating Pokeball -->
-<div id="floater" style="position:absolute; left:20px; top:100px; visibility:visible;">
-<img src="../assets/gifs/pokeball_spin.gif" width="30" height="30" alt="Pokeball">
-</div>
-
-<script language="JavaScript">
-<!--
-var xPos = 20;
-var yPos = 100;
-var xDir = 1;
-var yDir = 1;
-function floatPokeball() {
-    xPos += xDir;
-    yPos += yDir;
-    if (xPos > document.body.clientWidth - 30 || xPos < 0) xDir *= -1;
-    if (yPos > document.body.clientHeight - 30 || yPos < 0) yDir *= -1;
-    if (document.getElementById("floater")) {
-        document.getElementById("floater").style.left = xPos + "px";
-        document.getElementById("floater").style.top = yPos + "px";
-    }
-}
-setInterval("floatPokeball()", 100);
-//-->
-</script>
 
 </body>
 </html>
