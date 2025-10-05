@@ -289,6 +289,124 @@ input, textarea, select {
     background-color: #FFFFFF;
 }
 
+.post-author {
+    background-color: #F0F5FA;
+    border-right: 1px solid #CCCCCC;
+    text-align: center;
+}
+
+.post-username {
+    font-weight: bold;
+    font-size: 12px;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+.post-username a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.post-username a:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+.post-avatar {
+    margin: 10px 0;
+}
+
+.post-avatar img {
+    border: 1px solid #CCCCCC;
+}
+
+.post-rank {
+    font-size: 10px;
+    color: #666666;
+    margin: 5px 0;
+}
+
+.post-pips {
+    margin: 5px 0;
+}
+
+.post-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.post-content {
+    background-color: #FFFFFF;
+}
+
+.post-date {
+    font-size: 10px;
+    color: #666666;
+    padding: 5px;
+}
+
+.post-number {
+    font-size: 10px;
+    color: #999999;
+    padding: 5px;
+}
+
+.post-body {
+    padding: 10px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.post-signature {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #DDDDDD;
+    font-size: 10px;
+    color: #666666;
+}
+
+.post-edited {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #FFF9E6;
+    border: 1px solid #FFCC00;
+    font-size: 10px;
+    color: #666666;
+}
+
+.post-edit-note {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #FFE6E6;
+    border: 1px solid #FF6666;
+    font-size: 10px;
+    color: #CC0000;
+}
+
+/* User Badges */
+.user-badge {
+    padding: 2px 6px;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.badge-admin {
+    background-color: #CC0000;
+    color: #FFFFFF;
+}
+
+.badge-mod {
+    background-color: #0066CC;
+    color: #FFFFFF;
+}
+
+.badge-banned {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
 .post-header {
     background-color: #003366;
     color: #FFFFFF;
@@ -306,11 +424,6 @@ input, textarea, select {
     text-decoration: underline;
 }
 
-.post-body {
-    display: table;
-    width: 100%;
-}
-
 .post-userinfo {
     display: table-cell;
     width: 170px;
@@ -321,43 +434,11 @@ input, textarea, select {
     text-align: center;
 }
 
-.post-username {
-    font-weight: bold;
-    font-size: 12px;
-    color: #003366;
-    margin-bottom: 5px;
-}
-
-.post-rank {
-    font-size: 9px;
-    color: #666666;
-    margin: 3px 0;
-}
-
-.post-avatar {
-    margin: 10px 0;
-    max-width: 150px;
-}
-
 .post-userstats {
     font-size: 9px;
     color: #666666;
     margin-top: 10px;
     text-align: left;
-}
-
-.post-content {
-    display: table-cell;
-    padding: 15px;
-    vertical-align: top;
-}
-
-.post-signature {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #DDDDDD;
-    font-size: 10px;
-    color: #666666;
 }
 
 /* ============================================
@@ -443,6 +524,21 @@ input, textarea, select {
 .icon-sticky { color: #FFCC00; }
 .icon-locked { color: #999999; }
 .icon-poll { color: #6666CC; }
+
+/* ============================================
+   NEWS TICKER
+   ============================================ */
+
+.news-ticker {
+    background-color: #FFFFCC;
+    border: 2px solid #FFCC00;
+    margin: 5px 0;
+    font-size: 11px;
+}
+
+.news-ticker marquee {
+    /* Support for old <marquee> tag */
+}
 
 /* ============================================
    FOOTER & INFO BOXES

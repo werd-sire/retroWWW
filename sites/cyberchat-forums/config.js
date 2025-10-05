@@ -682,6 +682,67 @@ var USERS = {
         personality: 'lurker-poster'
     },
 
+    // Newer Users
+    newbuilder99: {
+        id: 'newbuilder99',
+        displayName: 'NewBuilder99',
+        joined: 'Dec 1999',
+        postCount: 47,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: '../../assets/avatars/newbie.gif',
+        signature: '<font size="1">Building my first PC! Wish me luck!</font>',
+        location: 'Boston, MA',
+        interests: 'Gaming, Learning, PC Building',
+        personality: 'eager-newbie'
+    },
+
+    frustrated_user: {
+        id: 'frustrated_user',
+        displayName: 'Frustrated_User',
+        joined: 'Nov 1999',
+        postCount: 23,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: null,
+        signature: null,
+        location: 'Unknown',
+        interests: 'Trying to fix my PC',
+        personality: 'frustrated-newbie'
+    },
+
+    confusednewbie: {
+        id: 'confusednewbie',
+        displayName: 'ConfusedNewbie',
+        joined: 'Dec 1999',
+        postCount: 12,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: null,
+        signature: '<font size="1">Help! I don\'t know what I\'m doing!</font>',
+        location: 'Texas',
+        interests: 'Learning computers',
+        personality: 'confused-newbie'
+    },
+
+    musiclover: {
+        id: 'musiclover',
+        displayName: 'MusicLover',
+        joined: 'Aug 1999',
+        postCount: 287,
+        customRank: null,
+        isAdmin: false,
+        isMod: [],
+        avatar: '../../assets/avatars/music.gif',
+        signature: '<font size="1">Support the artists! Buy CDs!</font>',
+        location: 'Nashville, TN',
+        interests: 'Music, Concerts, CD Collecting',
+        personality: 'music-industry-defender'
+    },
+
     // Legendary/Banned Users
     BANNED_trollmaster: {
         id: 'trollmaster',
@@ -1038,6 +1099,18 @@ var THREADS = {
     // Web Design Board
     'web-design': [
         {
+            id: 22,
+            title: 'Post your personal websites! Show off your pages!',
+            author: 'webwizard',
+            date: 'Dec 10, 1999 10:23 AM',
+            lastPost: { user: 'webwizard', date: 'Dec 29, 1999 11:22 PM' },
+            replies: 13,
+            views: 892,
+            sticky: false,
+            locked: false,
+            hot: true
+        },
+        {
             id: 28,
             title: 'Flash 4 vs animated GIFs - discuss!',
             author: 'webwizard',
@@ -1268,6 +1341,17 @@ var THREADS = {
             hot: true
         },
         {
+            id: 54,
+            title: 'X-Files finale - WHAT JUST HAPPENED?!',
+            author: 'skepticalone',
+            date: 'Dec 19, 1999 8:47 PM',
+            lastPost: { user: 'gamegod', date: 'Dec 29, 1999 10:37 PM' },
+            replies: 7,
+            views: 345,
+            sticky: false,
+            locked: false
+        },
+        {
             id: 46,
             title: 'Star Wars Episode I - your honest thoughts?',
             author: 'moviebuff',
@@ -1370,17 +1454,6 @@ var THREADS = {
             sticky: false,
             locked: false,
             hot: true
-        },
-        {
-            id: 54,
-            title: 'Black holes explained (for beginners)',
-            author: 'scienceguy',
-            date: 'Dec 18, 1999',
-            lastPost: { user: 'truthseeker', date: 'Dec 29, 1999 9:42 PM' },
-            replies: 89,
-            views: 2134,
-            sticky: false,
-            locked: false
         }
     ],
 

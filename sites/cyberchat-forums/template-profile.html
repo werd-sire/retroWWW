@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>{{USERNAME}} - Profile - {{FORUM_NAME}}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../../styles.css" type="text/css">
+</head>
+
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="forum-header">
+<tr>
+<td>
+<div class="forum-logo">{{FORUM_NAME}}</div>
+<div class="forum-tagline">{{TAGLINE}}</div>
+</td>
+</tr>
+</table>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+<a href="../../index.html">Forum Index</a> |
+<a href="#search">Search</a> |
+<a href="#members">Members</a> |
+<a href="#profile">Profile</a> |
+<a href="#pm">Private Messages</a>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<a href="../../../../index.html">CyberFind Home</a> &gt;
+<a href="../../index.html">{{FORUM_NAME}}</a> &gt;
+<a href="../index.html">Members</a> &gt;
+<b>{{USERNAME}}</b>
+</div>
+
+<br>
+
+<!-- Profile Header -->
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="info-box">
+<tr>
+<td>
+<h2>{{USERNAME}}'s Profile</h2>
+</td>
+</tr>
+</table>
+
+<div class="spacer"></div>
+
+<!-- Profile Content -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="200" valign="top">
+
+    <!-- Avatar Box -->
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="stats-box" style="margin-bottom: 10px;">
+    <tr>
+    <td align="center">
+        <div class="post-avatar">
+            {{AVATAR}}
+        </div>
+        <div style="margin-top: 10px;">
+            {{USER_STATUS}}
+        </div>
+    </td>
+    </tr>
+    </table>
+
+    <!-- User Stats Box -->
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="stats-box">
+    <tr>
+    <td>
+        <span class="stats-header">Statistics</span><br>
+        <div class="stats-content">
+        <b>Rank:</b> {{RANK}}<br>
+        <b>Posts:</b> {{POST_COUNT}}<br>
+        <b>Joined:</b> {{JOINED}}<br>
+        <b>Last Visit:</b> {{LAST_VISIT}}<br>
+        {{WARNINGS}}
+        </div>
+    </td>
+    </tr>
+    </table>
+
+</td>
+<td width="20">&nbsp;</td>
+<td valign="top">
+
+    <!-- Personal Information -->
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="stats-box" style="margin-bottom: 10px;">
+    <tr>
+    <td>
+        <span class="stats-header">Personal Information</span><br>
+        <div class="stats-content">
+        {{PERSONAL_INFO}}
+        </div>
+    </td>
+    </tr>
+    </table>
+
+    <!-- Signature -->
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="stats-box" style="margin-bottom: 10px;">
+    <tr>
+    <td>
+        <span class="stats-header">Signature</span><br>
+        <div class="stats-content">
+        {{SIGNATURE}}
+        </div>
+    </td>
+    </tr>
+    </table>
+
+    <!-- Contact -->
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="stats-box" style="margin-bottom: 10px;">
+    <tr>
+    <td>
+        <span class="stats-header">Contact {{USERNAME}}</span><br>
+        <div class="stats-content">
+        <a href="#pm">Send Private Message</a><br>
+        <a href="#email">Send Email</a><br>
+        {{WEBSITE_LINK}}
+        <a href="#posts">View All Posts by {{USERNAME}}</a>
+        </div>
+    </td>
+    </tr>
+    </table>
+
+</td>
+</tr>
+</table>
+
+<!-- Footer -->
+<div class="forum-footer">
+Powered by CyberChat Forum Software {{VERSION}}<br>
+&copy; 1998-1999 {{FORUM_NAME}}
+</div>
+
+</body>
+</html>

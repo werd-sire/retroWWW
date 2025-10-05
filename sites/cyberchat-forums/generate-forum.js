@@ -10,6 +10,7 @@ const path = require('path');
 
 // Load configuration
 const { FORUM_CONFIG, USERS, THREADS } = require('./config.js');
+const { THREAD_POSTS } = require('./thread-content.js');
 
 // Template cache
 let templates = {};
@@ -152,14 +153,25 @@ by <a href="#">User</a>
         categoriesHTML += '</table><div class="spacer"></div>\n';
     }
 
-    // Generate recent activity (placeholder)
+    // Generate news ticker
+    const newsTicker = `Welcome to CyberChat Forums! |
+Y2K is almost here - are you ready? |
+New: Anime & Manga board is VERY active! |
+Remember: Be respectful to all members |
+Check out our <a href="#">Forum Rules</a> |
+Having trouble? Visit the <a href="boards/help-desk/index.html">Help Desk</a>`;
+
+    // Generate recent activity from actual threads
     const recentActivity = `
 <font size="1">
-• <a href="#">TechMaster99</a> replied to <a href="#">"Windows 98 won't boot!"</a> in Tech Support<br>
-• <a href="#">AnimeLover2000</a> started <a href="#">"Best anime of 1999?"</a> in Anime & Manga<br>
-• <a href="#">GameGod</a> replied to <a href="#">"Dreamcast is AMAZING"</a> in Console Gaming<br>
-• <a href="#">FlameKing</a> replied to <a href="#">"This forum is dying"</a> in Off Topic<br>
-• <a href="#">MomOf3</a> started <a href="#">"How do I change my avatar?"</a> in Help Desk<br>
+• <a href="#">GameGod</a> replied to <a href="threads/general-discussion/2.html">"Y2K Countdown Thread - WHO'S STAYING UP?!"</a> in General Discussion<br>
+• <a href="#">MomOf3</a> replied to <a href="threads/tech-support/13.html">"HELP!! Windows 98 won't boot after installing RealPlayer!"</a> in Tech Support<br>
+• <a href="#">OtakuMaster</a> replied to <a href="threads/anime-manga/50.html">"Cowboy Bebop is a MASTERPIECE"</a> in Anime & Manga<br>
+• <a href="#">MovieBuff</a> started <a href="threads/movies-tv/45.html">"The Matrix changed cinema forever"</a> in Movies & TV<br>
+• <a href="#">Phoenix_Rising</a> replied to <a href="threads/off-topic/9.html">"This forum is dying"</a> in Off Topic<br>
+• <a href="#">FragMaster</a> started <a href="threads/pc-gaming/38.html">"Unreal Tournament vs Quake III - THE ULTIMATE SHOWDOWN"</a> in PC Gaming<br>
+• <a href="#">NewBuilder99</a> started <a href="threads/hardware/17.html">"Building my first PC - need advice!"</a> in Hardware<br>
+• <a href="#">ConsoleKid</a> started <a href="threads/console-gaming/40.html">"Nintendo 64 vs PlayStation - which won the generation?"</a> in Console Gaming<br>
 </font>
 `;
 
@@ -177,6 +189,7 @@ Upcoming: <a href="#">TechGuru</a> (Tomorrow)
         TAGLINE: FORUM_CONFIG.tagline,
         FOUNDED: FORUM_CONFIG.founded,
         VERSION: FORUM_CONFIG.version,
+        NEWS_TICKER: newsTicker,
         ONLINE_COUNT: FORUM_CONFIG.stats.currentOnline,
         ONLINE_MEMBERS: Math.floor(FORUM_CONFIG.stats.currentOnline * 0.4),
         ONLINE_GUESTS: Math.floor(FORUM_CONFIG.stats.currentOnline * 0.6),
@@ -349,6 +362,285 @@ function generateAllBoards() {
 }
 
 /**
+ * Generate a single post HTML
+ */
+function generatePost(postData, postNumber) {
+    const user = USERS[postData.user];
+    if (!user) {
+        console.warn(`Warning: User '${postData.user}' not found`);
+        return '';
+    }
+
+    const rank = getUserRank(user.postCount);
+    const pips = generatePips(rank.pips, rank.color);
+    const rankName = user.customRank || rank.name;
+
+    // User badge
+    let badge = '';
+    if (user.isAdmin) {
+        badge = '<span class="user-badge badge-admin">ADMIN</span>';
+    } else if (user.isMod && user.isMod.length > 0) {
+        badge = '<span class="user-badge badge-mod">MOD</span>';
+    }
+
+    // Online status (randomize for realism)
+    const isOnline = Math.random() > 0.3;
+    const onlineIndicator = isOnline ? '<span class="user-online">●</span> ' : '<span class="user-offline">○</span> ';
+
+    // Format post content (preserve line breaks)
+    let content = postData.content
+        .split('\n')
+        .map(line => line.trim() === '' ? '<br>' : line)
+        .join('\n');
+
+    // Add edit notice if edited
+    let editNotice = '';
+    if (postData.editedBy) {
+        const editedByUser = USERS[postData.editedBy];
+        const editorName = editedByUser ? editedByUser.displayName : postData.editedBy;
+        editNotice = `<div class="post-edited"><i>Last edited by <b>${editorName}</b> on ${postData.editedDate}</i></div>`;
+        if (postData.editNote) {
+            editNotice += `<div class="post-edit-note">${postData.editNote}</div>`;
+        }
+    }
+
+    return `
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="post">
+<tr>
+<td width="150" valign="top" class="post-author">
+    <div class="post-username">${onlineIndicator}<a href="#"><b>${user.displayName}</b></a> ${badge}</div>
+    <div class="post-avatar">${user.avatar ? `<img src="${user.avatar}" width="80" height="80" alt="avatar">` : ''}</div>
+    <div class="post-rank">${rankName}</div>
+    <div class="post-pips">${pips}</div>
+    <div class="post-info">
+        <font size="1">
+        Posts: ${formatNumber(user.postCount)}<br>
+        Joined: ${user.joined}<br>
+        ${user.location ? `Location: ${user.location}<br>` : ''}
+        </font>
+    </div>
+</td>
+<td valign="top" class="post-content">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="post-date"><font size="1">Posted: ${postData.date}</font></td>
+        <td align="right" class="post-number"><font size="1">#${postNumber}</font></td>
+    </tr>
+    </table>
+    <div class="post-body">
+${content}
+    </div>
+    ${editNotice}
+    ${user.signature ? `<div class="post-signature">${user.signature}</div>` : ''}
+</td>
+</tr>
+</table>
+`;
+}
+
+/**
+ * Generate a thread page
+ */
+function generateThread(boardId, thread) {
+    const template = loadTemplate('thread');
+
+    // Get board info
+    let boardName = '';
+    for (const category of FORUM_CONFIG.categories) {
+        const board = category.boards.find(b => b.id === boardId);
+        if (board) {
+            boardName = board.name;
+            break;
+        }
+    }
+
+    // Get posts for this thread
+    const posts = THREAD_POSTS[thread.id] || [];
+
+    if (posts.length === 0) {
+        console.warn(`  Warning: No posts found for thread ${thread.id}`);
+        return;
+    }
+
+    // Generate posts HTML
+    let postsHTML = '';
+    for (let i = 0; i < posts.length; i++) {
+        postsHTML += generatePost(posts[i], i + 1);
+    }
+
+    // Pagination
+    const pagination = '<span class="current">1</span>';
+
+    const vars = {
+        FORUM_NAME: FORUM_CONFIG.name,
+        TAGLINE: FORUM_CONFIG.tagline,
+        VERSION: FORUM_CONFIG.version,
+        BOARD_ID: boardId,
+        BOARD_NAME: boardName,
+        THREAD_TITLE: thread.title,
+        THREAD_ID: thread.id,
+        POSTS: postsHTML,
+        PAGINATION: pagination
+    };
+
+    const html = replaceVars(template, vars);
+
+    // Write file
+    const threadPath = path.join(__dirname, 'threads', boardId, `${thread.id}.html`);
+    fs.writeFileSync(threadPath, html, 'utf8');
+    console.log(`    ✅ Generated: threads/${boardId}/${thread.id}.html`);
+}
+
+/**
+ * Generate all threads with content
+ */
+function generateAllThreads() {
+    console.log('\nGenerating thread pages with content...');
+
+    let generatedCount = 0;
+
+    for (const [boardId, threadList] of Object.entries(THREADS)) {
+        console.log(`\n${boardId}:`);
+
+        for (const thread of threadList) {
+            if (THREAD_POSTS[thread.id]) {
+                generateThread(boardId, thread);
+                generatedCount++;
+            }
+        }
+    }
+
+    console.log(`\n✅ Generated ${generatedCount} thread pages with content`);
+}
+
+/**
+ * Update board pages to link to actual threads
+ */
+function updateBoardLinksToThreads() {
+    console.log('\nUpdating board pages to link to actual threads...');
+
+    for (const category of FORUM_CONFIG.categories) {
+        for (const board of category.boards) {
+            const boardPath = path.join(__dirname, 'boards', board.id, 'index.html');
+            let html = fs.readFileSync(boardPath, 'utf8');
+
+            // Get threads for this board
+            const boardThreads = THREADS[board.id] || [];
+
+            // Replace thread links
+            for (const thread of boardThreads) {
+                if (THREAD_POSTS[thread.id]) {
+                    // Replace the # placeholder with actual thread link
+                    const oldLink = `<a href="#">${thread.title}</a>`;
+                    const newLink = `<a href="../../threads/${board.id}/${thread.id}.html">${thread.title}</a>`;
+                    html = html.replace(oldLink, newLink);
+                }
+            }
+
+            fs.writeFileSync(boardPath, html, 'utf8');
+            console.log(`  ✅ Updated: boards/${board.id}/index.html`);
+        }
+    }
+}
+
+/**
+ * Generate user profile page
+ */
+function generateUserProfile(userId, user) {
+    const template = loadTemplate('profile');
+
+    const rank = getUserRank(user.postCount);
+    const rankName = user.customRank || rank.name;
+    const pips = generatePips(rank.pips, rank.color);
+
+    // User status badge
+    let userStatus = '';
+    if (user.isAdmin) {
+        userStatus = '<span class="user-badge badge-admin">ADMINISTRATOR</span>';
+    } else if (user.isMod && user.isMod.length > 0) {
+        userStatus = `<span class="user-badge badge-mod">MODERATOR</span><br><font size="1">Moderates: ${user.isMod.join(', ')}</font>`;
+    } else if (user.banned) {
+        userStatus = '<span class="user-badge badge-banned">BANNED</span>';
+    }
+
+    // Avatar
+    const avatar = user.avatar
+        ? `<img src="${user.avatar}" width="120" height="120" border="1" alt="avatar">`
+        : '<img src="../../assets/avatars/default.gif" width="120" height="120" border="1" alt="no avatar">';
+
+    // Personal Info
+    let personalInfo = '';
+    if (user.location) personalInfo += `<b>Location:</b> ${user.location}<br>`;
+    if (user.interests) personalInfo += `<b>Interests:</b> ${user.interests}<br>`;
+    if (user.occupation) personalInfo += `<b>Occupation:</b> ${user.occupation}<br>`;
+    if (!personalInfo) personalInfo = '<i>No information provided</i>';
+
+    // Warnings
+    let warnings = '';
+    if (user.warnings && user.warnings > 0) {
+        warnings = `<b style="color: #CC0000;">Warnings:</b> ${user.warnings}<br>`;
+    }
+    if (user.banned) {
+        warnings += `<b style="color: #CC0000;">Banned:</b> ${user.bannedDate}<br>`;
+        warnings += `<b>Reason:</b> ${user.bannedReason}<br>`;
+    }
+
+    // Website link
+    let websiteLink = '';
+    if (user.website) {
+        websiteLink = `<a href="${user.website}" target="_blank">Visit ${user.displayName}'s Website</a><br>`;
+    }
+
+    // Last visit (randomize for realism)
+    const lastVisit = 'Dec 29, 1999 11:' + Math.floor(Math.random() * 60) + ' PM';
+
+    const vars = {
+        FORUM_NAME: FORUM_CONFIG.name,
+        TAGLINE: FORUM_CONFIG.tagline,
+        VERSION: FORUM_CONFIG.version,
+        USERNAME: user.displayName,
+        USER_STATUS: userStatus,
+        AVATAR: avatar,
+        RANK: rankName + '<br>' + pips,
+        POST_COUNT: formatNumber(user.postCount),
+        JOINED: user.joined,
+        LAST_VISIT: lastVisit,
+        WARNINGS: warnings,
+        PERSONAL_INFO: personalInfo,
+        SIGNATURE: user.signature || '<i>No signature</i>',
+        WEBSITE_LINK: websiteLink
+    };
+
+    const html = replaceVars(template, vars);
+
+    // Write file
+    const profilePath = path.join(__dirname, 'members', `${userId}.html`);
+    fs.writeFileSync(profilePath, html, 'utf8');
+    console.log(`  ✅ Generated: members/${userId}.html`);
+}
+
+/**
+ * Generate all user profiles
+ */
+function generateAllProfiles() {
+    console.log('\nGenerating user profile pages...');
+
+    const membersDir = path.join(__dirname, 'members');
+    if (!fs.existsSync(membersDir)) {
+        fs.mkdirSync(membersDir);
+    }
+
+    let count = 0;
+    for (const [userId, user] of Object.entries(USERS)) {
+        // Skip banned users (their profiles still exist but are marked)
+        generateUserProfile(userId, user);
+        count++;
+    }
+
+    console.log(`✅ Generated ${count} user profile pages`);
+}
+
+/**
  * Main execution
  */
 function main() {
@@ -368,7 +660,27 @@ function main() {
     generateAllBoards();
 
     console.log('\n✨ Phase 1 Complete!');
-    console.log('\n📊 Summary:');
+
+    // Phase 2: Generate threads
+    console.log('\n\nPhase 2: Thread Content Generation');
+    console.log('-----------------------------------');
+
+    generateAllThreads();
+    updateBoardLinksToThreads();
+
+    console.log('\n✨ Phase 2 Complete!');
+
+    // Phase 3: Generate user profiles
+    console.log('\n\nPhase 3: User Profile Generation');
+    console.log('-----------------------------------');
+
+    generateAllProfiles();
+
+    console.log('\n✨ Phase 3 Complete!');
+
+    // Summary
+    console.log('\n\n📊 Final Summary:');
+    console.log('==================');
     console.log(`   Forum Index: 1`);
     console.log(`   Categories: ${FORUM_CONFIG.categories.length}`);
 
@@ -379,11 +691,18 @@ function main() {
     console.log(`   Boards: ${totalBoards}`);
     console.log(`   Users Configured: ${Object.keys(USERS).length}`);
 
-    console.log('\n🎯 Next Steps:');
-    console.log('   1. Review generated pages');
-    console.log('   2. Test navigation');
-    console.log('   3. Proceed to Phase 2: Create thread content');
-    console.log('   4. Run: node generate-forum.js --phase2');
+    let totalThreadsWithContent = 0;
+    for (const threadId of Object.keys(THREAD_POSTS)) {
+        totalThreadsWithContent++;
+    }
+    console.log(`   Threads with Content: ${totalThreadsWithContent}`);
+
+    console.log('\n✅ Forum generation complete!');
+    console.log('\n🌐 Next Steps:');
+    console.log('   1. Open index.html in your browser');
+    console.log('   2. Navigate through boards and threads');
+    console.log('   3. Check that all styles load correctly');
+    console.log('   4. Add more thread content as needed');
 }
 
 // Run generator
