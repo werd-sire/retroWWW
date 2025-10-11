@@ -15,22 +15,30 @@ function showConcertDates() {
     concertWindow.document.write('<html><head><title>Rage Against Y2K - Concert Dates</title></head>');
     concertWindow.document.write('<body bgcolor="#000000" text="#FF0000">');
     concertWindow.document.write('<center><h2><font color="#FF0000">RAGE AGAINST Y2K TOUR DATES</font></h2>');
-    concertWindow.document.write('
+    concertWindow.document.write('<table border="1" cellpadding="5" bgcolor="#330000">');
+    concertWindow.document.write('<tr><td><font color="#FFFFFF">Dec 30, 1999</font></td><td><font color="#FFFF00">Y2K Eve Chaos - Detroit</font></td></tr>');
+    concertWindow.document.write('<tr><td><font color="#FFFFFF">Jan 1, 2000</font></td><td><font color="#FFFF00">Millennium Meltdown - Chicago</font></td></tr>');
+    concertWindow.document.write('<tr><td><font color="#FFFFFF">Jan 15, 2000</font></td><td><font color="#FFFF00">Post-Apocalypse Party - NYC</font></td></tr>');
+    concertWindow.document.write('<tr><td><font color="#FFFFFF">Feb 29, 2000</font></td><td><font color="#FFFF00">Leap Year Rage - Seattle</font></td></tr>');
+    concertWindow.document.write('</table>
+<br>
+
+
 
 <br>
 
 <br>
 
-<!-- Extreme/Alternative Ring Navigation -->
+<!-- Music & Bands Ring Navigation -->
 <table border="2" bgcolor="#000000" cellpadding="5" cellspacing="0" bordercolor="#00FF00">
 <tr><td align="center">
-<font size="2" color="#00FF00" face="Courier New"><b>Extreme/Alternative Ring</b><br>
+<font size="2" color="#00FF00" face="Courier New"><b>Music & Bands Ring</b><br>
 <script language="JavaScript" src="../../js/webring-data.js"></script>
 <script language="JavaScript">
 <!--
-if (typeof WEBRINGS !== 'undefined' && WEBRINGS['extreme']) {
-    var ring = WEBRINGS['extreme'];
-    var siteId = 'rage-against-y2k';
+if (typeof WEBRINGS !== 'undefined' && WEBRINGS['music']) {
+    var ring = WEBRINGS['music'];
+    var siteId = 'rage-against-y2k-music';
     var currentIndex = -1;
 
     for (var i = 0; i < ring.members.length; i++) {
@@ -46,7 +54,7 @@ if (typeof WEBRINGS !== 'undefined' && WEBRINGS['extreme']) {
         var randomIndex = Math.floor(Math.random() * ring.members.length);
 
         document.write('[<a href="' + ring.members[prevIndex].url + '"><font color="#00FFFF">Previous</font></a>] ');
-        document.write('[<a href="../../webrings/extreme-ring.html"><font color="#00FFFF">List</font></a>] ');
+        document.write('[<a href="../../webrings/music-ring.html"><font color="#00FFFF">List</font></a>] ');
         document.write('[<a href="' + ring.members[nextIndex].url + '"><font color="#00FFFF">Next</font></a>] ');
         document.write('[<a href="' + ring.members[randomIndex].url + '"><font color="#00FFFF">Random</font></a>]');
         document.write('<br><font size="1">Member ' + (currentIndex + 1) + ' of ' + ring.members.length + '</font>');
@@ -54,7 +62,7 @@ if (typeof WEBRINGS !== 'undefined' && WEBRINGS['extreme']) {
 }
 //-->
 </script>
-<noscript>[<a href="../../webrings/extreme-ring.html"><font color="#00FFFF">Extreme/Alternative Ring</font></a>]</noscript>
+<noscript>[<a href="../../webrings/music-ring.html"><font color="#00FFFF">Music & Bands Ring</font></a>]</noscript>
 </font></td></tr></table>
 
 <br>
