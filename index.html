@@ -1,0 +1,787 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CyberFind 2000 - Professional Web Directory & Search Engine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="search,engine,web,directory,internet,find,portal,cyberfind,professional">
+<meta name="description" content="CyberFind 2000 - Professional Web Directory and Search Engine. Find the best sites on the World Wide Web.">
+<style type="text/css">
+<!--
+BODY { font-family: Arial, Helvetica, sans-serif; }
+A:link { color: #0000CC; text-decoration: underline; }
+A:visited { color: #551A8B; text-decoration: underline; }
+A:hover { color: #CC0000; text-decoration: underline; }
+A:active { color: #CC0000; }
+.header { font-family: Times, serif; font-weight: bold; }
+.category { font-family: Verdana, Arial, sans-serif; font-size: 11px; }
+.small { font-size: 10px; }
+-->
+</style>
+<script language="JavaScript">
+<!--
+window.status = "Welcome to CyberFind 2000!";
+
+function displayTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeValue = "" + ((hours > 12) ? hours - 12 : hours);
+    timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+    timeValue += (hours >= 12) ? " P.M." : " A.M.";
+    document.clock.face.value = timeValue;
+    setTimeout("displayTime()",1000);
+}
+
+function randomSite() {
+    var sites = [
+        "sites/geocities-fan/index.html",
+        "sites/truth-seekers/index.html",
+        "sites/webmaster-dave/index.html",
+        "sites/pokemon-paradise/index.html",
+        "sites/beanie-baby-haven/index.html",
+        "sites/anime-shrine/index.html",
+        "sites/xtreme-sports/index.html",
+        "sites/crystal-unicorns/index.html",
+        "sites/tamagotchi-heaven/index.html",
+        "sites/steves-hamster/index.html",
+        "sites/neon-shadows/index.html",
+        "sites/federal-watch-archive/index.html",
+        "sites/rage-against-y2k/index.html",
+        "sites/y2k-tech-watch/index.html"
+    ];
+    var randomIndex = Math.floor(Math.random() * sites.length);
+    window.location = sites[randomIndex];
+}
+
+function performSearch() {
+    var query = document.searchForm.query.value;
+    if (query == "") {
+        alert("Please enter a search term.");
+        return false;
+    }
+
+    // Redirect to search results page with query parameter
+    window.location = "search-results.html?q=" + encodeURIComponent(query);
+    return false;
+}
+
+// Featured sites rotation
+var featuredSites = [
+    {
+        url: "sites/geocities-fan/index.html",
+        title: "Bobby's Pokemon Page",
+        description: "Complete Pokemon database with images and trading information. Over 150 Pokemon listed!",
+        isNew: false
+    },
+    {
+        url: "sites/federal-watch-archive/index.html",
+        title: "Federal Watch Archive",
+        description: "Dr. Patricia Caldwell's research on government transparency. 3,247 verified documents!",
+        isNew: false
+    },
+    {
+        url: "sites/tamagotchi-heaven/index.html",
+        title: "Kevin's Tamagotchi Heaven",
+        description: "The ultimate virtual pet care guide! Tips, tricks, and secret codes revealed!",
+        isNew: true
+    },
+    {
+        url: "sites/anime-shrine/index.html",
+        title: "Akira's Anime Shrine",
+        description: "Kawaii anime pictures, episode guides, and Japanese culture. Sugoi desu ne!",
+        isNew: false
+    },
+    {
+        url: "sites/beanie-baby-haven/index.html",
+        title: "Janet's Beanie Baby Haven",
+        description: "RARE Princess Diana Bear alert! Complete price guide and authentication tips.",
+        isNew: false
+    },
+    {
+        url: "sites/crystal-unicorns/index.html",
+        title: "Crystal's Magical Unicorn Emporium",
+        description: "Discover the healing power of unicorns and crystals. Free aura readings!",
+        isNew: true
+    },
+    {
+        url: "sites/webmaster-dave/index.html",
+        title: "Dave's Web Design Services",
+        description: "Professional HTML expert! Sites starting at $50. Y2K compliant guaranteed!",
+        isNew: false
+    },
+    {
+        url: "sites/neon-shadows/index.html",
+        title: "The Neon Shadows Band",
+        description: "Download our latest MP3 demos! Next show December 31st - Y2K Eve Bash!",
+        isNew: true
+    },
+    {
+        url: "sites/rage-against-y2k/index.html",
+        title: "Rage Against Y2K",
+        description: "Hardcore punk band fighting the millennium bug! New album 'Binary Apocalypse' available!",
+        isNew: true
+    },
+    {
+        url: "sites/y2k-tech-watch/index.html",
+        title: "Y2K Tech Watch",
+        description: "Latest millennium bug news and updates! Critical patches and corporate readiness reports.",
+        isNew: true
+    }
+];
+
+function displayFeaturedSite() {
+    // Get random featured site
+    var randomIndex = Math.floor(Math.random() * featuredSites.length);
+    var site = featuredSites[randomIndex];
+
+    var featuredHTML = '<font size="3" color="#000080"><b>Featured Site of the Day</b></font>';
+    if (site.isNew) {
+        featuredHTML += ' <img src="assets/gifs/new.gif" width="40" height="20" alt="NEW!">';
+    }
+    featuredHTML += '<br>';
+    featuredHTML += '<font size="2" color="#000000">';
+    featuredHTML += 'Visit <a href="' + site.url + '">' + site.title + '</a> - ';
+    featuredHTML += site.description;
+    featuredHTML += '</font>';
+
+    // Update featured site box
+    var featuredBox = document.getElementById('featuredSite');
+    if (featuredBox) {
+        featuredBox.innerHTML = featuredHTML;
+    }
+}
+
+// Animated visitor counter
+var visitorCount = 31337; // Starting count (l33t!)
+
+function initCounter() {
+    // Get stored count or use default
+    var storedCount = localStorage.getItem('cyberFindVisitors');
+    if (storedCount) {
+        visitorCount = parseInt(storedCount);
+    }
+
+    // Increment by random amount (1-5) to simulate other visitors
+    var increment = Math.floor(Math.random() * 5) + 1;
+    visitorCount += increment;
+
+    // Save new count
+    localStorage.setItem('cyberFindVisitors', visitorCount);
+
+    // Animate the counter display
+    animateCounter();
+}
+
+function animateCounter() {
+    var counterDisplay = document.getElementById('counterDisplay');
+    if (!counterDisplay) return;
+
+    var displayCount = visitorCount - 10;
+    var targetCount = visitorCount;
+
+    function updateCounter() {
+        if (displayCount < targetCount) {
+            displayCount++;
+            counterDisplay.innerHTML = formatCounter(displayCount);
+            setTimeout(updateCounter, 100);
+        } else {
+            // Add "You are visitor #X" message
+            var visitorMsg = document.getElementById('visitorMessage');
+            if (visitorMsg) {
+                visitorMsg.innerHTML = 'You are visitor #' + targetCount + '!';
+            }
+        }
+    }
+
+    updateCounter();
+}
+
+function formatCounter(num) {
+    // Format number with leading zeros (6 digits)
+    var str = '000000' + num;
+    str = str.substr(str.length - 6);
+
+    // Create odometer-style display
+    var html = '';
+    for (var i = 0; i < str.length; i++) {
+        html += '<font style="background-color: #000000; color: #00FF00; padding: 2px 4px; margin: 1px; font-family: Courier; font-size: 16px; border: 1px solid #333333;">' + str[i] + '</font>';
+    }
+    return html;
+}
+
+// Y2K Countdown Timer
+function y2kCountdown() {
+    var y2k = new Date('January 1, 2000 00:00:00');
+    var now = new Date();
+    var diff = y2k - now;
+
+    if (diff > 0) {
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        var countdownText = '<font color="#FF0000"><b>⚠ Y2K COUNTDOWN: ' + days + ' days, ' + hours + ':' +
+                           (minutes < 10 ? '0' : '') + minutes + ':' +
+                           (seconds < 10 ? '0' : '') + seconds + ' ⚠</b></font>';
+
+        var y2kDisplay = document.getElementById('y2kCountdown');
+        if (y2kDisplay) {
+            y2kDisplay.innerHTML = countdownText;
+        }
+    } else {
+        var y2kDisplay = document.getElementById('y2kCountdown');
+        if (y2kDisplay) {
+            y2kDisplay.innerHTML = '<font color="#00FF00"><b>✓ WE SURVIVED Y2K! ✓</b></font>';
+        }
+    }
+
+    setTimeout(y2kCountdown, 1000);
+}
+
+// Update site count dynamically
+function updateSiteCount() {
+    // Fake dynamic site count
+    var baseCount = 10247;
+    var variation = Math.floor(Math.random() * 100);
+    var totalSites = baseCount + variation;
+
+    var siteCountDisplay = document.getElementById('siteCount');
+    if (siteCountDisplay) {
+        siteCountDisplay.innerHTML = 'Over ' + totalSites.toLocaleString() + ' Sites Indexed';
+    }
+}
+
+// News ticker functionality
+var newsItems = [
+    "Y2K compliance testing reveals 47% of companies not ready for millennium bug!",
+    "Napster downloads exceed 1 million files per day - Record industry concerned!",
+    "AOL announces merger with Time Warner in $165 billion deal!",
+    "Linux usage grows 300% as Windows 98 crashes plague users!",
+    "NASA confirms Mars had water - Could life exist on the red planet?",
+    "Columbine tragedy raises questions about violent video games!",
+    "Euro currency officially launches in 11 European countries!",
+    "Matrix breaks box office records - Is virtual reality our future?",
+    "Pokemon craze sweeps nation - Cards selling for thousands!",
+    "Beanie Babies market crashes - Princess Bear drops 90% in value!",
+    "Star Wars Episode I tickets sell out nationwide in 2 hours!",
+    "Federal Reserve warns banks to prepare for Y2K cash runs!",
+    "Internet Explorer 5.0 released - Netscape stocks plummet!",
+    "Amazon.com stock soars 2000% - Is this a bubble?",
+    "MP3 file sharing threatens music industry profits!",
+    "Pentium III reaches 600MHz - Moore's Law continues!"
+];
+
+var currentNewsIndex = 0;
+
+function updateNewsTicker() {
+    var ticker = document.getElementById('newsTicker');
+    if (ticker) {
+        ticker.innerHTML = newsItems[currentNewsIndex];
+        currentNewsIndex = (currentNewsIndex + 1) % newsItems.length;
+    }
+}
+
+// Cool Site of the Day functionality
+var coolSites = [
+    {
+        name: "Dancing Hamsters",
+        description: "Watch adorable hamsters dance to techno music! Dee-da-dee-da-doh!",
+        url: "javascript:alert('🐹 DeedaleedledeedaleedledeedadodaDEE! 🐹')"
+    },
+    {
+        name: "All Your Base Are Belong To Us",
+        description: "Classic internet meme generator! Make your own Zero Wing translations!",
+        url: "javascript:alert('All your base are belong to us!\\nYou are on the way to destruction!')"
+    },
+    {
+        name: "X-Files Sound Board",
+        description: "The truth is out there! Play classic X-Files sound effects and quotes.",
+        url: "sites/x-files-truth/index.html"
+    },
+    {
+        name: "ASCII Art Paradise",
+        description: "The most amazing text-based art on the internet! Copy and paste galore!",
+        url: "javascript:alert('( ͡° ͜ʖ ͡°)\\n¯\\\\_(ツ)_/¯\\n♪┏(・o･)┛♪')"
+    },
+    {
+        name: "Duct Tape Fashion Show",
+        description: "High fashion made entirely from duct tape! Prom dresses, ties, and more!",
+        url: "javascript:alert('🎀 Duct Tape Couture 🎀\\nWho needs fabric when you have tape?')"
+    },
+    {
+        name: "Potato Quality Webcam",
+        description: "Watch paint dry in glorious 320x240 resolution! Updates every 30 minutes!",
+        url: "javascript:alert('📷 LIVE WEBCAM: Paint Drying 📷\\nCurrent status: Still wet')"
+    },
+    {
+        name: "Chain Letter Central",
+        description: "Forward this to 10 friends or face 7 years of bad luck! Seriously!",
+        url: "javascript:alert('📧 URGENT: Forward this or bad luck! 📧\\n(Just kidding, please don\\'t)')"
+    }
+];
+
+function displayCoolSite() {
+    // Get date-based site (changes daily)
+    var today = new Date();
+    var dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    var siteIndex = dayOfYear % coolSites.length;
+    var site = coolSites[siteIndex];
+
+    var coolSiteHTML = '<b>' + site.name + '</b><br>';
+    coolSiteHTML += site.description + '<br>';
+    coolSiteHTML += '<a href="' + site.url + '">Visit Now!</a>';
+
+    var coolSiteBox = document.getElementById('coolSite');
+    if (coolSiteBox) {
+        coolSiteBox.innerHTML = coolSiteHTML;
+    }
+}
+
+// Initialize everything on page load
+window.onload = function() {
+    displayTime();
+    displayFeaturedSite();
+    initCounter();
+    y2kCountdown();
+    updateSiteCount();
+    initPoll();
+    updateNewsTicker();
+    displayCoolSite();
+
+    // Update news ticker every 10 seconds
+    setInterval(updateNewsTicker, 10000);
+};
+
+// Quick Poll functionality
+var polls = [
+    {
+        question: "Are you prepared for Y2K?",
+        options: ["Yes, I'm ready!", "No, I'm worried", "What's Y2K?"]
+    },
+    {
+        question: "What's your favorite web browser?",
+        options: ["Netscape Navigator", "Internet Explorer", "Other"]
+    },
+    {
+        question: "Do you have a personal homepage?",
+        options: ["Yes, on GeoCities!", "Yes, elsewhere", "Not yet"]
+    },
+    {
+        question: "How fast is your internet?",
+        options: ["56K Modem", "Cable/DSL", "T1 Line!"]
+    }
+];
+
+function initPoll() {
+    // Get random poll
+    var pollIndex = Math.floor(Math.random() * polls.length);
+    var currentPoll = polls[pollIndex];
+
+    // Store current poll in localStorage
+    localStorage.setItem('currentPoll', pollIndex);
+
+    var pollQuestion = document.getElementById('pollQuestion');
+    if (pollQuestion) {
+        pollQuestion.innerHTML = currentPoll.question;
+    }
+}
+
+function submitVote(choice) {
+    // Get poll results from localStorage or initialize
+    var pollResults = JSON.parse(localStorage.getItem('pollResults') || '{}');
+    var pollIndex = localStorage.getItem('currentPoll') || '0';
+
+    if (!pollResults[pollIndex]) {
+        pollResults[pollIndex] = {yes: 0, no: 0, maybe: 0};
+    }
+
+    // Random vote padding to make it look active
+    var padding = Math.floor(Math.random() * 10) + 5;
+    pollResults[pollIndex][choice] = (pollResults[pollIndex][choice] || 0) + padding;
+
+    // Save results
+    localStorage.setItem('pollResults', JSON.stringify(pollResults));
+    localStorage.setItem('hasVoted', 'true');
+
+    alert("Thank you for voting!\n\nYour vote has been recorded.\n\nClick 'View Results' to see current standings!");
+
+    // Disable further voting
+    var radios = document.getElementsByName('vote');
+    for (var i = 0; i < radios.length; i++) {
+        radios[i].disabled = true;
+    }
+}
+
+function showPollResults() {
+    var pollResults = JSON.parse(localStorage.getItem('pollResults') || '{}');
+    var pollIndex = localStorage.getItem('currentPoll') || '0';
+
+    if (!pollResults[pollIndex]) {
+        pollResults[pollIndex] = {
+            yes: Math.floor(Math.random() * 100) + 150,
+            no: Math.floor(Math.random() * 100) + 100,
+            maybe: Math.floor(Math.random() * 50) + 20
+        };
+    }
+
+    var total = pollResults[pollIndex].yes + pollResults[pollIndex].no + pollResults[pollIndex].maybe;
+    var yesPercent = Math.round((pollResults[pollIndex].yes / total) * 100);
+    var noPercent = Math.round((pollResults[pollIndex].no / total) * 100);
+    var maybePercent = Math.round((pollResults[pollIndex].maybe / total) * 100);
+
+    var resultsWindow = window.open('', 'pollResults', 'width=400,height=300,scrollbars=yes,resizable=yes');
+    resultsWindow.document.write('<html><head><title>Poll Results</title></head>');
+    resultsWindow.document.write('<body bgcolor="#FFFFCC">');
+    resultsWindow.document.write('<center><h2>CyberFind 2000 Poll Results</h2>');
+    resultsWindow.document.write('<table border="1" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">');
+    resultsWindow.document.write('<tr><td><b>Option</b></td><td><b>Votes</b></td><td><b>Percentage</b></td></tr>');
+    resultsWindow.document.write('<tr><td>Option 1</td><td>' + pollResults[pollIndex].yes + '</td><td>' + yesPercent + '%</td></tr>');
+    resultsWindow.document.write('<tr><td>Option 2</td><td>' + pollResults[pollIndex].no + '</td><td>' + noPercent + '%</td></tr>');
+    resultsWindow.document.write('<tr><td>Option 3</td><td>' + pollResults[pollIndex].maybe + '</td><td>' + maybePercent + '%</td></tr>');
+    resultsWindow.document.write('<tr><td><b>Total</b></td><td><b>' + total + '</b></td><td><b>100%</b></td></tr>');
+    resultsWindow.document.write('</table><br>');
+    resultsWindow.document.write('<font size="2">Thank you for participating!</font>');
+    resultsWindow.document.write('</center></body></html>');
+    resultsWindow.document.close();
+}
+
+// Status bar messages
+var statusMessages = [
+    "Welcome to CyberFind 2000!",
+    "Over 10,000 sites and growing!",
+    "Y2K compliant and ready!",
+    "Best viewed in Netscape 4.0",
+    "Add us to your bookmarks!",
+    "Tell your friends about CyberFind!",
+    "New sites added daily!"
+];
+var currentStatus = 0;
+
+function rotateStatus() {
+    window.status = statusMessages[currentStatus];
+    currentStatus = (currentStatus + 1) % statusMessages.length;
+    setTimeout(rotateStatus, 3000);
+}
+setTimeout(rotateStatus, 1000);
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000CC" vlink="#551A8B" alink="#CC0000">
+
+<center>
+
+<!-- Professional Header -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#E6E6FA">
+<tr>
+<td align="center">
+<font class="small" color="#666666">
+Professional Web Directory • <span id="siteCount">Over 10,000 Sites Indexed</span> • Updated Daily
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Y2K Warning Bar -->
+<table width="100%" border="0" cellpadding="3" cellspacing="0" bgcolor="#FFFF99">
+<tr>
+<td align="center">
+<div id="y2kCountdown">
+<font color="#FF0000"><b>Loading Y2K countdown...</b></font>
+</div>
+</td>
+</tr>
+</table>
+
+<!-- News Ticker -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#000080">
+<tr>
+<td width="80">
+<font size="2" color="#FFFFFF"><b>BREAKING:</b></font>
+</td>
+<td>
+<marquee bgcolor="#000080" scrollamount="5" style="color: #FFFF00; font-size: 12px; font-weight: bold;">
+<span id="newsTicker">Loading latest news...</span>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Main Logo Area -->
+<table width="600" border="1" cellpadding="15" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F0F0F0">
+<tr>
+<td align="center">
+<font class="header" size="6" color="#000080">CyberFind</font>
+<font class="header" size="5" color="#CC0000">2000</font>
+<br>
+<font size="2" color="#666666">
+<i>Professional Web Directory & Search Engine</i>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Search Box -->
+<table width="500" border="1" cellpadding="10" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#FFFFFF">
+<tr>
+<td align="center">
+<form name="searchForm" onSubmit="return performSearch();">
+<font size="3" color="#000080"><b>Search the Web:</b></font><br><br>
+<input type="text" name="query" size="30" style="font-family: Arial; font-size: 12px; border: 1px solid #666666; padding: 2px;">
+<br><br>
+<input type="submit" value="Search" style="font-family: Arial; font-size: 11px; background-color: #E0E0E0; border: 2px outset #CCCCCC; padding: 3px 12px; cursor: hand;">
+<input type="button" value="I'm Feeling Lucky" onClick="randomSite()" style="font-family: Arial; font-size: 11px; background-color: #E0E0E0; border: 2px outset #CCCCCC; padding: 3px 12px; cursor: hand;">
+</form>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Directory Categories -->
+<table width="650" border="0" cellpadding="0" cellspacing="8">
+<tr>
+<td colspan="3" align="center" bgcolor="#E6E6FA">
+<font size="4" color="#000080"><b>Web Directory</b></font>
+</td>
+</tr>
+<tr>
+<!-- Column 1 -->
+<td width="33%" valign="top" bgcolor="#F8F8FF" style="border: 1px solid #CCCCCC; padding: 8px;">
+<font class="category" color="#000080"><b>Entertainment</b></font><br>
+<font class="category">
+• <a href="cyberfind/movies/index.html">Movies</a><br>
+• <a href="cyberfind/music/index.html">Music</a><br>
+• <a href="cyberfind/tvshows/index.html">TV Shows</a><br>
+• <a href="cyberfind/celebrities/index.html">Celebrities</a><br>
+• <a href="sites/games/index.html">Games</a><br>
+</font>
+<br>
+<font class="category" color="#000080"><b>Computers</b></font><br>
+<font class="category">
+• <a href="cyberfind/hardware/index.html">Hardware</a><br>
+• <a href="cyberfind/software/index.html">Software</a><br>
+• <a href="cyberfind/internet/index.html">Internet</a><br>
+• <a href="cyberfind/y2k/index.html">Y2K Info</a><br>
+</font>
+</td>
+<!-- Column 2 -->
+<td width="33%" valign="top" bgcolor="#F8F8FF" style="border: 1px solid #CCCCCC; padding: 8px;">
+<font class="category" color="#000080"><b>Lifestyle</b></font><br>
+<font class="category">
+• <a href="cyberfind/fashion/index.html">Fashion</a><br>
+• <a href="cyberfind/health/index.html">Health</a><br>
+• <a href="cyberfind/food/index.html">Food</a><br>
+• <a href="cyberfind/travel/index.html">Travel</a><br>
+• <a href="cyberfind/pets/index.html">Pets</a><br>
+</font>
+<br>
+<font class="category" color="#000080"><b>Reference</b></font><br>
+<font class="category">
+• <a href="cyberfind/news/index.html">News</a><br>
+• <a href="cyberfind/education/index.html">Education</a><br>
+• <a href="cyberfind/science/index.html">Science</a><br>
+• <a href="cyberfind/government/index.html">Government</a><br>
+</font>
+</td>
+<!-- Column 3 -->
+<td width="33%" valign="top" bgcolor="#F8F8FF" style="border: 1px solid #CCCCCC; padding: 8px;">
+<font class="category" color="#000080"><b>Special Interest</b></font><br>
+<font class="category">
+• <a href="sites/weird/index.html">Unusual Sites</a><br>
+• <a href="cyberfind/humor/index.html">Humor</a><br>
+• <a href="cyberfind/paranormal/index.html">Paranormal</a><br>
+• <a href="cyberfind/downloads/index.html">Downloads</a><br>
+• <a href="cyberfind/personal/index.html">Personal Pages</a><br>
+</font>
+<br>
+<font class="category" color="#000080"><b>Community</b></font><br>
+<font class="category">
+• <a href="cyberfind/chat/index.html">Chat Rooms</a><br>
+• <a href="cyberfind/forums/index.html">Forums</a><br>
+• <a href="cyberfind/dating/index.html">Dating</a><br>
+• <a href="cyberfind/classifieds/index.html">Classifieds</a><br>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Featured Sites -->
+<table width="500" border="1" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#FFF8DC">
+<tr>
+<td align="center">
+<div id="featuredSite">
+<font size="3" color="#000080"><b>Loading featured site...</b></font>
+</div>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Cool Site of the Day -->
+<table width="500" border="2" cellpadding="8" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFFFCC">
+<tr>
+<td align="center">
+<img src="assets/gifs/hot.gif" width="40" height="20" align="absmiddle">
+<font size="3" color="#FF0000"><b>COOL SITE OF THE DAY</b></font>
+<img src="assets/gifs/hot.gif" width="40" height="20" align="absmiddle">
+<br>
+<font size="2" color="#000000">
+<div id="coolSite">Loading cool site...</div>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Quick Poll -->
+<table width="500" border="1" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#E6FFED">
+<tr>
+<td align="center">
+<font size="3" color="#000080"><b>Quick Poll</b></font>
+<img src="assets/gifs/new.gif" width="40" height="20" alt="NEW!"><br>
+<font size="2" color="#000000">
+<b id="pollQuestion">Are you prepared for Y2K?</b><br><br>
+<form name="quickPoll">
+<input type="radio" name="vote" value="yes" onClick="submitVote('yes')"> Yes, I'm ready!<br>
+<input type="radio" name="vote" value="no" onClick="submitVote('no')"> No, I'm worried<br>
+<input type="radio" name="vote" value="maybe" onClick="submitVote('maybe')"> What's Y2K?<br>
+</form>
+<br>
+<a href="javascript:showPollResults()"><font size="1">View Results</font></a>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Bottom Features -->
+<table width="600" border="0" cellpadding="8" cellspacing="8">
+<tr>
+<td width="50%" bgcolor="#F0F0F0" style="border: 1px solid #CCCCCC;">
+<center>
+<font size="2" color="#000080"><b>Site Statistics</b></font><br>
+<div id="counterDisplay" style="margin: 5px;">
+<img src="assets/gifs/counter.gif" width="100" height="30" alt="Loading...">
+</div>
+<font class="small" color="#666666">Visitors since January 1999</font><br>
+<font class="small" color="#FF0000"><b><span id="visitorMessage"></span></b></font>
+</center>
+</td>
+<td width="50%" bgcolor="#F0F0F0" style="border: 1px solid #CCCCCC;">
+<center>
+<form name="clock">
+<font size="2" color="#000080"><b>Current Time</b></font><br>
+<input type="text" name="face" size="12" style="background-color: #FFFFFF; color: #000000; border: 1px solid #CCCCCC; font-family: Arial; text-align: center; font-size: 11px;" readonly>
+</form>
+</center>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Web Ring -->
+<table width="400" border="1" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F8F8FF">
+<tr>
+<td align="center">
+<font size="2" color="#000080">
+Member of the <b>Professional Directory Ring</b><br>
+<script language="JavaScript">
+<!--
+var currentSite = 'cyberfind';
+var sites = [
+    {id: 'cyberfind', url: 'index.html', name: 'CyberFind 2000'},
+    {id: 'webmaster-dave', url: 'sites/webmaster-dave/index.html', name: "Dave's Professional Web Services"},
+    {id: 'neon-shadows', url: 'sites/neon-shadows/index.html', name: 'Neon Shadows Design Studio'}
+];
+
+function showProfessionalSites() {
+    var content = '<html><head><title>Professional Directory Ring Sites</title></head><body bgcolor="#F0F0F0"><center><h2>Professional Directory Ring</h2><table border="1" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">';
+    for (var i = 0; i < sites.length; i++) {
+        content += '<tr><td><a href="' + sites[i].url + '" target="_parent">' + sites[i].name + '</a></td></tr>';
+    }
+    content += '</table></center></body></html>';
+    var listWindow = window.open('', 'sitelist', 'width=400,height=300,scrollbars=yes,resizable=yes');
+    listWindow.document.write(content);
+    listWindow.document.close();
+}
+
+var currentIndex = 0;
+for (var i = 0; i < sites.length; i++) {
+    if (sites[i].id === currentSite) {
+        currentIndex = i;
+        break;
+    }
+}
+
+var prevIndex = (currentIndex - 1 + sites.length) % sites.length;
+var nextIndex = (currentIndex + 1) % sites.length;
+var randomIndex = Math.floor(Math.random() * sites.length);
+
+document.write('[<a href="' + sites[prevIndex].url + '"><font color="#000080">Previous</font></a>] ');
+document.write('[<a href="' + sites[nextIndex].url + '"><font color="#000080">Next</font></a>] ');
+document.write('[<a href="' + sites[randomIndex].url + '"><font color="#000080">Random</font></a>] ');
+document.write('[<a href="javascript:showProfessionalSites()"><font color="#000080">List Sites</font></a>]');
+//-->
+</script>
+<noscript>
+[<a href="sites/webmaster-dave/index.html">Previous</a>] [<a href="sites/neon-shadows/index.html">Next</a>] [<a href="webrings/professional-ring.html">List Sites</a>]
+</noscript>
+<font class="small">
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="500" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td align="center" bgcolor="#E6E6FA">
+<font class="small" color="#666666">
+<a href="about.html">About CyberFind</a> |
+<a href="submit.html">Submit Your Site</a> |
+<a href="advertise.html">Advertise</a> |
+<a href="mailto:webmaster@cyberfind2000.net">Contact</a>
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font class="small" color="#999999">
+&copy; 1999-2000 CyberFind 2000 Professional Directory. All Rights Reserved.<br>
+Best viewed at 800x600 resolution with Internet Explorer 4.0 or Netscape 4.0
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="assets/gifs/html32.gif" width="88" height="31" alt="HTML 3.2 Compliant">
+<img src="assets/gifs/y2k.gif" width="88" height="31" alt="Y2K Ready!">
+<img src="assets/gifs/real_download.gif" width="88" height="31" alt="Download Real Player!">
+<img src="assets/gifs/netscape.gif" width="88" height="31" alt="Netscape Browser!">
+</td>
+</tr>
+</table>
+
+</center>
+
+<!-- Removed background music for professional experience -->
+
+</body>
+</html>

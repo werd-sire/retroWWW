@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>{{FORUM_NAME}} - {{TAGLINE}}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="{{FORUM_NAME}} - The ultimate online community for discussion, tech support, gaming, and more!">
+<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="forum-header">
+<tr>
+<td>
+<div class="forum-logo">{{FORUM_NAME}}</div>
+<div class="forum-tagline">{{TAGLINE}}</div>
+</td>
+<td align="right" valign="top">
+<font size="1" color="#99CCFF">
+Founded: {{FOUNDED}}<br>
+Version {{VERSION}}
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+<a href="index.html">Forum Index</a> |
+<a href="#search">Search</a> |
+<a href="#members">Members</a> |
+<a href="#profile">Profile</a> |
+<a href="#pm">Private Messages</a> |
+<a href="#logout">Logout</a>
+</div>
+
+<!-- News Ticker -->
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="news-ticker">
+<tr>
+<td>
+<b>📰 Forum News:</b> {{NEWS_TICKER}}
+</td>
+</tr>
+</table>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<a href="../../index.html">CyberFind Home</a> &gt; <b>{{FORUM_NAME}}</b>
+</div>
+
+<br>
+
+<!-- Who's Online -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" class="stats-box">
+<tr>
+<td>
+<span class="stats-header">Who's Online</span><br>
+<span class="stats-content">
+<span class="user-online">●</span> {{ONLINE_COUNT}} users active ({{ONLINE_MEMBERS}} members, {{ONLINE_GUESTS}} guests)<br>
+Most users ever online: {{MOST_ONLINE_COUNT}} on {{MOST_ONLINE_DATE}}<br>
+<span style="font-size: 9px;">{{ONLINE_USERS}}</span>
+</span>
+</td>
+</tr>
+</table>
+
+<div class="spacer"></div>
+
+<!-- Forum Categories and Boards -->
+{{CATEGORIES}}
+
+<div class="spacer"></div>
+
+<!-- Forum Statistics -->
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="stats-box">
+<tr>
+<td width="50%">
+<span class="stats-header">Forum Statistics</span><br>
+<span class="stats-content">
+Total Posts: <b>{{TOTAL_POSTS}}</b><br>
+Total Threads: <b>{{TOTAL_THREADS}}</b><br>
+Total Members: <b>{{TOTAL_MEMBERS}}</b><br>
+Newest Member: <b><a href="#">{{NEWEST_MEMBER}}</a></b>
+</span>
+</td>
+<td width="50%">
+<span class="stats-header">Forum Birthday</span><br>
+<span class="stats-content">
+{{BIRTHDAYS}}
+</span>
+</td>
+</tr>
+</table>
+
+<div class="spacer"></div>
+
+<!-- Recent Activity -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" class="stats-box">
+<tr>
+<td>
+<span class="stats-header">Recent Activity</span><br>
+<span class="stats-content">
+{{RECENT_ACTIVITY}}
+</span>
+</td>
+</tr>
+</table>
+
+<!-- Footer -->
+<div class="forum-footer">
+Powered by CyberChat Forum Software {{VERSION}}<br>
+&copy; 1998-1999 {{FORUM_NAME}} • All times are GMT -8<br>
+<br>
+<font size="1">
+<a href="#top">Back to Top</a> |
+<a href="#privacy">Privacy Policy</a> |
+<a href="#terms">Terms of Service</a> |
+<a href="#contact">Contact Admin</a>
+</font>
+</div>
+
+</body>
+</html>

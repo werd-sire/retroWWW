@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CyberFind 2000 - Search Results</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+BODY { font-family: Arial, Helvetica, sans-serif; }
+A:link { color: #0000CC; text-decoration: underline; }
+A:visited { color: #551A8B; text-decoration: underline; }
+A:hover { color: #CC0000; text-decoration: underline; }
+A:active { color: #CC0000; }
+.header { font-family: Times, serif; font-weight: bold; }
+.small { font-size: 10px; }
+.result { margin-bottom: 15px; border-left: 3px solid #CCCCCC; padding-left: 10px; }
+.result-title { font-size: 14px; font-weight: bold; }
+.result-url { color: #008000; font-size: 11px; }
+.result-snippet { font-size: 12px; margin-top: 3px; }
+.broken-link { color: #999999; text-decoration: line-through; }
+.error-text { color: #CC0000; font-size: 10px; }
+-->
+</style>
+<script src="search-database.js"></script>
+<script language="JavaScript">
+<!--
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+function displayResults() {
+    var query = getUrlParameter('q');
+    var resultsContainer = document.getElementById('results');
+    var queryDisplay = document.getElementById('query');
+    var resultCount = document.getElementById('resultCount');
+
+    if (!query) {
+        resultsContainer.innerHTML = '<p>No search query provided.</p>';
+        return;
+    }
+
+    queryDisplay.innerHTML = query;
+
+    // Load search database (dynamically generated)
+    var realSites = [];
+    var brokenSites = [];
+
+    // Try to load the auto-generated search database
+    try {
+        if (typeof SEARCH_DATABASE !== 'undefined') {
+            realSites = SEARCH_DATABASE.filter(function(site) { return site.working === true; });
+        }
+        if (typeof BROKEN_SITES !== 'undefined') {
+            brokenSites = BROKEN_SITES;
+        }
+    } catch (e) {
+        console.log('Using fallback search data');
+    }
+
+    // Fallback data if search database fails to load
+    if (realSites.length === 0) {
+        realSites = [
+            {
+                url: "sites/geocities-fan/index.html",
+                title: "Bobby's Pokemon Page - The Ultimate Pokemon Resource!",
+                snippet: "Welcome to my Pokemon page! I have all 150 Pokemon listed with pictures! Trading cards, game tips, and more!",
+                keywords: "pokemon pikachu charizard cards nintendo gameboy ash misty brock",
+                working: true
+            },
+            {
+                url: "sites/federal-watch-archive/index.html",
+                title: "Federal Watch Archive - Dr. Patricia Caldwell - Government Transparency Research",
+                snippet: "Independent research on federal accountability and transparency by Dr. Patricia Caldwell, former Defense Intelligence Agency analyst. 3,247 verified documents.",
+                keywords: "government declassified documents foia cia fbi transparency research whistleblower intelligence",
+                working: true
+            }
+        ];
+    }
+
+    if (brokenSites.length === 0) {
+        brokenSites = [
+            {
+                url: "error-404.html",
+                title: "Mike's Computer Lab - Programming Tutorials",
+                snippet: "Learn Java, C++, and Visual Basic! Step-by-step tutorials for beginners.",
+                keywords: "programming java c++ visual basic tutorials computer science code",
+                working: false,
+                error: "404 - Page Not Found"
+            }
+        ];
+    }
+
+    // Improved search algorithm with relevance scoring
+    query = query.toLowerCase();
+    var results = [];
+    var searchTerms = query.split(' ').filter(function(term) { return term.length >= 2; });
+
+    // Search real sites first
+    for (var i = 0; i < realSites.length; i++) {
+        var site = realSites[i];
+        var score = 0;
+
+        for (var t = 0; t < searchTerms.length; t++) {
+            var term = searchTerms[t];
+
+            // Exact title matches (highest priority)
+            if (site.title.toLowerCase().indexOf(term) != -1) {
+                score += 10;
+            }
+            // Keyword matches (high priority)
+            if (site.keywords.toLowerCase().indexOf(term) != -1) {
+                score += 7;
+            }
+            // Snippet matches (medium priority)
+            if (site.snippet.toLowerCase().indexOf(term) != -1) {
+                score += 3;
+            }
+        }
+
+        if (score > 0) {
+            site.relevanceScore = score;
+            results.push(site);
+        }
+    }
+
+    // Only add 1-2 broken sites if we have some results, and only for certain searches
+    if (results.length > 0 && Math.random() < 0.3) {
+        for (var b = 0; b < brokenSites.length && results.length < 8; b++) {
+            var brokenSite = brokenSites[b];
+            var brokenScore = 0;
+
+            for (var t = 0; t < searchTerms.length; t++) {
+                var term = searchTerms[t];
+                if (brokenSite.title.toLowerCase().indexOf(term) != -1 ||
+                    brokenSite.keywords.toLowerCase().indexOf(term) != -1) {
+                    brokenScore += 1;
+                }
+            }
+
+            if (brokenScore > 0 && Math.random() < 0.5) {
+                brokenSite.relevanceScore = brokenScore;
+                results.push(brokenSite);
+                break; // Only add one broken site
+            }
+        }
+    }
+
+    // Sort by relevance score (higher scores first), prioritize working sites
+    results.sort(function(a, b) {
+        if (a.working === true && b.working !== true) return -1;
+        if (b.working === true && a.working !== true) return 1;
+        return b.relevanceScore - a.relevanceScore;
+    });
+
+    // Limit to top 10 results
+    results = results.slice(0, 10);
+
+    // Display results count
+    if (results.length == 0) {
+        resultCount.innerHTML = "No results found";
+        resultsContainer.innerHTML = '<div class="result"><p><b>No results found for "' + query + '"</b></p><p>Suggestions:<br>• Try different keywords<br>• Check your spelling<br>• Try broader terms<br>• Search for "pokemon", "conspiracy", or "web design"</p></div>';
+        return;
+    }
+
+    resultCount.innerHTML = "About " + results.length + " results found";
+
+    // Display results
+    var html = '';
+    for (var j = 0; j < results.length; j++) {
+        var result = results[j];
+        html += '<div class="result">';
+
+        if (result.working === true) {
+            html += '<div class="result-title"><a href="' + result.url + '">' + result.title + '</a></div>';
+            html += '<div class="result-url">' + window.location.protocol + '//' + window.location.host + window.location.pathname.replace('search-results.html', '').replace('search-results-new.html', '') + result.url + '</div>';
+            html += '<div class="result-snippet">' + result.snippet + '</div>';
+        } else {
+            html += '<div class="result-title"><a href="javascript:brokenLink(\'' + result.error + '\')" class="broken-link">' + result.title + '</a></div>';
+            html += '<div class="result-url">' + window.location.protocol + '//' + window.location.host + window.location.pathname.replace('search-results.html', '').replace('search-results-new.html', '') + result.url + '</div>';
+            html += '<div class="result-snippet">' + result.snippet + '</div>';
+            html += '<div class="error-text">' + result.error + '</div>';
+        }
+
+        html += '</div>';
+    }
+
+    resultsContainer.innerHTML = html;
+}
+
+function brokenLink(errorType) {
+    if (errorType == "404 - Page Not Found") {
+        window.location = "error-404.html";
+    } else if (errorType == "500 - Internal Server Error") {
+        window.location = "error-500.html";
+    } else {
+        window.location = "error-404.html";
+    }
+}
+
+function weirdRedirect(destination) {
+    alert("Redirecting...\n\nYou are being redirected to a different page.");
+    setTimeout(function() {
+        window.location = destination;
+    }, 1000);
+}
+
+window.onload = displayResults;
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000CC" vlink="#551A8B" alink="#CC0000">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#E6E6FA">
+<tr>
+<td align="center">
+<font class="small" color="#666666">
+<a href="index.html">CyberFind Home</a> |
+<a href="about.html">About</a> |
+<a href="submit.html">Submit Site</a> |
+<a href="advertise.html">Advertise</a>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Logo -->
+<table width="500" border="1" cellpadding="10" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F0F0F0">
+<tr>
+<td align="center">
+<font class="header" size="4" color="#000080">CyberFind</font>
+<font class="header" size="3" color="#CC0000">2000</font>
+<br>
+<font size="2" color="#666666">
+<i>Search Results</i>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Search Box -->
+<table width="500" border="1" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#FFFFFF">
+<tr>
+<td align="center">
+<form name="searchForm" action="search-results.html" method="get">
+<font size="2"><b>Search Again:</b></font><br>
+<input type="text" name="q" size="30" style="font-family: Arial; font-size: 11px; border: 1px solid #666666; padding: 2px;">
+<input type="submit" value="Search" style="font-family: Arial; font-size: 11px; background-color: #E0E0E0; border: 2px outset #CCCCCC; padding: 3px 12px;">
+</form>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Results Info -->
+<table width="600" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td>
+<font size="2">
+Search results for: <b><span id="query">[query]</span></b><br>
+<span id="resultCount">Searching...</span>
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Results -->
+<table width="600" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<div id="results">
+<p>Loading results...</p>
+</div>
+</td>
+</tr>
+</table>
+
+<br><br>
+
+<!-- Footer -->
+<table width="600" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center">
+<font class="small" color="#666666">
+CyberFind 2000 - Your Gateway to the World Wide Web<br>
+<a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+</body>
+</html>

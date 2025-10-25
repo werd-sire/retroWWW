@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Sarah's REAL Pokemon Paradise - THE ORIGINAL & AUTHENTIC POKEMON SITE!</TITLE>
+<META NAME="description" CONTENT="The ORIGINAL Pokemon fan site! Don't be fooled by THIEVES and COPYCATS!">
+<META NAME="keywords" CONTENT="pokemon,pikachu,original,real,authentic,sarah,not bobby,thief,stolen">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// alert("WELCOME TO THE *ORIGINAL* POKEMON PARADISE!\n\nBEWARE OF IMPOSTERS WHO STEAL ARTWORK!\n\nThis is the REAL Pokemon site by Sarah!");
+
+function warnVisitors() {
+    if(confirm("IMPORTANT WARNING!\n\nHave you visited a Pokemon site by someone named 'Bobby'?\n\nIf YES, click OK to learn the TRUTH about stolen artwork!\nIf NO, click Cancel to continue.")) {
+        window.open('bobby_exposed.html', 'expose', 'width=500,height=400,scrollbars=yes');
+    }
+}
+
+function protectImages() {
+    // alert("IMAGE PROTECTION ACTIVATED!\n\nThis site's artwork is COPYRIGHTED and protected!\n\nSTEALING IS ILLEGAL AND WILL BE REPORTED!");
+    return false;
+}
+
+document.oncontextmenu = protectImages;
+document.onselectstart = function() {
+    // alert("NO COPYING ALLOWED!\n\nThis content is protected!");
+    return false;
+}
+
+var scrollText = "*** SARAH'S POKEMON PARADISE - ESTABLISHED 1998 - BEWARE OF COPYCAT SITES *** ";
+var pos = 0;
+function scrollStatus() {
+    window.status = scrollText.substring(pos) + scrollText.substring(0, pos);
+    pos++;
+    if (pos > scrollText.length) pos = 0;
+    setTimeout("scrollStatus()", 100);
+}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FF1493" TEXT="#000000" LINK="#FFFF00" VLINK="#00FF00" ALINK="#FFFFFF" 
+      BACKGROUND="../../assets/gifs/sarah_pokeball_bg.gif" onLoad="scrollStatus(); setTimeout('warnVisitors()', 3000);">
+
+<CENTER>
+
+<!-- Warning Banner -->
+<TABLE WIDTH="100%" BORDER="5" CELLPADDING="10" CELLSPACING="0" BORDERCOLOR="#FF0000" BGCOLOR="#FFFF00">
+<TR>
+<TD ALIGN="CENTER">
+<FONT FACE="Arial Black" SIZE="4" COLOR="#FF0000">
+<BLINK>⚠️ WARNING: BEWARE OF COPYCAT SITES! ⚠️</BLINK>
+</FONT>
+<BR>
+<FONT FACE="Comic Sans MS" SIZE="3" COLOR="#000000">
+This is the ORIGINAL Pokemon Paradise by Sarah! Don't be fooled by THIEVES!
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Main Header -->
+<TABLE WIDTH="750" BORDER="10" CELLPADDING="15" CELLSPACING="0" BORDERCOLOR="#9932CC" BGCOLOR="#FFB6C1">
+<TR>
+<TD ALIGN="CENTER">
+<IMG SRC="../../assets/gifs/sarah_pikachu.gif" WIDTH="120" HEIGHT="100" ALT="ORIGINAL Pikachu">
+<BR>
+<FONT FACE="Comic Sans MS" SIZE="7" COLOR="#9932CC">
+Sarah's REAL Pokemon Paradise
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="4" COLOR="#000080">
+★ THE ORIGINAL ★ ESTABLISHED 1998 ★ ACCEPT NO SUBSTITUTES ★
+</FONT>
+<BR>
+<MARQUEE BEHAVIOR="alternate" SCROLLAMOUNT="5" WIDTH="600">
+<FONT FACE="Impact" SIZE="4" COLOR="#FF0000">
+*** ORIGINAL CONTENT - NOT STOLEN LIKE SOME SITES ***
+</FONT>
+</MARQUEE>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Copyright Notice -->
+<TABLE WIDTH="650" BORDER="7" CELLPADDING="15" CELLSPACING="0" BORDERCOLOR="#FF0000" BGCOLOR="#000000">
+<TR>
+<TD ALIGN="CENTER">
+<FONT FACE="Arial Black" SIZE="4" COLOR="#FF0000">
+🚨 COPYRIGHT NOTICE 🚨
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="3" COLOR="#FFFFFF">
+ALL ARTWORK, HTML CODE, AND CONTENT ON THIS SITE IS<BR>
+<FONT COLOR="#FFFF00">© COPYRIGHT 1998-1999 SARAH MITCHELL</FONT><BR>
+UNAUTHORIZED COPYING IS <FONT COLOR="#FF0000">ILLEGAL</FONT> AND WILL BE PROSECUTED!<BR>
+<BR>
+<FONT COLOR="#00FF00">IF YOU SEE MY ARTWORK ON OTHER SITES, PLEASE EMAIL ME!</FONT>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- About Sarah -->
+<TABLE WIDTH="700" BORDER="5" CELLPADDING="20" CELLSPACING="0" BORDERCOLOR="#00FF00" BGCOLOR="#90EE90">
+<TR>
+<TD>
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="150" VALIGN="TOP" ALIGN="CENTER">
+<IMG SRC="../../assets/gifs/sarah_photo.gif" WIDTH="120" HEIGHT="150" BORDER="3" ALT="Sarah">
+<BR>
+<FONT FACE="Arial" SIZE="2" COLOR="#000080">
+<B>Sarah Mitchell<BR>Age: 15<BR>Pokemon Fan Since 1996!</B>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT FACE="Comic Sans MS" SIZE="4" COLOR="#000080">
+<B>Welcome to the ORIGINAL Pokemon Paradise!</B>
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="3" COLOR="#000000">
+Hi! I'm Sarah and I've been a Pokemon fan since RED and BLUE first came out in America! 
+I started this website in January 1998 - making it one of the FIRST Pokemon fan sites 
+on the internet!
+<BR><BR>
+I spend HOURS creating original artwork, writing Pokemon guides, and making this site 
+the best Pokemon resource on the web. Unfortunately, some THIEVES have been stealing 
+my hard work and claiming it as their own!
+<BR><BR>
+<FONT COLOR="#FF0000"><B>I am NOT "Bobby" and I did NOT steal anyone's work! 
+My site came FIRST and I have PROOF!</B></FONT>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Evidence Section -->
+<TABLE WIDTH="700" BORDER="8" CELLPADDING="15" CELLSPACING="0" BORDERCOLOR="#FF0000" BGCOLOR="#FFF8DC">
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#FF4500">
+<FONT FACE="Impact" SIZE="5" COLOR="#FFFFFF">
+📋 PROOF OF ORIGINALITY 📋
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD>
+<FONT FACE="Verdana" SIZE="3" COLOR="#000000">
+<B>Here is DOCUMENTED PROOF that my site is the original:</B>
+</FONT>
+
+<UL>
+<LI><FONT COLOR="#000080"><B>Site Creation Date:</B> January 15, 1998 (I have the GeoCities email to prove it!)</FONT></LI>
+<LI><FONT COLOR="#000080"><B>Original Artwork:</B> All Pokemon drawings were hand-drawn by me in 1998</FONT></LI>
+<LI><FONT COLOR="#000080"><B>HTML Code:</B> I learned HTML myself and wrote every line of code</FONT></LI>
+<LI><FONT COLOR="#000080"><B>Witnesses:</B> My friends Jessica and Amanda can verify I had this site first</FONT></LI>
+<LI><FONT COLOR="#000080"><B>School Project:</B> I used this site for my computer class project in March 1998</FONT></LI>
+</UL>
+
+<CENTER>
+<TABLE BORDER="3" CELLPADDING="10" BGCOLOR="#FFCCCC" BORDERCOLOR="#FF0000">
+<TR>
+<TD ALIGN="CENTER">
+<FONT FACE="Arial Black" SIZE="3" COLOR="#FF0000">
+STOLEN ARTWORK ALERT!
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="2" COLOR="#000000">
+Someone calling himself "Bobby" has STOLEN my Pikachu drawings<br>
+and is using them on his copycat site!<br>
+<A HREF="evidence.html"><B>CLICK HERE FOR PROOF!</B></A>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Pokemon Content -->
+<TABLE WIDTH="100%" BORDER="6" CELLPADDING="15" CELLSPACING="5" BORDERCOLOR="#9932CC" BGCOLOR="#E6E6FA">
+<TR>
+<TD COLSPAN="2" ALIGN="CENTER" BGCOLOR="#9932CC">
+<FONT FACE="Arial Black" SIZE="5" COLOR="#FFFFFF">MY ORIGINAL POKEMON CONTENT</FONT>
+</TD>
+</TR>
+<TR>
+<TD WIDTH="50%" BGCOLOR="#F0F8FF">
+<FONT FACE="Comic Sans MS" SIZE="4" COLOR="#9932CC">
+<B>🎨 Original Artwork Gallery</B>
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="3" COLOR="#000000">
+View my hand-drawn Pokemon artwork!<br>
+<FONT SIZE="2" COLOR="#FF0000">(COPYRIGHTED - DO NOT STEAL!)</FONT>
+<BR><BR>
+• 50+ Original Pokemon Drawings<br>
+• Custom Pikachu Animations<br>
+• Pokemon Type Charts<br>
+• Evolution Diagrams<br>
+<BR>
+<A HREF="gallery.html"><B>VIEW GALLERY</B></A>
+</FONT>
+</TD>
+<TD WIDTH="50%" BGCOLOR="#FFF0F5">
+<FONT FACE="Comic Sans MS" SIZE="4" COLOR="#9932CC">
+<B>📚 Complete Pokemon Guide</B>
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="3" COLOR="#000000">
+The most comprehensive Pokemon guide online!<br>
+<FONT SIZE="2" COLOR="#FF0000">(WRITTEN BY ME - NOT COPIED!)</FONT>
+<BR><BR>
+• All 151 Pokemon Profiles<br>
+• Move Lists and Stats<br>
+• Location Guides<br>
+• Battle Strategies<br>
+<BR>
+<A HREF="guide.html"><B>READ GUIDE</B></A>
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#F5F5DC">
+<FONT FACE="Comic Sans MS" SIZE="4" COLOR="#9932CC">
+<B>🎮 Game Tips & Tricks</B>
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="3" COLOR="#000000">
+REAL tips discovered by me personally!<br>
+<FONT SIZE="2" COLOR="#FF0000">(NOT STOLEN FROM OTHER SITES!)</FONT>
+<BR><BR>
+• Secret Item Locations<br>
+• Rare Pokemon Encounters<br>
+• Gym Leader Strategies<br>
+• Elite Four Tactics<br>
+<BR>
+<A HREF="tips.html"><B>VIEW TIPS</B></A>
+</FONT>
+</TD>
+<TD BGCOLOR="#FFFACD">
+<FONT FACE="Comic Sans MS" SIZE="4" COLOR="#9932CC">
+<B>💌 Pokemon Pen Pals</B>
+</FONT>
+<BR>
+<FONT FACE="Arial" SIZE="3" COLOR="#000000">
+Meet other REAL Pokemon fans!<br>
+<FONT SIZE="2" COLOR="#FF0000">(THIEVES NOT WELCOME!)</FONT>
+<BR><BR>
+• Trading Partner Finder<br>
+• Pokemon Discussion Forum<br>
+• Fan Art Exchange<br>
+• Battle Buddy System<br>
+<BR>
+<A HREF="penpals.html"><B>JOIN NOW</B></A>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Hall of Shame -->
+<TABLE WIDTH="650" BORDER="5" CELLPADDING="15" CELLSPACING="0" BORDERCOLOR="#000000" BGCOLOR="#696969">
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#FF0000">
+<FONT FACE="Impact" SIZE="4" COLOR="#FFFFFF">
+🔥 HALL OF SHAME 🔥
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#FFFFFF">
+<FONT FACE="Arial" SIZE="3" COLOR="#000000">
+<CENTER><B>SITES THAT HAVE STOLEN FROM ME:</B></CENTER>
+<BR>
+<FONT COLOR="#FF0000">⚠️ <B>"Bobby's Pokemon Page"</B></FONT> - STOLE my Pikachu artwork and HTML layout!<BR>
+<FONT SIZE="2">Located at: [some GeoCities URL] - AVOID THIS COPYCAT!</FONT>
+<BR><BR>
+<FONT COLOR="#FF0000">⚠️ <B>"Pokemon Central"</B></FONT> - COPIED my Pokemon guide word-for-word!<BR>
+<FONT SIZE="2">Located at: [some Tripod URL] - PLAGIARISM!</FONT>
+<BR><BR>
+<FONT COLOR="#FF0000">⚠️ <B>"PokeFan2000"</B></FONT> - Using my custom backgrounds without permission!<BR>
+<FONT SIZE="2">Located at: [some Angelfire URL] - COPYRIGHT THIEF!</FONT>
+<BR><BR>
+<CENTER>
+<FONT FACE="Comic Sans MS" SIZE="2" COLOR="#666666">
+<I>If you know of other sites stealing my work, please email me immediately!</I>
+</FONT>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Anti-Theft Message -->
+<TABLE WIDTH="600" BORDER="7" CELLPADDING="20" CELLSPACING="0" BORDERCOLOR="#FF0000" BGCOLOR="#FFE4E1">
+<TR>
+<TD ALIGN="CENTER">
+<FONT FACE="Arial Black" SIZE="4" COLOR="#FF0000">
+MESSAGE TO THIEVES:
+</FONT>
+<BR>
+<FONT FACE="Comic Sans MS" SIZE="3" COLOR="#000000">
+I know who you are and I WILL catch you!<BR>
+Stealing artwork is ILLEGAL and WRONG!<BR>
+<BR>
+<FONT COLOR="#FF0000">TO "BOBBY": TAKE DOWN MY ARTWORK NOW!</FONT><BR>
+I have already reported you to GeoCities!<BR>
+<BR>
+<FONT COLOR="#008000">TO VISITORS: Please don't support copycat sites!<BR>
+Only visit the ORIGINAL Pokemon Paradise!</FONT>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Guest Book -->
+<TABLE WIDTH="650" BORDER="6" CELLPADDING="15" CELLSPACING="0" BORDERCOLOR="#9932CC" BGCOLOR="#DDA0DD">
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#8A2BE2">
+<FONT FACE="Comic Sans MS" SIZE="4" COLOR="#FFFFFF">
+💜 SIGN MY GUEST BOOK! 💜
+</FONT>
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#F8F8FF">
+<FORM ACTION="mailto:sarahspokemon@hotmail.com" METHOD="POST">
+<TABLE WIDTH="100%" BORDER="0" CELLPADDING="5">
+<TR>
+<TD ALIGN="RIGHT"><FONT SIZE="3"><B>Name:</B></FONT></TD>
+<TD><INPUT TYPE="text" NAME="name" SIZE="30"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT"><FONT SIZE="3"><B>Age:</B></FONT></TD>
+<TD><INPUT TYPE="text" NAME="age" SIZE="5"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT"><FONT SIZE="3"><B>Favorite Pokemon:</B></FONT></TD>
+<TD><INPUT TYPE="text" NAME="pokemon" SIZE="30"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" VALIGN="TOP"><FONT SIZE="3"><B>Message:</B></FONT></TD>
+<TD><TEXTAREA NAME="message" ROWS="4" COLS="40"></TEXTAREA></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" ALIGN="CENTER">
+<INPUT TYPE="submit" VALUE="SIGN GUEST BOOK!" STYLE="background-color: #FF69B4; color: #FFFFFF; font-weight: bold;">
+</TD>
+</TR>
+</TABLE>
+</FORM>
+
+<HR>
+
+<FONT FACE="Arial" SIZE="2" COLOR="#000000">
+<B>Recent Guest Book Entries:</B><BR>
+<BR>
+<B>Jessica:</B> "Sarah's site is SO much better than that copycat Bobby's site! Team Sarah!"<BR>
+<B>Amanda:</B> "I saw Bobby's site and it's totally stolen from here! So unfair!"<BR>
+<B>PokeFan99:</B> "Your artwork is amazing Sarah! Don't let the thieves get you down!"<BR>
+<B>MistyTrainer:</B> "I can't believe someone would steal your work! Reported Bobby's site!"<BR>
+</FONT>
+
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Footer -->
+<TABLE WIDTH="100%" BORDER="3" CELLPADDING="10" CELLSPACING="0" BORDERCOLOR="#000000" BGCOLOR="#000000">
+<TR>
+<TD ALIGN="CENTER">
+<FONT FACE="Arial" SIZE="3" COLOR="#FFFFFF">
+📧 <B>Email Sarah:</B> sarahspokemon@hotmail.com<BR>
+🔗 <B>ICQ:</B> 98765432 • <B>AIM:</B> PokemonSarah15<BR>
+<BR>
+<FONT COLOR="#FFFF00">This site has been visited by <IMG SRC="../../assets/gifs/sarah_counter.gif" WIDTH="100" HEIGHT="30" ALT="Counter"> trainers!</FONT><BR>
+<BR>
+<FONT SIZE="2" COLOR="#CCCCCC">
+Pokemon Paradise created January 15, 1998 by Sarah Mitchell<BR>
+All content © 1998-1999 Sarah Mitchell - UNAUTHORIZED COPYING PROHIBITED<BR>
+Pokemon © Nintendo/Game Freak - This is a fan site<BR>
+<BR>
+Best viewed in Netscape Navigator 4.0+ at 800x600<BR>
+<BR>
+<FONT COLOR="#FF0000">⚠️ If you see this site's content elsewhere, it's STOLEN! ⚠️</FONT><BR>
+Last updated: December 22, 1999 (Added more evidence against thieves!)
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+</CENTER>
+
+<!-- Hidden MIDI player -->
+<EMBED SRC="../../assets/midi/sarah_pokemon.mid" AUTOSTART="TRUE" LOOP="TRUE" HIDDEN="TRUE" HEIGHT="0" WIDTH="0">
+
+</BODY>
+</HTML>

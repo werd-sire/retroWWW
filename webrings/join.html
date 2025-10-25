@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Join a Web Ring - CyberFind 2000</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+BODY { font-family: Arial, Helvetica, sans-serif; background-color: #FFFFFF; }
+-->
+</style>
+<script language="JavaScript">
+<!--
+function submitForm() {
+    var ring = document.joinForm.ring.value;
+    var siteName = document.joinForm.siteName.value;
+    var siteURL = document.joinForm.siteURL.value;
+    var email = document.joinForm.email.value;
+
+    if (ring == "") {
+        alert("Please select a web ring!");
+        return false;
+    }
+    if (siteName == "") {
+        alert("Please enter your site name!");
+        return false;
+    }
+    if (siteURL == "") {
+        alert("Please enter your site URL!");
+        return false;
+    }
+    if (email == "") {
+        alert("Please enter your email address!");
+        return false;
+    }
+
+    alert("Thank you for your submission!\n\nYour application to join the " + ring + " ring has been received.\n\nWe will review your site and email you within 3-5 business days with instructions for adding the web ring navigation code.\n\nPlease check your email regularly!");
+    return false;
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="10" cellspacing="0" bgcolor="#000080">
+<tr>
+<td align="center">
+<font size="6" color="#FFFFFF"><b>Join a Web Ring</b></font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table width="600" border="2" cellpadding="20" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F8F8FF">
+<tr>
+<td>
+
+<font size="4" color="#000080"><b>Web Ring Application Form</b></font>
+<br><br>
+
+<form name="joinForm" onSubmit="return submitForm();">
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tr>
+<td align="right"><font size="2"><b>Select Ring:</b></font></td>
+<td>
+<select name="ring" style="width: 300px; font-family: Arial; font-size: 12px;">
+<option value="">-- Choose a Ring --</option>
+<option value="personal">Personal Pages Ring</option>
+<option value="pokemon">Pokemon Web Ring</option>
+<option value="conspiracy">Conspiracy & Truth Ring</option>
+<option value="extreme">Extreme/Alternative Ring</option>
+<option value="collectibles">Collectibles Ring</option>
+<option value="anime">Anime & Manga Ring</option>
+<option value="music">Music & Bands Ring</option>
+<option value="webpro">Web Professionals Ring</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td align="right"><font size="2"><b>Your Site Name:</b></font></td>
+<td><input type="text" name="siteName" size="40" style="font-family: Arial; font-size: 12px;"></td>
+</tr>
+<tr>
+<td align="right"><font size="2"><b>Site URL:</b></font></td>
+<td><input type="text" name="siteURL" size="40" value="http://" style="font-family: Arial; font-size: 12px;"></td>
+</tr>
+<tr>
+<td align="right"><font size="2"><b>Your Email:</b></font></td>
+<td><input type="text" name="email" size="40" style="font-family: Arial; font-size: 12px;"></td>
+</tr>
+<tr>
+<td align="right" valign="top"><font size="2"><b>Site Description:</b></font></td>
+<td><textarea name="description" rows="4" cols="38" style="font-family: Arial; font-size: 12px;"></textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<br>
+<input type="submit" value="Submit Application" style="font-family: Arial; font-size: 12px; padding: 5px 15px; cursor: hand;">
+<input type="reset" value="Clear Form" style="font-family: Arial; font-size: 12px; padding: 5px 15px; cursor: hand;">
+</td>
+</tr>
+</table>
+
+</form>
+
+<br>
+
+<font size="2" color="#666666">
+<b>Please Note:</b><br>
+• All applications are manually reviewed<br>
+• Your site must match the ring's theme<br>
+• You must add the web ring navigation code to your site<br>
+• Response time: 3-5 business days<br>
+</font>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<font size="2">
+<a href="index.html">← Back to Web Ring Central</a>
+</font>
+
+</center>
+
+</body>
+</html>

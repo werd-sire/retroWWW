@@ -1,0 +1,659 @@
+/* CyberChat Forums - Authentic Late 90s Forum Stylesheet */
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    background-color: #E0E6F0;
+    color: #000000;
+    margin: 0;
+    padding: 10px;
+}
+
+a:link { color: #003366; text-decoration: none; }
+a:visited { color: #003366; text-decoration: none; }
+a:hover { color: #CC0000; text-decoration: underline; }
+a:active { color: #CC0000; }
+
+table {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+input, textarea, select {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    border: 1px solid #999999;
+    background-color: #FFFFFF;
+}
+
+/* ============================================
+   HEADER & LOGO
+   ============================================ */
+
+.forum-header {
+    background-color: #003366;
+    background-image: linear-gradient(to bottom, #003366, #002244);
+    padding: 15px;
+    border: 1px solid #001122;
+}
+
+.forum-logo {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.forum-tagline {
+    font-size: 11px;
+    color: #99CCFF;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+
+.navbar {
+    background-color: #4682B4;
+    border: 1px solid #003366;
+    padding: 6px 10px;
+    margin: 5px 0;
+}
+
+.navbar a {
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #FFFF00;
+    text-decoration: underline;
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+
+.breadcrumb {
+    font-size: 10px;
+    padding: 5px 0;
+    color: #666666;
+}
+
+.breadcrumb a {
+    color: #003366;
+    text-decoration: none;
+}
+
+/* ============================================
+   FORUM INDEX TABLE
+   ============================================ */
+
+.forumindex {
+    border: 1px solid #003366;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.forumindex-header {
+    background-color: #003366;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px;
+    text-align: left;
+}
+
+.category-header {
+    background-color: #4682B4;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 6px;
+    border-bottom: 1px solid #003366;
+}
+
+.forum-row {
+    background-color: #F0F5FA;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.forum-row:hover {
+    background-color: #E8F0F8;
+}
+
+.forum-row-alt {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.forum-row-alt:hover {
+    background-color: #E8F0F8;
+}
+
+.forum-icon {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+}
+
+.forum-info {
+    padding: 8px;
+    vertical-align: top;
+}
+
+.forum-title {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.forum-title a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.forum-title a:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+.forum-description {
+    font-size: 10px;
+    color: #666666;
+    margin-top: 3px;
+}
+
+.forum-moderators {
+    font-size: 9px;
+    color: #999999;
+    margin-top: 5px;
+}
+
+.forum-stats {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 10px;
+    color: #666666;
+    width: 80px;
+}
+
+.forum-lastpost {
+    padding: 8px;
+    font-size: 10px;
+    vertical-align: middle;
+    width: 200px;
+}
+
+/* ============================================
+   THREAD LIST TABLE
+   ============================================ */
+
+.threadlist {
+    border: 1px solid #003366;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.threadlist-header {
+    background-color: #003366;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 6px;
+    text-align: left;
+}
+
+.thread-row {
+    background-color: #F0F5FA;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.thread-row:hover {
+    background-color: #E8F0F8;
+}
+
+.thread-row-alt {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.thread-row-alt:hover {
+    background-color: #E8F0F8;
+}
+
+.thread-sticky {
+    background-color: #FFFFCC !important;
+}
+
+.thread-locked {
+    opacity: 0.7;
+}
+
+.thread-icon {
+    padding: 5px;
+    text-align: center;
+    width: 30px;
+}
+
+.thread-title {
+    padding: 5px;
+}
+
+.thread-title a {
+    font-weight: bold;
+    color: #003366;
+    text-decoration: none;
+}
+
+.thread-title a:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+.thread-starter {
+    font-size: 10px;
+    color: #666666;
+}
+
+.thread-stats {
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+    width: 80px;
+}
+
+.thread-lastpost {
+    padding: 5px;
+    font-size: 10px;
+    width: 180px;
+}
+
+/* ============================================
+   POST DISPLAY
+   ============================================ */
+
+.post {
+    border: 1px solid #CCCCCC;
+    margin: 10px 0;
+    background-color: #FFFFFF;
+}
+
+.post-author {
+    background-color: #F0F5FA;
+    border-right: 1px solid #CCCCCC;
+    text-align: center;
+}
+
+.post-username {
+    font-weight: bold;
+    font-size: 12px;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+.post-username a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.post-username a:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+.post-avatar {
+    margin: 10px 0;
+}
+
+.post-avatar img {
+    border: 1px solid #CCCCCC;
+}
+
+.post-rank {
+    font-size: 10px;
+    color: #666666;
+    margin: 5px 0;
+}
+
+.post-pips {
+    margin: 5px 0;
+}
+
+.post-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.post-content {
+    background-color: #FFFFFF;
+}
+
+.post-date {
+    font-size: 10px;
+    color: #666666;
+    padding: 5px;
+}
+
+.post-number {
+    font-size: 10px;
+    color: #999999;
+    padding: 5px;
+}
+
+.post-body {
+    padding: 10px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.post-signature {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #DDDDDD;
+    font-size: 10px;
+    color: #666666;
+}
+
+.post-edited {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #FFF9E6;
+    border: 1px solid #FFCC00;
+    font-size: 10px;
+    color: #666666;
+}
+
+.post-edit-note {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #FFE6E6;
+    border: 1px solid #FF6666;
+    font-size: 10px;
+    color: #CC0000;
+}
+
+/* User Badges */
+.user-badge {
+    padding: 2px 6px;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.badge-admin {
+    background-color: #CC0000;
+    color: #FFFFFF;
+}
+
+.badge-mod {
+    background-color: #0066CC;
+    color: #FFFFFF;
+}
+
+.badge-banned {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
+.post-header {
+    background-color: #003366;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    font-size: 10px;
+}
+
+.post-header a {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.post-header a:hover {
+    color: #FFFF00;
+    text-decoration: underline;
+}
+
+.post-userinfo {
+    display: table-cell;
+    width: 170px;
+    background-color: #F0F5FA;
+    border-right: 1px solid #CCCCCC;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.post-userstats {
+    font-size: 9px;
+    color: #666666;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* ============================================
+   QUOTES & BBCode
+   ============================================ */
+
+.quote {
+    background-color: #F9F9F9;
+    border-left: 3px solid #4682B4;
+    padding: 10px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.quote-header {
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 5px;
+    font-style: normal;
+}
+
+.code {
+    background-color: #F5F5F5;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    overflow-x: auto;
+}
+
+/* ============================================
+   USER RANKS & BADGES
+   ============================================ */
+
+.rank-admin {
+    color: #CC0000;
+    font-weight: bold;
+}
+
+.rank-moderator {
+    color: #0000CC;
+    font-weight: bold;
+}
+
+.rank-elite {
+    color: #9900CC;
+    font-weight: bold;
+}
+
+.rank-banned {
+    color: #999999;
+    text-decoration: line-through;
+}
+
+.user-online {
+    color: #00CC00;
+}
+
+.user-offline {
+    color: #CCCCCC;
+}
+
+.pip {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4682B4;
+    border-radius: 50%;
+    margin: 0 1px;
+}
+
+/* ============================================
+   ICONS & INDICATORS
+   ============================================ */
+
+.icon {
+    font-size: 16px;
+}
+
+.icon-new { color: #00CC00; }
+.icon-hot { color: #FF6600; }
+.icon-sticky { color: #FFCC00; }
+.icon-locked { color: #999999; }
+.icon-poll { color: #6666CC; }
+
+/* ============================================
+   NEWS TICKER
+   ============================================ */
+
+.news-ticker {
+    background-color: #FFFFCC;
+    border: 2px solid #FFCC00;
+    margin: 5px 0;
+    font-size: 11px;
+}
+
+.news-ticker marquee {
+    /* Support for old <marquee> tag */
+}
+
+/* ============================================
+   FOOTER & INFO BOXES
+   ============================================ */
+
+.forum-footer {
+    background-color: #F0F5FA;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+    color: #666666;
+}
+
+.info-box {
+    background-color: #FFFFCC;
+    border: 1px solid #FFCC00;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.warning-box {
+    background-color: #FFCCCC;
+    border: 1px solid #CC0000;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* ============================================
+   STATISTICS & SIDEBAR
+   ============================================ */
+
+.stats-box {
+    background-color: #F0F5FA;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.stats-header {
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.stats-content {
+    font-size: 10px;
+    color: #666666;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination {
+    padding: 10px 0;
+    text-align: right;
+}
+
+.pagination a, .pagination span {
+    padding: 2px 6px;
+    margin: 0 2px;
+    border: 1px solid #CCCCCC;
+    background-color: #F0F5FA;
+    color: #003366;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #4682B4;
+    color: #FFFFFF;
+    border-color: #003366;
+}
+
+.pagination .current {
+    background-color: #003366;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-color: #003366;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.center { text-align: center; }
+.right { text-align: right; }
+.bold { font-weight: bold; }
+.small { font-size: 10px; }
+.smaller { font-size: 9px; }
+
+.spacer {
+    height: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ============================================
+   90s AUTHENTICITY TOUCHES
+   ============================================ */
+
+blink {
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+marquee {
+    /* Preserved for authenticity */
+}

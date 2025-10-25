@@ -1,0 +1,647 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>🥚🐣 Kevin's TOTALLY RADICAL Tamagotchi Heaven! 🐣🥚</title>
+<meta name="description" content="The ultimate Tamagotchi fan site! Care guides, trading, and virtual pet love!">
+<meta name="keywords" content="tamagotchi,virtual pet,bandai,digital pet,90s toys,keychain,pixel pet,care guide">
+<script language="JavaScript">
+<!--
+alert("🥚 WELCOME TO TAMAGOTCHI PARADISE! 🥚\n\nYou've entered the most RADICAL virtual pet sanctuary on the web!\n\nPrepare for MAXIMUM Tamagotchi obsession! 🐣💖");
+
+// Current pet status
+var currentPet = {
+    name: "Mimitchi Jr.",
+    age: 47,
+    happiness: 85,
+    hunger: 60,
+    discipline: 75,
+    weight: 35,
+    generation: 3,
+    alive: true,
+    daysSinceHatched: 0
+};
+
+function updatePetStatus() {
+    currentPet.daysSinceHatched++;
+    currentPet.age++;
+    currentPet.hunger -= Math.floor(Math.random() * 5) + 1;
+    currentPet.happiness -= Math.floor(Math.random() * 3) + 1;
+    
+    if(currentPet.hunger < 0) currentPet.hunger = 0;
+    if(currentPet.happiness < 0) currentPet.happiness = 0;
+    
+    // Death conditions (authentic Tamagotchi cruelty)
+    if(currentPet.hunger <= 10 && currentPet.happiness <= 10) {
+        currentPet.alive = false;
+        alert("💀 OH NO! YOUR TAMAGOTCHI HAS DIED! 💀\n\n" +
+              currentPet.name + " lived for " + currentPet.daysSinceHatched + " days!\n\n" +
+              "Cause of death: Neglect and starvation\n" +
+              "😭 Another angel gains its wings... 😭\n\n" +
+              "Press F to pay respects! Check the Pet Cemetery for memorial!");
+        return;
+    }
+    
+    if(document.getElementById) {
+        var statusDiv = document.getElementById('petStatus');
+        if(statusDiv && currentPet.alive) {
+            statusDiv.innerHTML = 
+                "<b>" + currentPet.name + "</b><br>" +
+                "Age: " + currentPet.age + " hours<br>" +
+                "Days Alive: " + currentPet.daysSinceHatched + "<br>" +
+                "Hunger: " + currentPet.hunger + "%<br>" +
+                "Happy: " + currentPet.happiness + "%<br>" +
+                "Weight: " + currentPet.weight + " oz";
+        }
+    }
+}
+
+function feedPet() {
+    if(currentPet.alive) {
+        currentPet.hunger += 20;
+        currentPet.weight += 2;
+        if(currentPet.hunger > 100) currentPet.hunger = 100;
+        alert("🍎 FED " + currentPet.name + "! 🍎\n\nYour pet is happier and heavier!\nHunger: " + currentPet.hunger + "%\nWeight: " + currentPet.weight + " oz");
+        updatePetStatus();
+    } else {
+        alert("💀 You cannot feed the dead! 💀\nVisit the Pet Cemetery to honor your fallen friend!");
+    }
+}
+
+function playWithPet() {
+    if(currentPet.alive) {
+        currentPet.happiness += 15;
+        currentPet.weight -= 1;
+        if(currentPet.happiness > 100) currentPet.happiness = 100;
+        alert("🎮 PLAYED WITH " + currentPet.name + "! 🎮\n\nYour pet is much happier!\nHappiness: " + currentPet.happiness + "%\nWeight: " + currentPet.weight + " oz");
+        updatePetStatus();
+    } else {
+        alert("💀 The dead cannot play! 💀\nOnly memories remain...");
+    }
+}
+
+function petCareAdvice() {
+    alert("🐣 KEVIN'S PRO TAMAGOTCHI TIPS! 🐣\n\n" +
+          "💡 NEVER let hunger drop below 20%!\n" +
+          "💡 Play games to lose weight but gain happiness!\n" +
+          "💡 Discipline only when they're being naughty!\n" +
+          "💡 Check on them every 30 minutes or THEY DIE!\n" +
+          "💡 Turn off sound at school (teachers hate beeping!)\n" +
+          "💡 Some say pausing prevents aging (I don't cheat!)\n" +
+          "💡 Different care = different evolutions!\n\n" +
+          "Remember: Your Tamagotchi DEPENDS on you! 💖");
+}
+
+function tamagotchiHistory() {
+    alert("📚 TAMAGOTCHI HISTORICAL FACTS! 📚\n\n" +
+          "🥚 Invented in Japan by Bandai in 1996!\n" +
+          "🌍 Over 40 MILLION sold worldwide!\n" +
+          "🏫 Banned from most schools (TOO AWESOME!)\n" +
+          "📺 Had their own TV show and comics!\n" +
+          "💰 Some rare ones sell for $500+ on eBay!\n" +
+          "🎭 Name means 'lovable egg' in Japanese!\n" +
+          "🔬 Based on virtual pet concept from 80s!\n" +
+          "🌟 Changed the world FOREVER!\n\n" +
+          "Fun fact: I have 47 different versions! 🤓");
+}
+
+// Pet evolution simulator
+function checkEvolution() {
+    if(currentPet.alive && currentPet.age > 72) {
+        var evolutions = ["Mimitchi", "Ginjirotchi", "Kuchipatchi", "Nyorotchi", "Tarakotchi", "Kusatchi"];
+        var evolved = evolutions[Math.floor(Math.random() * evolutions.length)];
+        alert("🎉 EVOLUTION TIME! 🎉\n\n" + currentPet.name + " has evolved into " + evolved + "!\n\n" +
+              "This is based on your care patterns:\n" +
+              "Final Hunger Level: " + currentPet.hunger + "%\n" +
+              "Final Happiness: " + currentPet.happiness + "%\n" +
+              "Days Cared For: " + currentPet.daysSinceHatched + "\n\n" +
+              "Congratulations on raising a beautiful digital life! 🌟");
+        currentPet.name = evolved;
+    } else if(!currentPet.alive) {
+        alert("💀 Dead pets cannot evolve! 💀\nOnly memories evolve into sadness...");
+    } else {
+        alert("⏰ Not ready to evolve yet! ⏰\nBe patient, young grasshopper!");
+    }
+}
+
+// Start the pet life cycle
+setInterval("updatePetStatus()", 30000); // Update every 30 seconds (accelerated time!)
+
+// Animated pet
+var petFrames = ["🥚", "🐣", "🐤", "🐥", "🐦"];
+var currentFrame = 0;
+function animatePet() {
+    if(document.getElementById && currentPet.alive) {
+        var petDisplay = document.getElementById('petAnimation');
+        if(petDisplay) {
+            petDisplay.innerHTML = petFrames[currentFrame];
+            currentFrame = (currentFrame + 1) % petFrames.length;
+        }
+    }
+}
+setInterval("animatePet()", 1000);
+
+window.status = "BEEP BEEP! Your Tamagotchi needs attention! Check Kevin's care guide!";
+//-->
+</script>
+</head>
+
+<body bgcolor="#00FF00" text="#000080" link="#FF0000" vlink="#800080" alink="#FFFF00"
+      background="../../assets/gifs/tamagotchi_bg.gif">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="8" cellpadding="20" cellspacing="0" bordercolor="#FF69B4" bgcolor="#FFFF00">
+<tr>
+<td align="center">
+<img src="../../assets/gifs/tamagotchi_logo.gif" width="150" height="100" alt="Tamagotchi">
+<br>
+<font face="Comic Sans MS" size="7" color="#FF0000">
+🥚 KEVIN'S TAMAGOTCHI HEAVEN! 🥚
+</font>
+<br>
+<font face="Arial Black" size="4" color="#0000FF">
+THE MOST RADICAL VIRTUAL PET SANCTUARY ON THE WEB!
+</font>
+<br>
+<marquee behavior="alternate" scrollamount="6" width="700">
+<font color="#FF00FF" size="3">
+🐣 BEEP BEEP! CARING FOR DIGITAL LIFE SINCE 1997! BEEP BEEP! 🐣
+</font>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Kevin's Introduction -->
+<table width="90%" border="6" cellpadding="15" cellspacing="0" bordercolor="#0000FF" bgcolor="#FFCCFF">
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="5" color="#FF0000">
+🤓 MEET KEVIN - TAMAGOTCHI MASTER! 🤓
+</font>
+<br><br>
+<table width="100%">
+<tr>
+<td width="200" align="center">
+<img src="../../assets/gifs/kevin_portrait.gif" width="150" height="180" border="4" alt="Kevin">
+<br>
+<font face="Arial" size="2" color="#0000FF">
+<b>Kevin Rodriguez<br>Age: 14<br>Tamagotchis Owned: 47<br>Current Streak: 8 days!</b>
+</font>
+</td>
+<td valign="top">
+<font face="Comic Sans MS" size="3" color="#000080">
+Hey there, fellow Tamagotchi trainers! I'm Kevin and I am TOTALLY OBSESSED 
+with virtual pets! I've been raising Tamagotchis since Christmas 1997 when 
+my aunt got me one from Japan (before they were even sold in America!).
+<br><br>
+<font color="#FF0000">I currently own 47 different Tamagotchis and I take care of them 
+ALL THE TIME! My longest streak was 23 days before my mom made me go to 
+my cousin's wedding and forgot to pause... RIP Ginjirotchi... 😭</font>
+<br><br>
+<font color="#0000FF"><b>This site has EVERYTHING you need to become a Tamagotchi master 
+like me! Care guides, trading tips, evolution charts, and even a virtual 
+pet cemetery for all the fallen digital warriors! 🪦</b></font>
+</font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Live Pet Demo -->
+<table width="85%" border="7" cellpadding="15" cellspacing="0" bordercolor="#FF0000" bgcolor="#000080">
+<tr>
+<td align="center" bgcolor="#FF0000">
+<font face="Impact" size="4" color="#FFFFFF">
+🐣 LIVE TAMAGOTCHI SIMULATOR! 🐣
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%">
+<tr>
+<td width="200" align="center" bgcolor="#000000">
+<!-- Virtual Tamagotchi Screen -->
+<table border="3" cellpadding="20" bgcolor="#C0C0C0" bordercolor="#808080">
+<tr>
+<td align="center">
+<font size="8" id="petAnimation">🥚</font>
+<br>
+<font face="Courier New" size="2" color="#000000" id="petStatus">
+<b>Mimitchi Jr.</b><br>
+Age: 47 hours<br>
+Days Alive: 0<br>
+Hunger: 60%<br>
+Happy: 85%<br>
+Weight: 35 oz
+</font>
+</td>
+</tr>
+</table>
+</td>
+<td valign="top">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>🎮 CARE FOR KEVIN'S CURRENT PET!</b><br>
+This is a REAL simulation of my current Tamagotchi!<br>
+Help me keep it alive!
+</font>
+<br><br>
+<input type="button" value="🍎 FEED PET" onclick="feedPet()" 
+       style="background-color: #FF69B4; color: #000080; font-weight: bold; font-size: 14px; font-family: Comic Sans MS; padding: 8px; margin: 5px;">
+<br>
+<input type="button" value="🎮 PLAY GAME" onclick="playWithPet()" 
+       style="background-color: #00FF00; color: #000080; font-weight: bold; font-size: 14px; font-family: Comic Sans MS; padding: 8px; margin: 5px;">
+<br>
+<input type="button" value="🌟 CHECK EVOLUTION" onclick="checkEvolution()" 
+       style="background-color: #FFFF00; color: #000080; font-weight: bold; font-size: 14px; font-family: Comic Sans MS; padding: 8px; margin: 5px;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Navigation Menu -->
+<table width="95%" border="5" cellpadding="10" cellspacing="5" bordercolor="#00FFFF" bgcolor="#FF69B4">
+<tr>
+<td colspan="4" align="center" bgcolor="#00FFFF">
+<font face="Impact" size="4" color="#FF0000">
+🌈 TAMAGOTCHI PARADISE MENU 🌈
+</font>
+</td>
+</tr>
+<tr>
+<td width="25%" align="center" bgcolor="#FF0000">
+<a href="care-guide.html">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">📋 CARE GUIDE</font>
+</a>
+</td>
+<td width="25%" align="center" bgcolor="#00FF00">
+<a href="evolution-chart.html">
+<font face="Comic Sans MS" size="3" color="#000080">🦋 EVOLUTION CHART</font>
+</a>
+</td>
+<td width="25%" align="center" bgcolor="#0000FF">
+<a href="trading-post.html">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">💱 TRADING POST</font>
+</a>
+</td>
+<td width="25%" align="center" bgcolor="#FFFF00">
+<a href="pet-cemetery.html">
+<font face="Comic Sans MS" size="3" color="#000080">🪦 PET CEMETERY</font>
+</a>
+</td>
+</tr>
+<tr>
+<td align="center" bgcolor="#FF00FF">
+<a href="collection.html">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">🏆 MY COLLECTION</font>
+</a>
+</td>
+<td align="center" bgcolor="#00FFFF">
+<a href="conspiracy.html">
+<font face="Comic Sans MS" size="3" color="#000080">👁️ BANDAI SECRETS</font>
+</a>
+</td>
+<td align="center" bgcolor="#FFA500">
+<a href="fanfiction.html">
+<font face="Comic Sans MS" size="3" color="#000080">📖 TAMA FANFIC</font>
+</a>
+</td>
+<td align="center" bgcolor="#98FB98">
+<a href="hospital.html">
+<font face="Comic Sans MS" size="3" color="#000080">🏥 PET HOSPITAL</font>
+</a>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Quick Tips -->
+<table width="80%" border="4" cellpadding="15" cellspacing="0" bordercolor="#FFD700" bgcolor="#8B008B">
+<tr>
+<td align="center" bgcolor="#FFD700">
+<font face="Comic Sans MS" size="4" color="#8B008B">
+💡 KEVIN'S EMERGENCY CARE TIPS! 💡
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>⚠️ CRITICAL TAMAGOTCHI SURVIVAL INFO:</b>
+</font>
+
+<br><br>
+
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+🚨 <b>RED ALERT SIGNS:</b> Skull icon, constant beeping, crying face<br>
+⏰ <b>FEEDING SCHEDULE:</b> Every 4 hours or they get sick!<br>
+🎮 <b>GAME STRATEGY:</b> Win to increase happiness, lose weight<br>
+💊 <b>MEDICINE:</b> Give immediately when sick (skull icon)<br>
+🛡️ <b>DISCIPLINE:</b> Only when they're being naughty (ignore beeping)<br>
+💤 <b>SLEEP:</b> They sleep at 10 PM - DON'T WAKE THEM UP!<br>
+🪦 <b>DEATH:</b> Usually happens from neglect or old age (day 10+)<br>
+🔄 <b>RESET:</b> Only if you want to start over (I NEVER reset!)
+</font>
+
+<br><br>
+
+<center>
+<input type="button" value="📚 FULL CARE GUIDE" onclick="petCareAdvice()" 
+       style="background-color: #00FF00; color: #000080; font-weight: bold; font-size: 16px; font-family: Comic Sans MS; padding: 10px;">
+<input type="button" value="📖 TAMA HISTORY" onclick="tamagotchiHistory()" 
+       style="background-color: #FF69B4; color: #FFFFFF; font-weight: bold; font-size: 16px; font-family: Comic Sans MS; padding: 10px;">
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Today's Tamagotchi News -->
+<table width="85%" border="6" cellpadding="15" cellspacing="0" bordercolor="#32CD32" bgcolor="#006400">
+<tr>
+<td align="center" bgcolor="#32CD32">
+<font face="Impact" size="4" color="#000080">
+📰 TODAY'S TAMAGOTCHI NEWS! 📰
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>December 23, 1999 - BREAKING TAMA NEWS!</b>
+</font>
+
+<br><br>
+
+<font face="Comic Sans MS" size="3" color="#FFFF00">
+🎉 <b>NEW COLORS ANNOUNCED:</b> Bandai releasing neon pink and electric blue versions!<br>
+💔 <b>TRAGEDY REPORT:</b> 347 Tamagotchis died yesterday due to Y2K prep neglect!<br>
+🏆 <b>RECORD BROKEN:</b> Japanese kid kept same pet alive for 47 days straight!<br>
+🎮 <b>GAME TIP:</b> Hold A+B while feeding for secret happy dance!<br>
+📺 <b>TV SPECIAL:</b> Tamagotchi anime coming to Cartoon Network next month!<br>
+💰 <b>RARE FIND:</b> Original white shell found at garage sale for $2!<br>
+🔬 <b>SCIENCE:</b> Study shows caring for Tamagotchis improves responsibility!<br>
+🚫 <b>SCHOOL BAN:</b> Another middle school bans Tamagotchis (TOTALLY UNFAIR!)
+</font>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Kevin's Collection Showcase -->
+<table width="90%" border="7" cellpadding="15" cellspacing="0" bordercolor="#FF1493" bgcolor="#FFB6C1">
+<tr>
+<td align="center" bgcolor="#FF1493">
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+🏆 KEVIN'S EPIC COLLECTION SHOWCASE! 🏆
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="2" cellpadding="10" cellspacing="5">
+<tr>
+<td width="25%" align="center" bgcolor="#FFCCCC">
+<img src="../../assets/gifs/tama_original.gif" width="80" height="100" alt="Original">
+<br>
+<font face="Comic Sans MS" size="2" color="#000080">
+<b>ORIGINAL WHITE</b><br>
+#001 in my collection!<br>
+Christmas 1997<br>
+<font color="#FF0000">RETIRED</font>
+</font>
+</td>
+<td width="25%" align="center" bgcolor="#CCFFCC">
+<img src="../../assets/gifs/tama_angel.gif" width="80" height="100" alt="Angel">
+<br>
+<font face="Comic Sans MS" size="2" color="#000080">
+<b>ANGELGOTCHI</b><br>
+Ultra rare variant!<br>
+Got for birthday!<br>
+<font color="#00FF00">ACTIVE</font>
+</font>
+</td>
+<td width="25%" align="center" bgcolor="#CCCCFF">
+<img src="../../assets/gifs/tama_ocean.gif" width="80" height="100" alt="Ocean">
+<br>
+<font face="Comic Sans MS" size="2" color="#000080">
+<b>OCEANGOTCHI</b><br>
+Aquatic themed!<br>
+Mail ordered from Japan!<br>
+<font color="#0000FF">PAUSED</font>
+</font>
+</td>
+<td width="25%" align="center" bgcolor="#FFFFCC">
+<img src="../../assets/gifs/tama_forest.gif" width="80" height="100" alt="Forest">
+<br>
+<font face="Comic Sans MS" size="2" color="#000080">
+<b>FORESTGOTCHI</b><br>
+Bug-themed pets!<br>
+Super challenging!<br>
+<font color="#FF6600">LEARNING</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<center>
+<font face="Comic Sans MS" size="3" color="#000080">
+<b>🌟 TOTAL COLLECTION: 47 Tamagotchis and counting! 🌟</b><br>
+<font size="2" color="#666666">Most are stored safely in my special Tamagotchi display case!</font>
+</font>
+</center>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Visitor Memorial -->
+<table width="70%" border="5" cellpadding="15" cellspacing="0" bordercolor="#800080" bgcolor="#000000">
+<tr>
+<td align="center" bgcolor="#800080">
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+💀 MEMORIAL WALL 💀
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>In loving memory of pets lost too soon...</b>
+</font>
+<br><br>
+<font face="Comic Sans MS" size="2" color="#FFFF00">
+🕯️ Ginjirotchi #1 - Died Day 3 (forgot to feed) - Oct 1997<br>
+🕯️ Mimitchi #1 - Died Day 23 (wedding disaster) - Nov 1997<br>
+🕯️ Kuchipatchi #2 - Died Day 7 (sick, no medicine) - Dec 1997<br>
+🕯️ Tarakotchi #1 - Died Day 15 (battery died at school) - Jan 1998<br>
+🕯️ Nyorotchi #3 - Died Day 11 (mom reset by accident) - Feb 1998<br>
+<br>
+<font color="#FF69B4"><b>Total pets lost to date: 23 😭</b></font><br>
+<font color="#CCCCCC" size="1">They live on in our hearts and pixels...</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Bandai Appreciation -->
+<table width="75%" border="4" cellpadding="15" cellspacing="0" bordercolor="#FFD700" bgcolor="#FF8C00">
+<tr>
+<td align="center" bgcolor="#FFD700">
+<font face="Impact" size="4" color="#FF8C00">
+🙏 THANK YOU BANDAI! 🙏
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+Without Bandai's incredible invention, none of this would be possible!<br>
+Thank you for creating the most amazing virtual pets in history!<br>
+<br>
+<font color="#FFFF00" size="4"><b>BANDAI = DIGITAL LIFE CREATORS! 🌟</b></font>
+<br><br>
+<font size="2" color="#CCCCCC">
+(Even though you make them die too easily... but that's part of the challenge!)
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Guestbook -->
+<table width="80%" border="6" cellpadding="15" cellspacing="0" bordercolor="#FF69B4" bgcolor="#8B008B">
+<tr>
+<td align="center" bgcolor="#FF69B4">
+<font face="Comic Sans MS" size="4" color="#FFFFFF">
+📝 TAMAGOTCHI TRAINERS GUESTBOOK! 📝
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+<b>Recent entries from fellow Tamagotchi masters:</b>
+</font>
+
+<br><br>
+
+<font face="Arial" size="2" color="#FFFF00">
+<b>TamaQueen99:</b> "OMG Kevin your site is AMAZING! My Mimitchi just evolved and I'm so happy! 🐣"<br><br>
+<b>VirtualPetKid:</b> "Dude, I lost my 15-day streak yesterday... I'm devastated. Your tips could have saved me! 😭"<br><br>
+<b>DigitalMom:</b> "My daughter loves Tamagotchis but keeps forgetting to feed them. Bookmarking your care guide!"<br><br>
+<b>PetMaster2000:</b> "Kevin, do you have any rare Japanese-only versions? I'm willing to trade my Angelgotchi!"<br><br>
+<b>TamaTrainer:</b> "Just discovered your site! Been raising virtual pets since day one. Respect! 🙏"<br>
+</font>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="100%" border="8" cellpadding="15" cellspacing="0" bordercolor="#00FF00" bgcolor="#FF0000">
+<tr>
+<td align="center">
+<font face="Comic Sans MS" size="3" color="#FFFFFF">
+🥚 <b>KEEP YOUR TAMAGOTCHIS ALIVE AND HAPPY!</b> 🥚<br>
+<br>
+📧 Email: kevin.tamagotchi@email.com<br>
+💬 ICQ: 87654321 • AIM: TamaKevin99<br>
+📟 Pager: 555-TAMA (for emergencies only!)<br>
+<br>
+<font size="2" color="#FFFF00">
+Kevin's Tamagotchi Heaven © 1997-1999 Kevin Rodriguez<br>
+Tamagotchi is a registered trademark of Bandai<br>
+This is an unofficial fan site made with PURE LOVE!<br>
+<br>
+"Digital pets are real pets with digital hearts!" - Kevin<br>
+<br>
+<font color="#CCFFCC">Best viewed while caring for your Tamagotchi at 800x600 resolution</font><br>
+Last updated: December 23, 1999 (Added new evolution data!)
+</font>
+<br><br>
+<marquee behavior="scroll" scrollamount="3" width="400">
+<font color="#FFFF00" size="2">
+🐣 Remember: A Tamagotchi's love is forever, even after they die! 🐣
+</font>
+</marquee>
+</font>
+</td>
+</tr>
+</table>
+
+
+<br>
+
+<!-- Personal Pages Ring Navigation -->
+<table border="2" bgcolor="#FFB6C1" cellpadding="5" cellspacing="0" bordercolor="#FF69B4">
+<tr><td align="center">
+<font size="2" color="#8B008B" face="Impact"><b>Personal Pages Ring</b><br>
+<script language="JavaScript" src="../../js/webring-data.js"></script>
+<script language="JavaScript">
+<!--
+if (typeof WEBRINGS !== 'undefined' && WEBRINGS['personal']) {
+    var ring = WEBRINGS['personal'];
+    var siteId = 'tamagotchi-heaven';
+    var currentIndex = -1;
+
+    for (var i = 0; i < ring.members.length; i++) {
+        if (ring.members[i].id === siteId) {
+            currentIndex = i;
+            break;
+        }
+    }
+
+    if (currentIndex !== -1) {
+        var prevIndex = (currentIndex - 1 + ring.members.length) % ring.members.length;
+        var nextIndex = (currentIndex + 1) % ring.members.length;
+        var randomIndex = Math.floor(Math.random() * ring.members.length);
+
+        document.write('[<a href="' + ring.members[prevIndex].url + '"><font color="#FF1493">Previous</font></a>] ');
+        document.write('[<a href="../../webrings/personal-ring.html"><font color="#FF1493">List</font></a>] ');
+        document.write('[<a href="' + ring.members[nextIndex].url + '"><font color="#FF1493">Next</font></a>] ');
+        document.write('[<a href="' + ring.members[randomIndex].url + '"><font color="#FF1493">Random</font></a>]');
+        document.write('<br><font size="1">Member ' + (currentIndex + 1) + ' of ' + ring.members.length + '</font>');
+    }
+}
+//-->
+</script>
+<noscript>[<a href="../../webrings/personal-ring.html"><font color="#FF1493">Personal Pages Ring</font></a>]</noscript>
+</font></td></tr></table>
+
+<br>
+</center>
+
+<!-- Tamagotchi beeping sound effects -->
+<bgsound src="../../assets/midi/tamagotchi_beeps.mid" loop="infinite">
+<embed src="../../assets/midi/tamagotchi_beeps.mid" autostart="true" loop="true" hidden="true" height="0" width="0">
+
+</body>
+</html>

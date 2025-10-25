@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>OurSpace - Наше Пространство - Social Networking Community</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="description" content="OurSpace - The world's leading social networking community. Connect with friends, share your life, customize your profile.">
+<meta name="keywords" content="ourspace, vladimir, social, networking, community, friends, profile, space">
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000080 url('../../assets/gifs/stars.gif');
+}
+.header {
+    background: linear-gradient(to bottom, #CC0000, #990000);
+    background: #CC0000;
+    color: white;
+    padding: 15px;
+    border-bottom: 3px solid #FFD700;
+}
+.content {
+    background: #FFFFFF;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #FFD700;
+}
+.login-box {
+    background: #F0F8FF;
+    border: 2px inset #CCCCCC;
+    padding: 15px;
+    width: 300px;
+}
+.feature-box {
+    background: #FFF8DC;
+    border: 1px solid #DDD;
+    padding: 10px;
+    margin: 10px 0;
+}
+.construction {
+    background: #FFFFCC;
+    border: 2px solid #FFD700;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+a:link { color: #000080; text-decoration: underline; }
+a:visited { color: #800080; }
+a:hover { color: #CC0000; }
+.russian { font-family: Times, serif; color: #CC0000; font-weight: bold; }
+-->
+</style>
+<script language="JavaScript">
+<!--
+function validateLogin() {
+    var email = document.loginForm.email.value;
+    var password = document.loginForm.password.value;
+
+    if (email == "") {
+        alert("Please enter your email address");
+        return false;
+    }
+    if (password == "") {
+        alert("Please enter your password");
+        return false;
+    }
+
+    // Demo login - redirect to browse profiles
+    if (email == "vlad@ourspace.ru" && password == "demo") {
+        window.location = "profile_vlad.html";
+        return false;
+    } else {
+        alert("Demo Login:\nEmail: vlad@ourspace.ru\nPassword: demo\n\nOr browse profiles below!");
+        return false;
+    }
+}
+
+function randomProfile() {
+    var profiles = ['profile_vlad.html', 'profile_ashley.html', 'profile_dmitri.html'];
+    var random = profiles[Math.floor(Math.random() * profiles.length)];
+    window.location = random;
+}
+
+// Visitor counter simulation
+var visitors = 847293;
+function updateCounter() {
+    visitors += Math.floor(Math.random() * 3) + 1;
+    document.getElementById('counter').innerHTML = visitors.toLocaleString();
+}
+setInterval(updateCounter, 30000);
+//-->
+</script>
+</head>
+
+<body onLoad="document.getElementById('counter').innerHTML = visitors.toLocaleString();">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="header">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="50%">
+<font size="6" face="Arial Black" color="#FFFFFF"><b>Our</b></font><font size="6" face="Arial Black" color="#FFD700"><b>Space</b></font>
+<br>
+<font size="2" class="russian">Наше Пространство</font>
+</td>
+<td width="50%" align="right">
+<font size="2" color="#FFFFFF">
+A place for friends<br>
+Created by Vladimir Petrov • Moscow, Russia<br>
+<i>"Connecting the world, one profile at a time"</i>
+</font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<table width="900" border="0" cellpadding="0" cellspacing="0" class="content">
+<tr>
+<td width="60%" valign="top">
+
+<!-- Welcome Section -->
+<table width="100%" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td>
+<h2><font color="#CC0000">Welcome to OurSpace!</font></h2>
+<font size="3">
+The world's fastest growing social networking community. Over <b><span id="counter">847,293</span></b> members and counting!
+<br><br>
+<b>Connect with friends:</b> Send messages, post comments, share photos<br>
+<b>Express yourself:</b> Customize your profile with HTML, CSS, and music<br>
+<b>Discover new people:</b> Browse profiles, join groups, make new connections<br>
+<b>Stay connected:</b> Get updates from your friends and favorite bands
+</font>
+
+<!-- Construction Notice -->
+<div class="construction">
+<font size="3" color="#000080"><b>🚧 Site Development Update 🚧</b></font><br>
+<font size="2">
+OurSpace is rapidly expanding! New features launching weekly:<br>
+<b>Coming Soon:</b> Music Player Integration • Photo Albums • Group Forums • Mobile Access<br>
+<i>Thank you for your patience as we build the future of social networking!</i>
+</font>
+</div>
+
+<!-- Browse Profiles -->
+<div class="feature-box">
+<h3><font color="#000080">Browse Member Profiles</font></h3>
+<font size="2">
+Check out some of our active community members:<br><br>
+→ <a href="profile_vlad.html"><b>Vladimir P.</b></a> - OurSpace Founder (Moscow, Russia)<br>
+→ <a href="profile_ashley.html"><b>Ashley M.</b></a> - Digital Artist (Los Angeles, USA)<br>
+→ <a href="profile_dmitri.html"><b>Dmitri K.</b></a> - University Student (St. Petersburg, Russia)<br><br>
+<input type="button" value="Random Profile" onclick="randomProfile()"
+       style="background: #E0E0E0; border: 2px outset; padding: 5px; cursor: hand;">
+</font>
+</div>
+
+</td>
+</tr>
+</table>
+
+</td>
+<td width="40%" valign="top">
+
+<!-- Login Box -->
+<table width="100%" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center">
+
+<div class="login-box">
+<h3><font color="#CC0000">Member Login</font></h3>
+<form name="loginForm" onSubmit="return validateLogin()">
+<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2"><b>Email:</b></font></td>
+</tr>
+<tr>
+<td><input type="text" name="email" size="25" maxlength="50"></td>
+</tr>
+<tr>
+<td><font size="2"><b>Password:</b></font></td>
+</tr>
+<tr>
+<td><input type="password" name="password" size="25" maxlength="20"></td>
+</tr>
+<tr>
+<td align="center">
+<br>
+<input type="submit" value="Login to OurSpace"
+       style="background: #CC0000; color: white; font-weight: bold; padding: 8px; border: 2px outset; cursor: hand;">
+</td>
+</tr>
+</table>
+</form>
+<font size="1">
+<a href="forgot.html">Forgot Password?</a><br>
+<a href="signup.html"><b>Sign Up for OurSpace!</b></a>
+</font>
+</div>
+
+<!-- Stats Box -->
+<div class="feature-box" style="margin-top: 20px;">
+<h3><font color="#000080">Community Stats</font></h3>
+<font size="2">
+<b>847,293</b> Total Members<br>
+<b>23,847</b> Online Now<br>
+<b>156,792</b> Photos Uploaded<br>
+<b>2,847,293</b> Friend Connections<br>
+<b>394,847</b> Messages Sent Today<br>
+</font>
+</div>
+
+<!-- Features Box -->
+<div class="feature-box">
+<h3><font color="#000080">Popular Features</font></h3>
+<font size="2">
+• <a href="groups.html">Groups & Communities</a><br>
+• <a href="music.html">Music & Bands</a><br>
+• <a href="photos.html">Photo Sharing</a><br>
+• <a href="bulletins.html">Bulletin Board</a><br>
+• <a href="classifieds.html">Classifieds</a><br>
+• <a href="blogs.html">Personal Blogs</a> <font color="red"><b>NEW!</b></font><br>
+</font>
+</div>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="900" border="0" cellpadding="10" cellspacing="0" style="background: #F0F0F0; border-top: 2px solid #FFD700;">
+<tr>
+<td align="center">
+<font size="2" color="#666666">
+© 2003 OurSpace.ru • <a href="about.html">About</a> • <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a> • <a href="contact.html">Contact</a> • <a href="advertise.html">Advertise</a><br>
+OurSpace is a registered trademark of Petrov Internet Technologies, Moscow<br>
+<i>"Building communities across borders" - Построение сообществ через границы</i>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+<!-- Hidden counter update -->
+<script>
+setTimeout(function() {
+    document.getElementById('counter').innerHTML = (847293 + Math.floor(Math.random() * 100)).toLocaleString();
+}, 5000);
+</script>
+
+</body>
+</html>

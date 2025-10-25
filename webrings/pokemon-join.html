@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Join the Pokemon Ring - Submit Your Site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="pokemon,join,submit,web ring,application,form">
+<meta name="description" content="Join the Pokemon Ring! Submit your Pokemon fan site to connect with other trainers and Pokemon fans.">
+<style type="text/css">
+<!--
+BODY { font-family: Arial, Helvetica, sans-serif; background-image: url('../assets/gifs/pokeball_tile.gif'); }
+A:link { color: #0000CC; text-decoration: underline; }
+A:visited { color: #551A8B; text-decoration: underline; }
+A:hover { color: #FF0000; text-decoration: underline; }
+A:active { color: #FF0000; }
+.header { font-family: Comic Sans MS, cursive; font-weight: bold; }
+.small { font-size: 10px; }
+.form-box { border: 3px solid #FFD700; background-color: #FFFACD; padding: 15px; margin: 10px; }
+.requirement { border: 2px solid #00AA00; background-color: #F0FFF0; padding: 8px; margin: 5px; }
+-->
+</style>
+<script language="JavaScript">
+<!--
+window.status = "Join the Pokemon Ring - Gotta catch 'em all sites!";
+
+function validateForm() {
+    var siteName = document.joinForm.siteName.value;
+    var siteURL = document.joinForm.siteURL.value;
+    var webmaster = document.joinForm.webmaster.value;
+    var email = document.joinForm.email.value;
+    var description = document.joinForm.description.value;
+
+    if (siteName == "" || siteURL == "" || webmaster == "" || email == "" || description == "") {
+        alert("Please fill out all required fields!\\n\\nRemember: We need to know about your Pokemon site to approve it for the ring!");
+        return false;
+    }
+
+    if (siteURL.indexOf("http://") != 0 && siteURL.indexOf("https://") != 0) {
+        alert("Please enter a complete URL starting with http:// or https://\\n\\nExample: http://www.geocities.com/yoursite");
+        return false;
+    }
+
+    if (email.indexOf("@") == -1) {
+        alert("Please enter a valid email address!\\n\\nWe need to contact you about your application.");
+        return false;
+    }
+
+    alert("Thank you for submitting your Pokemon site!\\n\\nYour application has been received and will be reviewed within 3-5 business days.\\n\\nYou will receive an email at " + email + " with instructions on adding the ring navigation to your site.\\n\\nGotta review 'em all! - Pokemon Ring Master");
+    return true;
+}
+
+function showRequirements() {
+    alert("POKEMON RING REQUIREMENTS:\\n\\n✓ Pokemon-themed content\\n✓ Family-friendly (no adult content)\\n✓ Regular updates\\n✓ Working email contact\\n✓ Add ring navigation code\\n✓ No 'fake' Pokemon content\\n✓ Original content preferred\\n\\nSites are manually reviewed!\\nProcessing time: 3-5 days");
+}
+
+function showNavCode() {
+    alert("RING NAVIGATION CODE:\\n\\nOnce approved, you'll add this HTML to your site:\\n\\n<TABLE BORDER=2 BGCOLOR='#FFFF00'>\\n<TR><TD ALIGN=CENTER>\\n<FONT SIZE=2><B>Pokemon Ring</B><BR>\\n[<A HREF='ring.cgi?prev'>Prev</A>]\\n[<A HREF='ring.cgi?random'>Random</A>]\\n[<A HREF='ring.cgi?next'>Next</A>]\\n</FONT></TD></TR></TABLE>\\n\\nDetailed instructions sent after approval!");
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#87CEEB" text="#000000" link="#0000CC" vlink="#551A8B" alink="#FF0000">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFD700">
+<tr>
+<td align="center">
+<font class="small" color="#000000">
+<a href="pokemon-ring.html">Pokemon Ring Home</a> |
+<a href="index.html">Web Ring Central</a> |
+<a href="../index.html">CyberFind Home</a>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Main Header -->
+<table width="650" border="5" cellpadding="15" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFFF00">
+<tr>
+<td align="center">
+<img src="../assets/gifs/pikachu_dance.gif" width="60" height="60" alt="Pikachu">
+<font class="header" size="5" color="#FF0000">JOIN THE POKEMON RING!</font>
+<img src="../assets/gifs/pikachu_dance.gif" width="60" height="60" alt="Pikachu">
+<br>
+<font class="header" size="3" color="#0000FF">
+Submit Your Pokemon Site for Review
+</font>
+<br>
+<font size="2" color="#000000">
+<b>Connect with fellow Pokemon trainers and fans!</b>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Requirements -->
+<div class="requirement">
+<font size="3" color="#00AA00"><b>📋 Ring Requirements</b></font>
+<br><br>
+<font size="2" color="#000000">
+Before submitting, make sure your site meets these requirements:
+<br><br>
+<b>✓ Content Requirements:</b><br>
+• Pokemon-themed content (games, cards, anime, etc.)<br>
+• Family-friendly content only<br>
+• No "fake" or "hacked" Pokemon content<br>
+• Original content strongly preferred<br>
+<br>
+<b>✓ Technical Requirements:</b><br>
+• Working website with regular updates<br>
+• Valid contact email address<br>
+• Willing to add ring navigation to your site<br>
+• Site must load properly in major browsers<br>
+<br>
+<input type="button" value="View Detailed Requirements" onClick="showRequirements()" style="font-family: Arial; font-size: 11px; background-color: #00AA00; color: white; border: 2px outset #CCCCCC; padding: 3px 8px; cursor: hand;">
+<input type="button" value="Preview Navigation Code" onClick="showNavCode()" style="font-family: Arial; font-size: 11px; background-color: #0000FF; color: white; border: 2px outset #CCCCCC; padding: 3px 8px; cursor: hand;">
+</font>
+</div>
+
+<!-- Application Form -->
+<div class="form-box">
+<font size="3" color="#000080"><b>Pokemon Ring Application Form</b></font>
+<br><br>
+
+<form name="joinForm" action="mailto:pokemon-ring@cyberfind2000.net" method="post" onSubmit="return validateForm();">
+<input type="hidden" name="subject" value="Pokemon Ring Application">
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tr>
+<td width="30%"><font size="2"><b>Site Name:</b></font></td>
+<td><input type="text" name="siteName" size="40" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;">
+<font size="1" color="#FF0000">*Required</font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Site URL:</b></font></td>
+<td><input type="text" name="siteURL" size="40" value="http://" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;">
+<font size="1" color="#FF0000">*Required</font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Webmaster Name:</b></font></td>
+<td><input type="text" name="webmaster" size="40" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;">
+<font size="1" color="#FF0000">*Required</font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Email Address:</b></font></td>
+<td><input type="text" name="email" size="40" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;">
+<font size="1" color="#FF0000">*Required</font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Age (Optional):</b></font></td>
+<td><input type="text" name="age" size="10" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;">
+<font size="1" color="#666666">Helps us understand our community</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2"><b>Site Description:</b></font></td>
+<td><textarea name="description" rows="4" cols="40" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;"></textarea>
+<br><font size="1" color="#FF0000">*Required - Tell us about your Pokemon content!</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2"><b>Pokemon Specialty:</b></font></td>
+<td>
+<input type="checkbox" name="specialty" value="trading_cards"> Trading Cards<br>
+<input type="checkbox" name="specialty" value="video_games"> Video Games<br>
+<input type="checkbox" name="specialty" value="anime"> Anime/TV Show<br>
+<input type="checkbox" name="specialty" value="manga"> Manga/Comics<br>
+<input type="checkbox" name="specialty" value="fan_fiction"> Fan Fiction<br>
+<input type="checkbox" name="specialty" value="fan_art"> Fan Art<br>
+<input type="checkbox" name="specialty" value="general"> General Pokemon Info<br>
+<input type="checkbox" name="specialty" value="other"> Other: <input type="text" name="other_specialty" size="20" style="font-size: 11px;">
+</td>
+</tr>
+<tr>
+<td valign="top"><font size="2"><b>Site Updates:</b></font></td>
+<td>
+<input type="radio" name="update_frequency" value="daily"> Daily<br>
+<input type="radio" name="update_frequency" value="weekly"> Weekly<br>
+<input type="radio" name="update_frequency" value="monthly"> Monthly<br>
+<input type="radio" name="update_frequency" value="occasionally"> Occasionally<br>
+</td>
+</tr>
+<tr>
+<td valign="top"><font size="2"><b>Additional Comments:</b></font></td>
+<td><textarea name="comments" rows="3" cols="40" style="font-family: Arial; font-size: 12px; border: 2px inset #CCCCCC; padding: 2px;" placeholder="Anything else you'd like us to know about your site?"></textarea></td>
+</tr>
+</table>
+
+<br>
+
+<!-- Agreement -->
+<table border="1" cellpadding="8" cellspacing="0" bordercolor="#000080" bgcolor="#E6E6FA" width="100%">
+<tr>
+<td>
+<font size="2" color="#000080"><b>Agreement:</b></font>
+<br>
+<font size="2" color="#000000">
+<input type="checkbox" name="agreement" value="agree" required>
+I agree to add the Pokemon Ring navigation code to my site upon acceptance and maintain it as long as I am a member of the ring.
+<br><br>
+<input type="checkbox" name="family_friendly" value="agree" required>
+I certify that my site contains only family-friendly Pokemon content appropriate for all ages.
+<br><br>
+<input type="checkbox" name="original_content" value="agree" required>
+I understand that original content is preferred, and I will clearly credit any sources I use.
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<input type="submit" value="Submit Application" style="font-family: Arial; font-size: 14px; background-color: #FF0000; color: white; border: 3px outset #CCCCCC; padding: 5px 15px; cursor: hand;">
+<input type="reset" value="Clear Form" style="font-family: Arial; font-size: 14px; background-color: #CCCCCC; color: black; border: 3px outset #CCCCCC; padding: 5px 15px; cursor: hand;">
+
+</form>
+</div>
+
+<!-- Current Members -->
+<table width="600" border="2" cellpadding="10" cellspacing="0" bordercolor="#0000FF" bgcolor="#F0F0FF">
+<tr>
+<td align="center">
+<font size="3" color="#0000FF"><b>Current Pokemon Ring Members</b></font>
+<br><br>
+<font size="2" color="#000000">
+<b>Bobby's Pokemon Page</b> - Complete Pokemon database with trading cards<br>
+<i>Webmaster: Bobby (Age 12) | Member since: November 1999</i>
+<br><br>
+<b>Sarah's REAL Pokemon Paradise</b> - Original Pokemon artwork and content<br>
+<i>Webmaster: Sarah Mitchell (Age 14) | Member since: December 1999</i>
+<br><br>
+<font color="#666666">Join these Pokemon masters in the ultimate Pokemon web ring!</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Process Information -->
+<table width="600" border="1" cellpadding="10" cellspacing="0" bordercolor="#00AA00" bgcolor="#F0FFF0">
+<tr>
+<td>
+<font size="3" color="#00AA00"><b>Application Process</b></font>
+<br><br>
+<font size="2" color="#000000">
+<b>1. Submit Application</b><br>
+Fill out and submit the form above. You'll receive an automatic confirmation email.
+<br><br>
+<b>2. Site Review (3-5 days)</b><br>
+Our Ring Master will review your site for content quality and Pokemon theme.
+<br><br>
+<b>3. Approval Email</b><br>
+If approved, you'll receive detailed instructions for adding ring navigation.
+<br><br>
+<b>4. Add Navigation Code</b><br>
+Copy and paste the provided HTML code to your site.
+<br><br>
+<b>5. Go Live!</b><br>
+Your site will be added to the ring and visible to all Pokemon fans!
+<br><br>
+<font color="#FF0000"><b>Note:</b> Sites that don't add the navigation code within 14 days will be removed from the ring.</font>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="600" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center" bgcolor="#FFD700">
+<font class="small" color="#000000">
+<a href="pokemon-ring.html">Pokemon Ring Home</a> |
+<a href="index.html">Web Ring Central</a> |
+<a href="../index.html">CyberFind Home</a> |
+<a href="mailto:pokemon-ring@cyberfind2000.net">Contact Ring Master</a>
+<br><br>
+&copy; 1999-2000 Pokemon Ring. Part of the Web Ring Central Network.<br>
+Pokemon is &copy; Nintendo/Game Freak. This is a fan community only.<br>
+<br>
+<font size="1">
+Ring Master: PokemonMaster2000 | Applications processed daily | Average approval time: 4 days
+</font>
+</font>
+</td>
+</tr>
+</table>
+
+</center>
+
+</body>
+</html>

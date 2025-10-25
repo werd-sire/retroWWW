@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Y2K Tech Watch - Your Source for Millennium Bug News</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="y2k,millennium bug,computer,technology,news,updates,fixes,patches">
+<meta name="description" content="Y2K Tech Watch - Stay informed about the millennium bug with the latest news, updates, and fixes.">
+<style type="text/css">
+<!--
+BODY { font-family: "Times New Roman", Times, serif; }
+A:link { color: #000080; }
+A:visited { color: #800080; }
+A:hover { background-color: #FFFF00; }
+.newsdate { font-size: 10px; color: #666666; }
+.breaking { color: #FF0000; font-weight: bold; background-color: #FFFF00; }
+.urgent { color: #FFFFFF; background-color: #FF0000; font-weight: bold; padding: 2px; }
+-->
+</style>
+<script language="JavaScript">
+<!--
+function updateCountdown() {
+    var y2k = new Date('January 1, 2000 00:00:00');
+    var now = new Date();
+    var diff = y2k - now;
+
+    if (diff > 0) {
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById('countdown').innerHTML =
+            '<font color="#FF0000" size="4"><b>' + days + ' DAYS ' + hours + ' HOURS ' + minutes + ' MINUTES</b></font>';
+    } else {
+        document.getElementById('countdown').innerHTML =
+            '<font color="#00FF00" size="4"><b>Y2K HAS PASSED!</b></font>';
+    }
+
+    setTimeout(updateCountdown, 60000); // Update every minute
+}
+
+function showPatchDatabase() {
+    var patchWindow = window.open('', 'patches', 'width=600,height=500,scrollbars=yes');
+    patchWindow.document.write('<html><head><title>Y2K Patch Database</title></head>');
+    patchWindow.document.write('<body bgcolor="#FFFFFF"><h2>Y2K Patch Database</h2>');
+    patchWindow.document.write('<table border="1" cellpadding="5" bgcolor="#FFFFCC">');
+    patchWindow.document.write('<tr><th>Software</th><th>Version</th><th>Status</th><th>Download</th></tr>');
+    patchWindow.document.write('<tr><td>Windows 98</td><td>4.10.2222</td><td>PATCHED</td><td><a href="#">Download</a></td></tr>');
+    patchWindow.document.write('<tr><td>Windows 95</td><td>4.03.1214</td><td>CRITICAL</td><td><a href="#">Download</a></td></tr>');
+    patchWindow.document.write('<tr><td>MS Office 97</td><td>8.0c</td><td>PATCHED</td><td><a href="#">Download</a></td></tr>');
+    patchWindow.document.write('<tr><td>Norton Utilities</td><td>4.5</td><td>VULNERABLE</td><td>No Fix Available</td></tr>');
+    patchWindow.document.write('<tr><td>Lotus 1-2-3</td><td>9.0</td><td>CRITICAL</td><td><a href="#">Download</a></td></tr>');
+    patchWindow.document.write('</table></body></html>');
+    patchWindow.document.close();
+}
+
+window.onload = updateCountdown;
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+<center>
+
+<!-- Header -->
+<table width="100%" border="0" cellpadding="10" cellspacing="0" bgcolor="#000080">
+<tr>
+<td align="center">
+<font size="6" color="#FFFFFF" face="Arial"><b>Y2K TECH WATCH</b></font><br>
+<font size="3" color="#FFFF00"><i>Your Source for Millennium Bug News</i></font>
+</td>
+</tr>
+</table>
+
+<!-- Countdown Timer -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FF0000">
+<tr>
+<td align="center">
+<font size="2" color="#FFFFFF"><b>TIME UNTIL Y2K:</b></font><br>
+<div id="countdown">Loading countdown...</div>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table width="800" border="1" cellpadding="10" cellspacing="0" bordercolor="#000080" bgcolor="#FFFFFF">
+<tr>
+<td>
+
+<!-- Breaking News -->
+<table width="100%" border="2" cellpadding="8" cellspacing="0" bordercolor="#FF0000" bgcolor="#FFFFCC">
+<tr>
+<td>
+<font size="4" class="breaking">🚨 BREAKING NEWS 🚨</font><br>
+<font size="2" class="urgent">CRITICAL Y2K PATCH RELEASED</font><br>
+<font size="2">Microsoft releases emergency Windows 98 update - Download immediately!</font>
+<a href="javascript:alert('Downloading patch... ERROR: File corrupted!')">Download Now</a>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td width="70%" valign="top">
+
+<font size="5" color="#000080"><b>LATEST Y2K NEWS</b></font><br><br>
+
+<hr>
+
+<font size="3"><b>Federal Reserve Confirms Y2K Readiness</b></font><br>
+<span class="newsdate">December 28, 1999 - 2:34 PM EST</span><br>
+The Federal Reserve announced today that all banking systems have been tested and are Y2K compliant.
+"We are confident that ATMs will continue to function normally after midnight on December 31st,"
+said Fed Chairman Alan Greenspan. However, many experts recommend withdrawing cash as a precaution.
+<a href="javascript:alert('Full article requires subscription!')">Read More</a><br><br>
+
+<hr>
+
+<font size="3"><b>Major Airlines Ground Flights for Y2K Testing</b></font><br>
+<span class="newsdate">December 27, 1999 - 11:15 AM EST</span><br>
+United Airlines and American Airlines will ground all flights from 11:30 PM on December 31st
+until 6:00 AM on January 1st as a "precautionary measure" while navigation systems are tested.
+Flight booking systems have experienced intermittent failures during stress tests.
+<a href="javascript:alert('Flight status: DELAYED')">Check Flight Status</a><br><br>
+
+<hr>
+
+<font size="3"><b>Power Grid Companies Report Mixed Y2K Results</b></font><br>
+<span class="newsdate">December 26, 1999 - 4:22 PM EST</span><br>
+Regional power companies across the United States report varying levels of Y2K compliance.
+While 78% of utilities claim full readiness, several smaller companies admit to ongoing issues
+with SCADA systems and automated controls. Rolling blackouts possible in some areas.
+<a href="javascript:alert('Your area: Status Unknown')">Check Your Area</a><br><br>
+
+<hr>
+
+<font size="3"><b>Software Companies Rush Final Y2K Patches</b></font><br>
+<span class="newsdate">December 25, 1999 - 9:45 AM EST</span><br>
+Major software vendors including Microsoft, Oracle, and SAP released dozens of last-minute
+patches on Christmas Day. "It's a race against time," said one Microsoft engineer.
+Some patches are causing system instability, leading to difficult decisions for IT managers.
+<a href="javascript:showPatchDatabase()">View Patch Database</a><br><br>
+
+<hr>
+
+<font size="3"><b>Embedded Systems: The Hidden Y2K Threat</b></font><br>
+<span class="newsdate">December 24, 1999 - 7:11 PM EST</span><br>
+Security elevators, traffic lights, and industrial control systems may fail due to embedded
+Y2K bugs that cannot be easily patched. "These systems were never designed to be updated,"
+warns cybersecurity expert Dr. Patricia Chen. Manual overrides being installed nationwide.
+<a href="javascript:alert('Emergency contacts database loading...')">Emergency Contacts</a><br><br>
+
+</td>
+<td width="30%" valign="top" bgcolor="#F0F0F0">
+
+<!-- Sidebar -->
+<font size="3" color="#000080"><b>Y2K RESOURCES</b></font><br><br>
+
+<table border="1" cellpadding="5" bgcolor="#FFFFFF" width="100%">
+<tr><td>
+<font size="2"><b>Government Advisories</b></font><br>
+• <a href="javascript:alert('gov site down for Y2K testing')">Y2K.gov Official Site</a><br>
+• <a href="../federal-watch-archive/index.html">Federal Watch Archive</a><br>
+• <a href="javascript:alert('404 - Site not Y2K ready')">FEMA Preparedness Guide</a><br>
+</td></tr>
+</table><br>
+
+<table border="1" cellpadding="5" bgcolor="#FFFFFF" width="100%">
+<tr><td>
+<font size="2"><b>Corporate Y2K Status</b></font><br>
+<font color="#00AA00">✓ Microsoft</font><br>
+<font color="#00AA00">✓ IBM</font><br>
+<font color="#FFAA00">⚠ Oracle</font><br>
+<font color="#FF0000">✗ Novell</font><br>
+<font color="#FFAA00">⚠ Compaq</font><br>
+<a href="javascript:alert('Database updating...')">View Full List</a>
+</td></tr>
+</table><br>
+
+<table border="1" cellpadding="5" bgcolor="#FFFFCC" width="100%">
+<tr><td>
+<font size="2"><b>Y2K SURVIVAL KIT</b></font><br>
+Essential items for Y2K:<br>
+• Cash (small bills)<br>
+• 3-day food supply<br>
+• Battery radio<br>
+• Flashlight & batteries<br>
+• First aid kit<br>
+• Printed maps<br>
+• Paper & pencils<br>
+<a href="../y2k/index.html">Complete Survival Guide</a>
+</td></tr>
+</table><br>
+
+<table border="1" cellpadding="5" bgcolor="#FFEEEE" width="100%">
+<tr><td>
+<font size="2"><b>TESTING TOOLS</b></font><br>
+Test your system's Y2K readiness:<br>
+• <a href="javascript:alert('Test failed: Date rollover error!')">Date Rollover Test</a><br>
+• <a href="javascript:alert('WARNING: BIOS not Y2K compliant!')">BIOS Checker</a><br>
+• <a href="javascript:alert('Your score: 3/10 - High Risk!')">Y2K Readiness Quiz</a><br>
+• <a href="javascript:alert('Scan complete: 47 vulnerabilities found!')">System Scanner</a><br>
+</td></tr>
+</table><br>
+
+<table border="1" cellpadding="5" bgcolor="#EEEEFF" width="100%">
+<tr><td>
+<font size="2"><b>LATEST TECH NEWS</b></font><br>
+• Pentium III hits 600MHz<br>
+• DVD players under $200<br>
+• USB becoming standard<br>
+• 56K modems reach limits<br>
+• <a href="../hardware/index.html">More Tech News</a>
+</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- Footer -->
+<table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#000080">
+<tr>
+<td align="center">
+<font size="2" color="#FFFFFF">
+<a href="../../index.html"><font color="#FFFF00">CyberFind Home</font></a> |
+<a href="mailto:editor@y2ktechwatch.com"><font color="#FFFF00">Contact Editor</font></a> |
+<a href="javascript:alert('Subscription service offline')"><font color="#FFFF00">Subscribe</font></a>
+</font>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<font size="1" color="#666666">
+Y2K Tech Watch © 1999 - All Rights Reserved<br>
+"Preparing you for the millennium bug since 1998"<br>
+This site is Y2K compliant and will continue operating after January 1, 2000
+</font>
+
+</center>
+
+</body>
+</html>
